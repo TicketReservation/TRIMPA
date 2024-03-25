@@ -1,4 +1,4 @@
-const db = require('../model-mysql/index')
+const db = require('../db/index')
 module.exports = {
     selectAll: async (req, res) => {
       try {
