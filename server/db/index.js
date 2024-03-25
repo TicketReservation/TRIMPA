@@ -18,9 +18,9 @@ async function connectionTest (){
   connectionTest()
   const db={}
 
-db.User=require('./UserModel')(connection,DataTypes)
-db.Travel=require('./TravelModel')(connection,DataTypes)
-db.Admin=require('./AdminModel')(connection,DataTypes)
+db.User=require('../model-mysql/UserModel')(connection,DataTypes)
+db.Travel=require('../model-mysql/TravelModel')(connection,DataTypes)
+db.Admin=require('../model-mysql/AdminModel')(connection,DataTypes)
 
 
 //  connection.sync({force:true}) 
