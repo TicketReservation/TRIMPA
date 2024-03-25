@@ -21,10 +21,14 @@ async function connectionTest (){
 db.User=require('./UserModel')(connection,DataTypes)
 db.Travel=require('./TravelModel')(connection,DataTypes)
 
-db.User.hasMany(db.Products)
-db.Products.belongsTo(db.User)
 
-//  connection.sync({force:true}) 
-// db.User.sync({force:true}) 
+// Sync the models with the database
+// sequelize.sync({ force: true })
+//     .then(() => {
+//         console.log('Models synced with the database.')
+//     })
+//     .catch((error) => {
+//         console.error('Unable to sync models with the database: ', error)
+//     });
 
 module.exports = db;
