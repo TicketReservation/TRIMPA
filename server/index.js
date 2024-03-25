@@ -1,6 +1,6 @@
 const express = require("express");
 
-const db = require('./model-mysql/index');
+const db = require('./db/index');
 const app = express()
 
 const TravelRoutes=require('./routes/Travel.routes')
