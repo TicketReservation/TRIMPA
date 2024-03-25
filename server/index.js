@@ -5,8 +5,8 @@ const express = require("express");
 const db = require('./model-mysql/index');
 const app = express()
 
-const TravelRoutes=require("")
-const userRoutes = require('')
+const TravelRoutes=require('./controllers/indexTravel')
+const userRoutes = require('./controllers/indexUserRoutes')
 
 
 const PORT = process.env.PORT || 3000
