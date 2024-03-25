@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const {getAll,register,login,updateOne,}=require('../controllers/indexUserRoutes')
+const {getAll,register,deleteOne,updateOne,}=require('../controllers/indexUserRoutes')
 
 
 
 router.get("/",getAll);
 router.post("/register",register);
-router.post("/login",login);
+router.delete("/login",deleteOne);
 router.patch("/:id",updateOne);
 
 
