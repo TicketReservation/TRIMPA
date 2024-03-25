@@ -1,12 +1,13 @@
 const express = require("express");
-const userRoutes = require('./routes/user.routes')
 
 
 
 const db = require('./model-mysql/index');
 const app = express()
 
-const productRoutes=require("./routes/products.routes")
+const TravelRoutes=require("")
+const userRoutes = require('')
+
 
 const PORT = process.env.PORT || 3000
 
