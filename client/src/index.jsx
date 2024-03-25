@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
+import Footer from './comp/footer.jsx'
 
 
 
@@ -14,7 +15,7 @@ const App = () => {
 
   return (
     <div>
-      
+      <Footer/>
     </div> 
   )
 }
