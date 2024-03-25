@@ -1,17 +1,16 @@
 const express = require("express");
-const router = require('express').Router();
+const router = express.Router();
 
 
 
-const {selectAll,selectOne,addOne,deleteOne,UpdateOne}=require('')
+const {selectAll,addOne,deleteOne,UpdateOne}=require('./../controllers/indexTravel')
 
 
 
 router.get("/",selectAll);
-router.get("/:id",selectOne);
 router.post("/",addOne);
 router.delete("/:id",deleteOne);
-router.patch("/:id",UpdateOne);
+router.put("/:id",UpdateOne);
 
 
 module.exports = router;

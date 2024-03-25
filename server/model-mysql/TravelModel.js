@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
 module.exports=(sequelize,DataTypes)=>{
-  const Products = sequelize.define('prod', {
+  const Travel = sequelize.define('Travel', {
   
     name: {
       type: DataTypes.STRING,
@@ -19,7 +19,19 @@ module.exports=(sequelize,DataTypes)=>{
     description: {
         type: DataTypes.STRING,
         allowNull :false
-      }
+      },
+      depart: {
+          type: DataTypes.STRING,
+          allowNull :false
+        },
+     destination: {
+            type: DataTypes.STRING,
+            allowNull :false
+          },
+      date: {
+              type: DataTypes.DATE,
+              allowNull :false
+            }
   });
-  return Products
+  return Travel
 }

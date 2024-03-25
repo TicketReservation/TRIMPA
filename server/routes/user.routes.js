@@ -1,7 +1,7 @@
-const router = require('express').Router();
+const express = require("express");
+const router = express.Router();
 
-
-const {getAll,register,login,updateOne,}=require('')
+const {getAll,register,login,updateOne,}=require('../controllers/indexUserRoutes')
 
 
 

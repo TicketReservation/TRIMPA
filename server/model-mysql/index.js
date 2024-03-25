@@ -20,11 +20,9 @@ async function connectionTest (){
 
 db.User=require('./UserModel')(connection,DataTypes)
 db.Travel=require('./TravelModel')(connection,DataTypes)
+db.Admin=require('./AdminModel')(connection,DataTypes)
 
-db.User.hasMany(db.Products)
-db.Products.belongsTo(db.User)
 
 //  connection.sync({force:true}) 
-// db.User.sync({force:true}) 
 
 module.exports = db;
