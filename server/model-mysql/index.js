@@ -20,8 +20,10 @@ async function connectionTest (){
 
 db.User=require('./UserModel')(connection,DataTypes)
 db.Travel=require('./TravelModel')(connection,DataTypes)
+db.Admin=require('./AdminModel')(connection,DataTypes)
 
 
+<<<<<<< HEAD
 // Sync the models with the database
 // sequelize.sync({ force: true })
 //     .then(() => {
@@ -30,5 +32,8 @@ db.Travel=require('./TravelModel')(connection,DataTypes)
 //     .catch((error) => {
 //         console.error('Unable to sync models with the database: ', error)
 //     });
+=======
+//  connection.sync({force:true}) 
+>>>>>>> a6e21a90e5ca1b2121c8a5215b4c8734411ac16e
 
 module.exports = db;
