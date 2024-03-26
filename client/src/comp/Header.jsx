@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 import SignIn from './SignIn.jsx';
 import style from '../css/homePage.css';
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+
+
+
 function Header() {
    
-
+    const [login,setLogin]=useState(false);
     return (
         <div className="header">
+
+
+            <SignIn trigger={login}/>
+                
+            
+
+
             <span>
                 <h1 className="trimpa">Trimpa</h1>
             </span>
@@ -21,7 +29,7 @@ function Header() {
                 <p id="nav" href="#Packages">
                     Packages
                 </p>
-                <a id="log" href="#Sign in">
+                <a onClick={()=>setLogin(true)} id="log" href="#Sign in">
                     Sign in
                 </a>
                 <a id="log" className="active" href="#Singn up">
