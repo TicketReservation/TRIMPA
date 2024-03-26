@@ -1,10 +1,11 @@
 const mysql = require('mysql2');
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize,DataTypes } = require('sequelize');
+const { DATABASE_Name, DATABASE_USERNAME, DATABASE_PASSWORD } = require("./config.js");
 
-const connection = new Sequelize('Tripma', 'root', 'root', {
-  host: 'localhost',
-  dialect:'mysql'
+const connection = new Sequelize (DATABASE_Name, DATABASE_USERNAME, DATABASE_PASSWORD, {
+  dialect: 'mysql'
 });
+
 
 async function connectionTest (){     
   try {
