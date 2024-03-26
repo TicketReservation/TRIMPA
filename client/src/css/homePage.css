@@ -1,0 +1,76 @@
+header{
+    background-color: 	#8A2BE2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.topnav #log {
+    float: left;
+    color: grey;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 8px;
+  }
+  
+  .topnav #log:hover {
+    background-color: #8A2BE2;
+    color: white;
+  }
+  
+  .topnav #log.active {
+    margin-left: 4px;
+    background-color: #8A2BE2;
+    color: white;
+    margin-right: 20px;
+  }
+  .topnav #nav{
+    float: left;
+    color: grey;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 8px;
+  }
+  .topnav #nav:hover{
+    color: #8A2BE2;
+    cursor: pointer;
+  }
+  .saying{
+    text-align: center;
+    background: -webkit-linear-gradient(#0d70da, #8A2BE2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 600%;
+  font-weight: bold;
+  }
+  .trimpa{
+    margin-left: 20px;
+    color: #8A2BE2;
+  }
+.landing{
+    margin-top: 50px;
+}
+.filter{
+    display: flex;
+    justify-content: center;
+}
+.inputs{
+    margin-top: 40px;
+    height: 30px;
+}
+.btn{
+    height: 30px;
+    margin-top: 40px;
+    background-color: #8A2BE2;
+    color: #8A2BE2;
+}
