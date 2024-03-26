@@ -1,0 +1,98 @@
+import React from 'react';
+import style from '../css/information.css'
+function Information() {
+  return (
+    <div className="all">
+      <h3>Passenger information</h3>
+      <p>
+        Enter the required information for each traveler and be sure that it exactly matches the government-issued ID presented at the airport.
+      </p>
+      <div className="col-7 mb-md-0 mb-5">
+        <p>Passenger 1 (Adult)</p>
+        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="md-form mb-0">
+                <input type="text" name="firstName" placeholder="First name*" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text" name="lastName" placeholder="Surname" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text" name="email" placeholder="Email address" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text" name="redressNumber" placeholder="Redress Number" className="form-control" />
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="md-form mb-0">
+                <input type="text" name="middleName" placeholder="Middle name" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="date" name="dob" placeholder="Date of birth" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text" name="phoneNumber" placeholder="Phone number" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text" name="ktn" placeholder="Known traveler Number*" className="form-control" />
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <h4>Emergency contact information</h4>
+          <div>
+            <p>
+              <input type="checkbox" name="sameAsPassenger1" id="sameAsPassenger1" />
+              Same as Passenger 1
+            </p>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <div className="md-form mb-0">
+                <input type="text" name="emergencyFirstName" placeholder="First name*" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text" name="emergencyEmail" placeholder="Email address*" className="form-control" />
+              </div>
+              <br />
+            </div>
+            <div className="col-md-6">
+              <div className="md-form mb-0">
+                <input type="text" name="emergencyLastName" placeholder="Last Name*" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text" name="emergencyPhoneNumber" placeholder="Phone number" className="form-control" />
+              </div>
+            </div>
+          </div>
+          <h4>Bag information</h4>
+          <p>
+            Each passenger is allowed one free carry-on bag and one personal item. First checked bag for each passenger is also free.
+            Second bag check fees are waived for loyalty program members. See the full bag policy.
+          </p>
+          <div>
+            <div>
+              First Last <button>-</button> 0 <button>+</button>
+            </div>
+            <br />
+            <button>Save and close</button> <button>Select seats</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default Information;
