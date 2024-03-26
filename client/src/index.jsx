@@ -15,7 +15,13 @@ const App = () => {
 
   return (
     <div>
-      <Footer/>
+
+
+
+
+      
+      <Footer 
+      />
     </div> 
   )
 }
