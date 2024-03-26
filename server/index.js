@@ -15,12 +15,6 @@ app.use(express.static(__dirname + "/../client/dist"));
 app.use("/api/user", userRoutes);
 app.use("/api/Travel", TravelRoutes);
 
-
-
-
-
-
-
 app.listen(PORT, function () {
   console.log("listening on port 3000!");
 });

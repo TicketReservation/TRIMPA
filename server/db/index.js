@@ -6,7 +6,6 @@ const connection = new Sequelize('Tripma', 'root', 'root', {
   dialect:'mysql'
 });
 
-
 async function connectionTest (){     
   try {
     await connection.authenticate();
@@ -14,14 +13,13 @@ async function connectionTest (){
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }
-  }
+}
   connectionTest()
   const db={}
 
 db.User=require('../model-mysql/UserModel')(connection,DataTypes)
 db.Travel=require('../model-mysql/TravelModel')(connection,DataTypes)
 db.Admin=require('../model-mysql/AdminModel')(connection,DataTypes)
-
 
 //  connection.sync({force:true}) 
 
