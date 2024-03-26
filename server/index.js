@@ -5,6 +5,7 @@ const app = express()
 
 const TravelRoutes=require('./routes/Travel.routes')
 const userRoutes = require('./routes/user.routes')
+const adminRoutes = require('./routes/Admin.routes')
 
 const PORT = process.env.PORT || 3000
 
@@ -14,6 +15,7 @@ app.use(express.static(__dirname + "/../client/dist"));
 
 app.use("/api/user", userRoutes);
 app.use("/api/Travel", TravelRoutes);
+app.use("/api/admin", adminRoutes);
 
 
 
