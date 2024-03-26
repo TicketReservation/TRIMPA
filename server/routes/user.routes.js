@@ -7,7 +7,7 @@ const {getAll,register,deleteOne,updateOne,}=require('../controllers/indexUserRo
 
 router.get("/",getAll);
 router.post("/register",register);
-router.delete("/login",deleteOne);
+router.delete("/del/:id",deleteOne);
 router.patch("/:id",updateOne);
 
 
