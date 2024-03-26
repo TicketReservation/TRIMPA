@@ -11,6 +11,7 @@ module.exports = {
     register: async (req, res) => {
       try {
         const user = await db.User.create(req.body);
+
         res.status(201).send(user);
       } catch (error) {
         throw error;
@@ -28,11 +29,9 @@ module.exports = {
     },
     deleteOne: async (req, res) => {
       try {
-        let id = req.params.id;
-        const user = await db.User.destroy({
-          where: { id: id },
-        });
-        res.status(200).send(user);
+        const user = await db.User.destroy({where: { id: req.params.id }});
+        res.sendStatus(200);
+       
         }
        
       catch (error) {

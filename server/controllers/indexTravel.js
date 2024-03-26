@@ -28,11 +28,9 @@ module.exports = {
     },
     deleteOne: async (req, res) => {
       try {
-        let id = req.params.id;
-        const travel = await db.Travel.destroy({
-          where: { id: id },
-        });
-        res.status(200).send(travel);
+        const travel = await db.Travel.destroy({where: { id: req.params.id }});
+        res.status(201).send(travel);
+        
         }
        
       catch (error) {

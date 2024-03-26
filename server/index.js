@@ -17,12 +17,6 @@ app.use("/api/user", userRoutes);
 app.use("/api/Travel", TravelRoutes);
 app.use("/api/admin", adminRoutes);
 
-
-
-
-
-
-
 app.listen(PORT, function () {
   console.log("listening on port 3000!");
 });
