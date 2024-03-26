@@ -3,7 +3,18 @@ const sequelize = new Sequelize('sqlite::memory:');
 
 module.exports=(sequelize,DataTypes)=>{
   const Admin = sequelize.define('Admin', {
-  
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull :false
+    },
+    password:{
+      type: DataTypes.STRING,
+      allowNull :false
+    }
  
   });
   return Admin
