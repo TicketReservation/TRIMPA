@@ -4,7 +4,7 @@ import style from "../css/footer.css";
 
 function Footer() {
   return (
-          <div className={style.mainFooter}>
+          <div className='zaza'>
            <div className="container">
            <div className="row">
  {/* Column1 */}
