@@ -20,7 +20,7 @@ module.exports = {
     deleteOne: async (req, res) => {
       try {
         const user = await db.User.destroy({where: { id: req.params.id }});
-        res.sendStatus(200);
+        res.sendStatus(201);
 
         }
         catch (error) {
