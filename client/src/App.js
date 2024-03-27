@@ -8,6 +8,7 @@ import Information from './compoents/Information';
 import Revieux from './compoents/Revieux';
 import Seats from './compoents/seats'
 
+
 import Paye from './compoents/Paye'
 function App() {
   return (
@@ -20,11 +21,12 @@ function App() {
  {/* <Paye/> */}
       {/* <Header/>
       <MainPage/> */}
- <Seats/>
+//  <Seats/>
      {/* <FlightDeals/> */}
     {/* < Information/> */}
      {/* <Revieux />  */}
    {/* <Footer/>   */}
+
 
     </div>
   );
