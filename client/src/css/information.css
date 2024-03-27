@@ -1,2 +1,18 @@
 .all{
-    margin-left:140px}
+    margin: 0 0px 94px 140px}
+
+
+
+    button{
+        color: blue;
+       
+    }
+    button :hover{
+        background-color: blue;
+        color: aliceblue;
+    }
+    
+    
+    p , h4{
+        text-align: left
+    }

@@ -5,7 +5,7 @@ import Information from './compoents/Information';
 
 function App() {
   return (
-    <div className="App">
+    <div>
      
     < Information/>
      <Footer/>
