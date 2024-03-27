@@ -1,22 +1,31 @@
 const express = require("express");
+let app = express();
+const cors=require('cors')
+const db = require ("./Database/index.js")
+const UserRoute = require('./Routers/user.routes.js')
+const FlightRoute = require('./Routers/flight.routes.js')
+const SitRoute = require('./Routers/sit.routes.js')
+const BookingRoute = require('./Routers/booking.routes.js')
 
-const db = require('./db/index');
-const app = express()
 
-const TravelRoutes=require('./routes/Travel.routes')
-const userRoutes = require('./routes/user.routes')
-const adminRoutes = require('./routes/Admin.routes')
 
-const PORT = process.env.PORT || 3000
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+
 app.use(express.static(__dirname + "/../client/dist"));
+app.use(express.json());
+app.use(cors())
+app.use('/api/user', UserRoute);
+app.use('/api/flight', FlightRoute);
+app.use('/api/sit', SitRoute);
+app.use('/api/booking', BookingRoute);
 
-app.use("/api/user", userRoutes);
-app.use("/api/Travel", TravelRoutes);
-app.use("/api/admin", adminRoutes);
 
-app.listen(PORT, function () {
-  console.log("listening on port 3000!");
+
+
+let port = 3000;
+
+
+app.listen(port, function () {
+  console.log(`listening on port ${port}`);
 });
