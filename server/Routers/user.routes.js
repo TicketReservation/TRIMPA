@@ -3,7 +3,7 @@ const router = express.Router();
 const {getAll,register,deleteOne,login,UpdateOne}=require('../controller/UserController')
 
 router.get("/",getAll);
-router.put("/update",UpdateOne);
+
 
 router.post("/register",register);
 router.post("/login",login)

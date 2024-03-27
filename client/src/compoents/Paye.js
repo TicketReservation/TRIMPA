@@ -44,11 +44,14 @@ function Paye() {
           
         </div>
       </div>
-      <div style={{width: 682}}><span style="color: '#7C8DB0', fontSize: 16, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'">This flight has a flexible cancellation policy. If you cancel or change your 
+      {/* <div style={{width: 682}}><span style="color: '#7C8DB0', fontSize: 16, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'">This flight has a flexible cancellation policy. If you cancel or change your 
           flight up to 30 days before the departure date,
            you are eligible for a free refund.
             All flights booked on Tripma are backed by our satisfaction guarantee, however cancellation policies vary by airline. See the</span>
-        </div>
+        </div> */}
+        <div style={{width: 682}}>
+  <span style={{color: '#7C8DB0', fontSize: 16, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'}}>This flight has a flexible cancellation policy. If you cancel or change your flight up to 30 days before the departure date, you are eligible for a free refund. All flights booked on Tripma are backed by our satisfaction guarantee, however cancellation policies vary by airline. See the</span>
+</div>
   </div>
   );
 }

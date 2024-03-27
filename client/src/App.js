@@ -6,6 +6,7 @@ import './App.css';
 // import Footer from './compoents/Footer';
 import Information from './compoents/Information';
 
+import Paye from './compoents/Paye'
 function App() {
   return <>
   <header>
