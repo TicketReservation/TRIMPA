@@ -18,7 +18,7 @@ function Information() {
 
 
   return (
-    <div className="all">
+    <div className="container">
       <h4>Passenger information</h4>
       <p>
         Enter the required information for each traveler and be sure that it exactly 
@@ -26,7 +26,7 @@ function Information() {
       <div className="col-7 mb-md-0 mb-5">
         <p>Passenger 1 (Adult)</p>
         <form name="contact-form" >
-          <div className="row">
+          <div className="row"     >
             <div className="col-md-4">
               <div className="md-form mb-0">
                 <input type="text"  placeholder="First name*" className="form-control" />

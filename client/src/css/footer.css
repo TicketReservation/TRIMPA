@@ -6,6 +6,7 @@
     bottom: 0;
     width: 100%;
     padding-top: 25px;
+    
   }
  h3 , h4{
   text-align: center;
@@ -15,5 +16,12 @@
 }
 
   .row {
-    text-align: center;}
-   
+    text-align: center}
+
+
+   .role{
+    margin-right: 10px
+   }
+   .zaza{
+    margin-top: 55px 
+   }
