@@ -1,10 +1,11 @@
 const mysql = require('mysql2');
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize ,DataTypes } = require('sequelize');
+const { DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD } = require("./config.js");
 
-const connection = new Sequelize('Tripma', 'root', 'root', {
-  host: 'localhost',
-  dialect:'mysql'
+const connection = new Sequelize (DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, {
+  dialect: 'mysql'
 });
+
 
 async function connectionTest (){     
   try {
@@ -45,7 +46,7 @@ db.Booking.belongsTo(db.Flight, { foreignKey: 'flightId' });
 
 
 // Sync the models with the database
-// sequelize.sync({ force: true })
+// connection.sync({ force: true })
 //     .then(() => {
 //         console.log('Models synced with the database.')
 //     })
