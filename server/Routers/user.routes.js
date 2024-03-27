@@ -8,7 +8,7 @@ const {getAll,register,deleteOne,login}=require('../controller/UserController')
 
 
 router.get("/",getAll);
-router.put("/update",UpdateOne);
+
 
 router.post("/register",register);
 router.post("/login",login)
