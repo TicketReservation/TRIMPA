@@ -68,9 +68,62 @@ header{
     margin-top: 40px;
     height: 30px;
 }
-.btn{
-    height: 30px;
+button .searchBtn{
+    height: 10px;
     margin-top: 40px;
-    background-color: #8A2BE2;
+    background-color:black;
     color: #ffffff;
 }
+.topnav{
+  display: flex;
+  justify-content: center;
+}
+.signIn {
+  margin-right: 550px;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.signIn form {
+  margin-top: 20px;
+}
+
+.signIn h2 {
+  margin-bottom: 20px;
+}
+
+.signIn label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signIn input[type="text"],
+.signIn input[type="email"],
+.signIn input[type="password"],
+.signIn input[type="file"] {
+  width: calc(100% - 22px); /* Adjust for input padding and border */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.signIn button[type="submit"] {
+  width: 100%;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signIn button[type="submit"]:hover {
+  background-color: #8A2BE2;
+}
+
