@@ -1,16 +1,17 @@
 
 import './App.css';
+import FlightDeals from './compoents/FlightDeals';
 import Footer from './compoents/Footer';
-// import Information from './compoents/Information';
+import Information from './compoents/Information';
 import Revieux from './compoents/Revieux';
 
 function App() {
   return (
     <div>
-  
-     
-    {/* < Information/> */}
-    <Revieux />
+      {/* <h1>hello</h1> */}
+     <FlightDeals/>
+     {/* < Information/> */}
+     <Revieux />
      <Footer/>
     </div>
   );
