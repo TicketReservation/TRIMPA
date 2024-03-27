@@ -8,6 +8,10 @@ module.exports = {
         throw error;
       }
     },
+
+
+    
+
     register: async (req, res) => {
       try {
         const user = await db.User.create(req.body);

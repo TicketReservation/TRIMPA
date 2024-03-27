@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SignIn from './SignIn.js';
-import SignUp from './SignUp.js';
 import style from '../css/homePage.css';
 
 

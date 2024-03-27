@@ -26,7 +26,7 @@ function Revieux() {
               </div>
             </div>
             <div className="card-body">
-              <p className="card-text">Lorem ipsum dolor sit  Nullam viverra, neque quis bibendum finibus, odio velit posuere eros, nec convallis enim purus eget nunc.</p>
+              <p className="card-text">What a great experience using Tripma! I booked all of my flights for my gap year through Tripma and never had any issues. When I had to cancel a flight because of an emergency, Tripma support helped me read more...</p>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ function Revieux() {
               </div>
             </div>
             <div className="card-body">
-              <p className="card-text">Sed vitae libero eu lectus posuere placerat. Nam consectetur nulla id ligula pharetra vulputate. Vivamus eleifend tempor feugiat.</p>
+              <p className="card-text">My family and I visit Hawaii every year, and we usually book our flights using other services. Tripma was recommened to us by a long time friend, and I’m so glad we tried it out! The process was easy and read more...</p>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ function Revieux() {
               </div>
             </div>
             <div className="card-body">
-              <p className="card-text">Fusce nec lorem nec ex fermentum efficitur. Curabitur sollicitudin dui ac aliquam venenatis. Ut ac consectetur dolor, sed sollicitudin sem.</p>
+              <p className="card-text">When I was looking to book my flight to Berlin from LAX, Tripma had the best browsing experiece so I figured I’d give it a try. It was my first time using Tripma, but I’d definitely recommend it to a friend and use it for read more...</p>
             </div>
           </div>
         </div>
