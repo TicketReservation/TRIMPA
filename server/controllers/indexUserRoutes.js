@@ -27,13 +27,7 @@ module.exports = {
       }
     },
     deleteOne: async (req, res) => {
-      try {
-        
-       
-        }
-       
-      catch (error) {
-        throw error;
+
       }
-    }
+    
   };
