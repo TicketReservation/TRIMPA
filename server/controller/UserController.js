@@ -10,6 +10,10 @@ module.exports = {
         throw error;
       }
     },
+
+
+    
+
     register: async (req, res) => {
       const{Name,email,password,picture}=req.body
       const hashedPassword =  await bcrypt.hash(password, 10);
