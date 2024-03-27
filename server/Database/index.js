@@ -22,6 +22,7 @@ db.User=require('./UserModel')(connection,DataTypes)
 db.Flight=require('./FlightModel')(connection,DataTypes)
 db.Sit=require('./SitModel')(connection,DataTypes)
 db.Booking=require('./BookingModel')(connection,DataTypes)
+db.SignIn=require('./signIn.js')(connection,DataTypes)
 
 
 
