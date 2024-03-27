@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 const { Sequelize, DataTypes } = require('sequelize');
 
-const connection = new Sequelize('Tripma', 'root', '1920', {
+const connection = new Sequelize('Tripma', 'root', 'dhia2002', {
   host: 'localhost',
   dialect:'mysql'
 });
