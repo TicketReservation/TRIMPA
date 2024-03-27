@@ -1,49 +1,71 @@
-import React from 'react';
-import style from '../css/information.css'
+import React, { useState } from 'react';
+import style from '../css/information.css';
+
 function Information() {
+  const [comteur, setComteur] = useState(0);
+
+  const pls = (event) => {
+    event.preventDefault();
+    setComteur(comteur + 1);
+  }
+  
+  const mns = (event) => {
+    event.preventDefault();
+    setComteur(comteur - 1);
+  }
+  
+
+
+
   return (
-    <div className="all">
-      <h3>Passenger information</h3>
+    <div className="container">
+      <h4>Passenger information</h4>
       <p>
-        Enter the required information for each traveler and be sure that it exactly matches the government-issued ID presented at the airport.
-      </p>
+        Enter the required information for each traveler and be sure that it exactly 
+        matches  <br /> the government-issued ID presented at the airport. </p>
       <div className="col-7 mb-md-0 mb-5">
         <p>Passenger 1 (Adult)</p>
-        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-          <div className="row">
-            <div className="col-md-6">
+        <form name="contact-form" >
+          <div className="row"     >
+            <div className="col-md-4">
               <div className="md-form mb-0">
-                <input type="text" name="firstName" placeholder="First name*" className="form-control" />
+                <input type="text"  placeholder="First name*" className="form-control" />
               </div>
               <br />
               <div className="md-form mb-0">
-                <input type="text" name="lastName" placeholder="Surname" className="form-control" />
+                <input type="text" placeholder="Suffix" className="form-control" />
               </div>
               <br />
               <div className="md-form mb-0">
-                <input type="text" name="email" placeholder="Email address" className="form-control" />
+                <input type="text" placeholder="Email address" className="form-control" />
+              </div>  <br />
+              <div className="md-form mb-0">
+                <input type="text" placeholder="Redress number" className="form-control" />
+              </div> <br />
+            </div>
+            <div className="col-md-4">
+              <div className="md-form mb-0">
+                <input type="text"  placeholder="Middle name" className="form-control" />
               </div>
               <br />
               <div className="md-form mb-0">
-                <input type="text" name="redressNumber" placeholder="Redress Number" className="form-control" />
+                <input type="date"  placeholder="Date of birth" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="number"  placeholder="Phone number" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text"  placeholder="Known traveller number*" className="form-control" />
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="md-form mb-0">
-                <input type="text" name="middleName" placeholder="Middle name" className="form-control" />
+                <input type="text" placeholder="Last Name*" className="form-control" />
               </div>
+              
               <br />
-              <div className="md-form mb-0">
-                <input type="date" name="dob" placeholder="Date of birth" className="form-control" />
-              </div>
-              <br />
-              <div className="md-form mb-0">
-                <input type="text" name="phoneNumber" placeholder="Phone number" className="form-control" />
-              </div>
-              <br />
-              <div className="md-form mb-0">
-                <input type="text" name="ktn" placeholder="Known traveler Number*" className="form-control" />
-              </div>
             </div>
           </div>
           <br />
@@ -63,18 +85,19 @@ function Information() {
               </div>
               <br />
               <div className="md-form mb-0">
-                <input type="text" name="emergencyEmail" placeholder="Email address*" className="form-control" />
+                <input type="text" name="emergencyLastName" placeholder="Last Name*" className="form-control" />
               </div>
               <br />
             </div>
             <div className="col-md-6">
               <div className="md-form mb-0">
-                <input type="text" name="emergencyLastName" placeholder="Last Name*" className="form-control" />
+                <input type="text" name="emergencyEmail" placeholder="Email address*" className="form-control" />
               </div>
               <br />
               <div className="md-form mb-0">
                 <input type="text" name="emergencyPhoneNumber" placeholder="Phone number" className="form-control" />
               </div>
+              <br />
             </div>
           </div>
           <h4>Bag information</h4>
@@ -84,7 +107,7 @@ function Information() {
           </p>
           <div>
             <div>
-              First Last <button>-</button> 0 <button>+</button>
+              First Last <button onClick={mns}>-</button> {comteur}<button onClick={pls}>+</button>
             </div>
             <br />
             <button>Save and close</button> <button>Select seats</button>

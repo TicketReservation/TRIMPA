@@ -2,21 +2,16 @@ const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite:///:memory:');
 
 module.exports=(sequelize,DataTypes)=>{
-  const User = sequelize.define('user', {
-    
-    firstName: {
+  const SignIn = sequelize.define('signIn', {
+  
+    adress: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    email: {
+    passWord: {
       type: DataTypes.STRING,
-      allowNull :false
-    },
-    password:{
-      type: DataTypes.STRING,
-      allowNull :false
+      allowNull:false
     }
-
   });
-  return User
+  return SignIn
 }

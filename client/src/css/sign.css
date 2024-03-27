@@ -1,0 +1,50 @@
+.signIn {
+    padding: 10px 10px 10px 10px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 44vh;
+    margin-left: 21rem;
+    background-color: cornsilk;
+    border-radius: 5px;
+  }
+  .log-input{
+    border-radius: 5px;
+    border-color: transparent;
+  }
+  .TrimpaSignUp{
+    color: rgb(120, 119, 119);
+    margin-top: 14px;
+  }
+  .Top-SingUp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  h7{
+    color: rgb(120, 119, 119);
+  }
+  .log-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    /* background-color: transparent; */
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .quit:hover {
+    background-color: #8A2BE2;
+    color: white;
+  }
+  

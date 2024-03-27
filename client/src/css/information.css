@@ -1,2 +1,20 @@
-.all{
-    background-color: rgb(37, 122, 175);}
+.container{
+    margin: 0 0px 94px 140px}
+
+.input-group-text{
+    margin: 0px 0px 0px 256px;
+}
+
+    button{
+        color: blue;
+       
+    }
+    button :hover{
+        background-color: blue;
+        color: aliceblue;
+    }
+    
+    
+    p , h4{
+        text-align: left
+    }
