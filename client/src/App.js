@@ -4,19 +4,19 @@ import MainPage from './compoents/MainPage'
 import './App.css';
 import FlightDeals from './compoents/FlightDeals';
 import Footer from './compoents/Footer';
-// import Information from './compoents/Information';
+import Information from './compoents/Information';
 import Revieux from './compoents/Revieux';
 
 function App() {
   return (
     <div>
-       <header>
+       {/* <header>
       Join Tripma today and save up to 20% on your fligth using code TRAVEL at checkout. Promotion valid for new users only.
-      </header>
+      </header> */}
       <Header/>
       <MainPage/>
-     <FlightDeals/>
-     {/* < Information/> */}
+     {/* <FlightDeals/> */}
+     < Information/>
   
      <Revieux /> 
    <Footer/> 
