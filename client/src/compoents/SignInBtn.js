@@ -14,22 +14,28 @@ function SignInBtn() {
     const id = open ? 'simple-popper' : undefined;
 
   return <div>
-   <a onClick={handleClick} id="log" href="#Sign in">
+      <a onClick={handleClick} id="log" href="#Sign in">
                     Sign in
                 </a>
                 <BasePopup id={id} open={open} anchor={anchor}>
     <div className='signIn'>
     <form >
-      <h2>Sign In</h2>
-      <label htmlFor="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+      <h2>Sign in</h2>
+      <br/> 
+      <br/> 
+      <br/> 
       <label htmlFor="email">Email:</label>
       <input type="email" id="email" name="email"  required />
+     
       <label htmlFor="password">Password:</label>
       <input type="password" id="password" name="password"   required />
-      <label htmlFor="picture">Picture:</label>
-      <input type="file" id="picture" name="picture"  />
-      <button type="submit"  >Sign In</button>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      
+      <button type="submit"  className='signInBtn' >Sign in</button>
     </form>
     </div>
       </BasePopup>

@@ -17,19 +17,25 @@ function SignUpBtn() {
    <a onClick={handleClick} className="active" id="log" href="#Sign in">
                     Sign up
                 </a>
-                <BasePopup id={id} open={open} anchor={anchor}>
+      <BasePopup id={id} open={open} anchor={anchor}>
     <div className='signIn'>
     <form >
       <h2>Sign up</h2>
+      <label htmlFor="name">Name:</label>
+      <input type="text" id="name" name="name" required />
       <label htmlFor="email">Email:</label>
       <input type="email" id="email" name="email"  required />
       <label htmlFor="password">Password:</label>
       <input type="password" id="password" name="password"   required />
+      <label htmlFor="picture">Picture:</label>
+      <input type="file" id="picture" name="picture"  />
       <button type="submit"  >Sign up</button>
     </form>
     </div>
       </BasePopup>
   </div>
+
+  
   
 }
 

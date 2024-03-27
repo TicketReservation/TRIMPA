@@ -81,6 +81,7 @@ button .searchBtn{
 .signIn {
   margin-right: 550px;
   width: 400px;
+  height: 500px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -111,7 +112,9 @@ button .searchBtn{
   border-radius: 4px;
   box-sizing: border-box;
 }
-
+.signInBtn{
+  margin-top: 7px;
+}
 .signIn button[type="submit"] {
   width: 100%;
   background-color: blue;
