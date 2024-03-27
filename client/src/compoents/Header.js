@@ -18,7 +18,7 @@ function Header() {
 
 
             <span>
-                <h1 className="trimpa">Trimpa</h1>
+                <h1 className="trimpa">Tripma</h1>
             </span>
             <SignIn trigger={login} setTrigger={setLogin}/>
             {/* <SignUp trigger={login} setTrigger={setLogin}/> */}

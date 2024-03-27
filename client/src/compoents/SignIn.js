@@ -11,7 +11,7 @@ function SignIn({trigger,setTrigger}) {
     <h7>Tripma is totally fre to use. Sign in your email<br/> adress or phone numberbelow to get started</h7><br/>
     <span>
       <input className='log-input' type="text" placeholder='Email or phone number' /><br />
-      <input className='log-input' type="text" placeholder='Password'/><br />
+      <input className='log-input' type="password" placeholder='Password'/><br />
       </span>
 
     <button className='quit'>Create Account</button>
