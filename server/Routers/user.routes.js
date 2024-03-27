@@ -1,10 +1,10 @@
-const express = require("express");
-const router = express.Router();
+const express = require("express")
+const router = express.Router()
 const {getAll,register,deleteOne}=require('../controller/UserController')
 
-router.get("/",getAll);
-router.post("/register",register);
-router.delete("/del/:id",deleteOne);
+router.get("/",getAll)
+router.post("/register",register)
+router.delete("/del/:id",deleteOne)
 
 
-module.exports = router;
+module.exports = router

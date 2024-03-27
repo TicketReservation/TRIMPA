@@ -1,5 +1,5 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite:///:memory:');
+const { Sequelize, DataTypes } = require('sequelize')
+const sequelize = new Sequelize('sqlite:///:memory:')
 
 module.exports=(sequelize,DataTypes)=>{
   const User = sequelize.define('user', {
@@ -20,6 +20,6 @@ module.exports=(sequelize,DataTypes)=>{
       type: DataTypes.STRING,
       allowNull :false
     }
-  });
+  })
   return User
 }
