@@ -24,7 +24,7 @@ function Header() {
             {/* <SignUp trigger={login} setTrigger={setLogin}/> */}
             <span className="topnav">
                 <p id="nav" href="#Fligth">
-                    Fligth
+                    Flight
                 </p>
                 <p id="nav" href="#Hotels">
                     Hotels
