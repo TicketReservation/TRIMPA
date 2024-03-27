@@ -4,7 +4,11 @@ import style from "../css/footer.css";
 
 function Footer() {
   return (
+<<<<<<< HEAD
+          <div className="main-footer"   >
+=======
           <div className='zaza'>
+>>>>>>> 6a2ea6a97dc321d1d9b7d1b63f9c39cad319c241
            <div className="container">
            <div className="row">
  {/* Column1 */}
