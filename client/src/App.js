@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
+import Header from './compoents/Header';
+import MainPage from './compoents/MainPage'
 import './App.css';
 // import Footer from './compoents/Footer';
 import Information from './compoents/Information';
