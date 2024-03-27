@@ -52,7 +52,23 @@ function Flights() {
 
 </div>
 <h5>Choose a departing flight</h5>  
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      </div>
   )
 }
