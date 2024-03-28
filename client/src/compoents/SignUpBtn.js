@@ -31,7 +31,7 @@ function SignUpBtn({switchView}) {
 
     const handleSubmit=(body)=>{
       axios.post("http://localhost:3000/api/user/register",body)
-      .then(res=>console.log(res))
+      .then(res=>console.log("signed"))
       .catch(err=>console.log(err))
     }
 
@@ -44,7 +44,7 @@ function SignUpBtn({switchView}) {
     <form >
       <h2>Sign up</h2>
       <label htmlFor="name">Name</label>
-      <input type="text" onChange={(e)=>handleInput(e)} value={signUp.Name} id="name" name="name" required />
+      <input type="text" onChange={(e)=>handleInput(e)} value={signUp.Name} id="Name" name="name" required />
       <label htmlFor="email">Email</label>
       <input type="email" onChange={(e)=>handleInput(e)} value={signUp.email} id="email" name="email"  required />
       <label htmlFor="password">Password</label>
