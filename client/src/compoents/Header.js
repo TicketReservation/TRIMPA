@@ -7,7 +7,13 @@ import style from '../css/homePage.css';
 
 function Header() {
    
-    
+    const [view,setView]=useState('signIn')
+
+
+    const switchView=(v)=>{
+        setView(v)
+    }
+
     return (
         <div className="header">
 
@@ -31,8 +37,8 @@ function Header() {
                 <p id="nav" href="#Packages">
                     Packages
                 </p>
-                <SignInBtn/>
-                <SignUpBtn/>
+                {view==="signIn" && <SignInBtn/>}
+                <SignUpBtn switchView={switchView}/>
             </span>
         </div>
     );
