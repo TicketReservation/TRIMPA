@@ -5,10 +5,10 @@
     margin: 0px 0px 0px 256px;
 }
 
-    button{
+    /* button{
         color: blue;
        
-    }
+    } */
     button :hover{
         background-color: blue;
         color: aliceblue;
