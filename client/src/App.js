@@ -18,8 +18,8 @@ function App() {
       <MainPage />
       <Routes>
         <Route path="/seats" element={<Seats />} />
-        {/* <Route path="/payment" element={<Paye />} /> */}
-        <Route path="/flight" element={<Paye />} />
+        <Route path="/payment" element={<Paye />} />
+        <Route path="/flight" element={<FlightPage />} />
       </Routes>
     </BrowserRouter>
   );
