@@ -32,7 +32,7 @@ function SignUpBtn({switchView}) {
     const handleSubmit=(body)=>{
       axios.post("http://localhost:3000/api/user/register",body)
       .then(res=>console.log("signed"))
-      .catch(err=>console.log(err))
+      .catch(err=>console.log(err,"err"))
     }
 
   return <div>
