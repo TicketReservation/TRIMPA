@@ -1,14 +1,11 @@
 .container{
-    margin: 0 0px 94px 140px}
+    margin: 55px 0px 94px 140px}
 
 .input-group-text{
     margin: 0px 0px 0px 256px;
 }
 
-    /* button{
-        color: blue;
-       
-    } */
+  
     button :hover{
         background-color: blue;
         color: aliceblue;
