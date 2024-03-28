@@ -32,9 +32,11 @@ function Header() {
             <span className="topnav">
             
                 <p id="nav" href="#Fligth">
+
                     Fligth
                 </p> 
                 
+
                 <p id="nav" href="#Hotels">
                     Hotels
                 </p>
