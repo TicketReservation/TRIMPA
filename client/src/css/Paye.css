@@ -1,52 +1,126 @@
 
-
-
 .payment-container {
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 45em; 
+
+  width: 100%;
     max-width: 1000px; 
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  
-  .input-container {
-    margin-bottom: 20px;
-  }
-  
-
-  .payment-buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-
-  .back-button {
-    padding: 10px 20px;
-    background-color: #ccc; 
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-
-  .confirm-button {
-    padding: 10px 20px;
-    background-color: #605DEC;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  p {
-    font-size:small;
 }
 
-h1 {
-    font-size: small;
+.payment-method {
+  text-align: center;
+  margin-bottom: 2em;
 }
-.payment-option{
-   
-    background-color: #a9a9b6
+
+.payment-method p {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 1em;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 1em;
+  box-sizing: border-box;
 
 }
-  
+
+.payment-card img {
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 1em;
+
+}
+
+.credit-card-details {
+  text-align: center;
+  width: 50%;
+  margin-bottom: 1em;
+}
+
+.credit-card-details p {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.credit-card-details label {
+  display: block;
+  margin-bottom: 0.5em;
+
+}
+
+.credit-card-details input {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+.create-account,
+.sign-up-options {
+  text-align: center;
+  width: 50%;
+  margin-bottom: 1em;
+}
+
+.create-account-btn,
+.save-for-later-btn,
+.sign-in-with-google-btn,
+.sign-in-with-apple-btn,
+.facebook-sign-up-option,
+.back-to-seat-select-btn,
+.confirm-and-pay-btn {
+  padding: 1em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 0.5em;
+  box-sizing: border-box;
+}
+
+.sign-up-options input,
+.facebook-sign-up-option {
+  font-size: 1.2rem;
+}
+
+.facebook-sign-up-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #3b5998;
+}
+
+.facebook-sign-up-option img {
+  width: 3.5em;
+  height: 3.5em;
+  margin-right: 1em;
+}
+
+.cancellation-policy {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.cancellation-policy img {
+  width: 100%;
+}
