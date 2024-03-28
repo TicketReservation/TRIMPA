@@ -1,59 +1,61 @@
-import React from 'react'
+import React from 'react';
+// import ReactRoundedImage from "react-rounded-image"
+import "../css/Flights.css"
 
 
 
 
-function Flights() {
+
+const Flights = (props) => {
   return (
-  <div className="container">
+    <div>
+    <div className="FilterBar">
+      <select>
+        <option value="Max Price">Max Price</option>
+      </select>
 
-<div className="filter">
+      <select>
+        <option value="Shops">Shops</option>
+      </select>
 
-  
-<div className="byprice">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Max Price
-  </button>
-  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
+      <select>
+        <option value="Times">Times</option>
+      </select>
+
+      <select>
+        <option value="Airlines">Airlines</option>
+      </select>
+
+      <select>
+        <option value="SeatsClass">Seats Class</option>
+      </select>
+
+      <select>
+        <option value="More">More</option>
+      </select>
+    </div>
+    
+    
+    
+    
+    
+    {console.log(props.flights)}
+    
+    <div className="flightsTable">
+      {props.flights.map((flight) => (
+         // Correct usage of style prop
+<div className="card" style={{width: '40rem'}}>
+  <ul className="list-group list-group-flush">
+    <li className="list-group-item">
+      <img className="companyimage"src={flight.imgUrl} alt={flight.name} />
+      <p>{flight.companyName}</p>
+      <p>{flight.departure}</p>
+      <p>{flight.price}</p>
+    </li>
   </ul>
 </div>
-<div className="byshops">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Shops
-  </button>
-  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-  </ul>
-</div>
-<div className="bytimes">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Times
-  </button>
-  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-  </ul>
-</div>
-
-<div className="bySeats">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-     Seats Class
-  </button>
-  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-  </ul>
-</div>
-<div className="byMore">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-     More
-  </button>
-  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-  </ul>
-</div>
-
-</div>
-<h5>Choose a departing flight</h5>  
+      ))}
+    </div>
 
 
 
@@ -69,10 +71,8 @@ function Flights() {
 
 
 
+    </div>
+  );
+};
 
-
-     </div>
-  )
-}
-
-export default Flights
+export default Flights;

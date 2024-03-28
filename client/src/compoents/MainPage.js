@@ -24,7 +24,7 @@ function MainPage() {
       </DemoContainer>
     </LocalizationProvider> */}
     <input className='inputs' type="number"/>
-    <button className="btn">Search</button>
+    <button className="searchBtn">Search</button>
     </span>
   </div>
 }
