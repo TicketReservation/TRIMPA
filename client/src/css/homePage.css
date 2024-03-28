@@ -56,7 +56,10 @@ header{
   .trimpa{
     margin-left: 20px;
     color: #8A2BE2;
-    font-size: 2rem;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: "Brush Script MT", "Brush Script Std", cursive;
+
   }
 
 .filter{
@@ -77,7 +80,7 @@ header{
   margin-left: 10px;
 }
 .landing{
-  margin-top: 95px;
+  margin-top: 40px;
  }
  .searchBtn {
   margin-top: 7px;
@@ -120,7 +123,7 @@ header{
 .signIn input[type="email"],
 .signIn input[type="password"],
 .signIn input[type="file"] {
-  width: calc(100% - 22px); /* Adjust for input padding and border */
+  width: calc(100% - 22px);
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
