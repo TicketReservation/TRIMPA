@@ -1,126 +1,176 @@
+.payment-header {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3f51b5;
+  padding: 10px;
+}
 
-.payment-container {
+.payment-description {
+  font-size: 18px;
+  color: #60699c;
+  padding: 10px;
+}
+
+.payment-options {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 90%;
-  max-width: 45em; 
-
-  width: 100%;
-    max-width: 1000px; 
-    margin: 0 auto;
-    padding: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
 }
 
-.payment-method {
-  text-align: center;
-  margin-bottom: 2em;
+.payment-option {
+  flex: 1 1 auto;
+  padding: 10px;
+  color: #3f51b5;
+  border: none;
+  border-radius: 5px;
 }
 
-.payment-method p {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.payment-card {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  margin-bottom: 1em;
-  background-color: transparent;
-  cursor: pointer;
-  padding: 1em;
-  box-sizing: border-box;
-
-}
-
-.payment-card img {
-  width: 2.5em;
-  height: 2.5em;
-  margin-right: 1em;
-
+.payment-option:hover {
+  background-color: #3f51b5;
+  color: white;
 }
 
 .credit-card-details {
-  text-align: center;
-  width: 50%;
-  margin-bottom: 1em;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #3f51b5;
 }
 
-.credit-card-details p {
-  font-size: 1.5rem;
-  color: #333;
+.credit-card-header {
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 1em;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  padding: 10px;
 }
 
-.credit-card-details label {
-  display: block;
-  margin-bottom: 0.5em;
-
+.credit-card-input {
+  margin-top: 10px;
 }
 
-.credit-card-details input {
-  width: 100%;
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1.2rem;
-  box-sizing: border-box;
+.create-account {
+  padding: 10px;
 }
 
-.create-account,
-.sign-up-options {
-  text-align: center;
-  width: 50%;
-  margin-bottom: 1em;
+.create-account-header {
+  font-size: 23px;
+  font-weight: bold;
+  color: #3f51b5;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-.create-account-btn,
-.save-for-later-btn,
-.sign-in-with-google-btn,
-.sign-in-with-apple-btn,
-.facebook-sign-up-option,
-.back-to-seat-select-btn,
-.confirm-and-pay-btn {
-  padding: 1em;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom: 0.5em;
-  box-sizing: border-box;
+.create-account-description {
+  font-size: 22px;
+  color: #60699c;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-.sign-up-options input,
-.facebook-sign-up-option {
-  font-size: 1.2rem;
-}
-
-.facebook-sign-up-option {
+.save-card-option {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  color: #3b5998;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-.facebook-sign-up-option img {
-  width: 3.5em;
-  height: 3.5em;
-  margin-right: 1em;
+.save-card-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3f51b5;
+  border-radius: 3px;
+
+}
+.save-card-checkbox:checked {
+  background-color: #3f51b5; 
+}
+.save-card-text {
+  margin-left: 10px;
+  color:#60699c
+}
+
+.create-account-input {
+  margin-top: 10px;
 }
 
 .cancellation-policy {
-  text-align: center;
-  margin-bottom: 1em;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-.cancellation-policy img {
-  width: 100%;
+.cancellation-policy-header {
+  font-size: 26px;
+  font-weight: bold;
+  color: #3f51b5;
+  padding: 10px;
 }
+
+.cancellation-policy-description {
+  font-size: 22px;
+  color: #60699c;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.back-button,
+.confirm-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  border: 1px solid #3f51b5;
+  border-radius: 5px;
+  background-color: #3f51b5;
+  cursor: pointer;
+  margin: 0 10px; 
+  color:white
+}
+
+.confirm-button {
+  background-color: #3f51b5;
+  color: white;
+  border-color: #2196f3;
+}
+
+.payment-container {
+  width: 70%;
+  margin: 0 auto; 
+}
+.sign-in-options {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.sign-in-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  width: 300; 
+  border: 1px solid #3f51b5;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 26px;
+  color: #3f51b5;
+  background-color: white; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.logo {
+  width: 30px; /* Set the width of the logo */
+  height: 30px; /* Set the height of the logo */
+  margin-right: 10px; /* Add some spacing between the logo and text */
+}
+
+
