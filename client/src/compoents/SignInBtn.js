@@ -28,7 +28,11 @@ function SignInBtn() {
 
     const handleSubmit=()=>{
       axios.post("http://localhost:3000/api/user/login",signIn)
-      .then(res=>console.log(res))
+      .then(res=>{
+        const token=res.data.token
+        localStorage.setItem("jwtToken",token)
+        console.log("Token Stored in the local storage",token);
+      })
       .catch(err=>console.log(err))
     }
 
