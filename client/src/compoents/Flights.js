@@ -8,6 +8,8 @@ function Flights() {
   <div className="container">
 
 <div className="filter">
+
+  
 <div className="byprice">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Max Price
