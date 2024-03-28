@@ -13,11 +13,11 @@ module.exports = {
 
     register: async (req, res) => {
         try {
-          const booking = await db.Booking.create(req.body);
+          const booking = await db.Booking.create(req.body)
   
-          res.status(201).send(booking);
+          res.status(201).send(booking)
         } catch (error) {
-          throw error;
+          throw error
         }
     },
 }

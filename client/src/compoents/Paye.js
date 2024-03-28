@@ -72,6 +72,7 @@ function Paye() {
           />
         </div>
       </div>
+<<<<<<< HEAD
       <div className="create-account">
         <div className="create-account-header">Create an account</div>
         <div className="create-account-description">
@@ -98,6 +99,23 @@ function Paye() {
           className="create-account-input"
           style={{width:500}}
         />
+=======
+
+      <TextField
+        label="Email address or phone number"
+        variant="outlined"
+        className="mt-4"
+      />
+       <br></br>
+      <TextField
+        label="Password"
+        type="password"
+        variant="outlined"
+        className="mt-4"
+      />
+        <div className="mt-7 text-lg font-semibold text-slate-500 max-md:max-w-full">
+        Cancellation policy
+>>>>>>> 6f3b64d5f7ff385f669b1389de6467889c2cfa0b
       </div>
       <div className="sign-in-options">
   <button className="sign-in-button">
@@ -129,7 +147,15 @@ function Paye() {
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   );
 }
 
 export default Paye;
+=======
+    );
+  }
+  export default Paye;
+   
+
+>>>>>>> 6f3b64d5f7ff385f669b1389de6467889c2cfa0b

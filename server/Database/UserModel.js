@@ -1,25 +1,41 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite:///:memory:');
+const { Sequelize, DataTypes } = require('sequelize')
+const sequelize = new Sequelize('sqlite:///:memory:')
 
-module.exports=(sequelize,DataTypes)=>{
+module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('user', {
-    
-    Name: {
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    middleName: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false
     },
     email: {
       type: DataTypes.STRING,
-      allowNull :false
+      allowNull: false
     },
-    password:{
+    password: {
       type: DataTypes.STRING,
-      allowNull :false
+      allowNull: false
     },
-    picture:{
+    picture: {
       type: DataTypes.STRING,
-      allowNull :false
+      allowNull: false
+    },
+    phoneNumber: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    dateOfBirth: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
     }
-  });
+  })
+
   return User
 }
