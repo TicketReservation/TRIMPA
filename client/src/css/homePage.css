@@ -56,23 +56,38 @@ header{
   .trimpa{
     margin-left: 20px;
     color: #8A2BE2;
+    font-size: 2rem;
   }
-.landing{
-    margin-top: 50px;
-}
+
 .filter{
-    display: flex;
-    justify-content: center;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .inputs{
-    margin-top: 40px;
-    height: 30px;
+  margin-top: 9px;
+  height: 55px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-button .searchBtn{
-    height: 10px;
-    margin-top: 40px;
-    background-color:black;
-    color: #ffffff;
+#nbrInp{
+  margin-left: 10px;
+}
+.landing{
+  margin-top: 95px;
+ }
+ .searchBtn {
+  margin-top: 7px;
+  height: 55px;
+  padding: 8px 16px;
+  background-color: #8A2BE2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 .topnav{
   display: flex;

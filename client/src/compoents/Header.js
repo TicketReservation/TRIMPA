@@ -24,7 +24,7 @@ function Header() {
 
 
             <span>
-                <h1 className="trimpa">Tripma</h1>
+                <p className="trimpa">Tripma</p>
             </span>
             
             <span className="topnav">
