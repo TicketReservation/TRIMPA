@@ -3,6 +3,13 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'; 
 
 import Header from './compoents/Header';
+import SearchBar from './compoents/SearchBar';
+import "./css/homePage.css"
+
+import './App.css';
+// import Footer from './compoents/Footer';
+// import Information from './compoents/Information';
+
 import MainPage from './compoents/MainPage'
 import Seats from './compoents/seats';
 import Footer from './compoents/Footer';
@@ -12,13 +19,16 @@ import FlightDeals from './compoents/FlightDeals'
 import Revieux from './compoents/Revieux';
 
 function App() {
-  return (
-    <BrowserRouter>
+  return <BrowserRouter>
     <header>
       Join Tripma today and save up to 20% on your fligth using code TRAVEL at checkout. Promotion valid for new users only.
       </header>
-      <Header />
-      <MainPage />
+      <Header/>
+      <div className="landing">
+    <p className='saying'>It's more than</p><p className='saying'> just a trip</p>
+    <SearchBar/>
+  </div>
+
 
       <Routes>
       <Route path="/seats" element={<Seats />} /> 
@@ -26,7 +36,7 @@ function App() {
         <Route path="/flight" element={<FlightPage />} />
       </Routes>
     </BrowserRouter>
-  );
+  
 }
 
 function FlightPage() {
