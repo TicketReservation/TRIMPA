@@ -1,9 +1,10 @@
+////
 import * as React from 'react';
 import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 import '../css/homePage.css'
 import axios from 'axios'
 
-function SignUpBtn({switchView}) {
+function SignUpBtn() {
 
     const [anchor, setAnchor] = React.useState(null);
 
@@ -29,8 +30,8 @@ function SignUpBtn({switchView}) {
     }
 
 
-    const handleSubmit=(body)=>{
-      axios.post("http://localhost:3000/api/user/register",body)
+    const handleSubmit=()=>{
+      axios.post("http://localhost:3000/api/user/register",signUp)
       .then(res=>console.log("signed"))
       .catch(err=>console.log(err,"err"))
     }
@@ -51,7 +52,7 @@ function SignUpBtn({switchView}) {
       <input type="password" onChange={(e)=>handleInput(e)} value={signUp.password} id="password" name="password"   required />
       <label htmlFor="picture">Picture</label>
       <input type="file" onChange={(e)=>handleInput(e)} value={signUp.picture} id="picture" name="picture"  />
-      <button type="submit" onClick={()=>{handleSubmit();switchView("signIn")}}  >Sign up</button>
+      <button type="submit" onClick={()=>{handleSubmit()}}  >Sign up</button>
     </form>
     </div>
       </BasePopup>
