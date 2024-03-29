@@ -1,8 +1,9 @@
-const express = require('express');
-const { Add } = require('../controller/PaymentController')
-const router=express.Router()
+const express=require('express')
+const { add,verify } = require('./.././controller/PaymentController')
 
+const Router=express.Router()
 
-router.get('/add',Add)
+Router.post('/pay',add)
+Router.post('/pay/:id',verify)
 
-module.exports=router
+module.exports=Router
