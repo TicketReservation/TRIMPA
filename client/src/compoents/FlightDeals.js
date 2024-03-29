@@ -3,7 +3,7 @@ import "../css/flightdeal.css"
 
 function FlightDeals() {
   return (
-    <div>
+    <div className='allll'>
       
       {/* ******************************* */}
       <div className="container">
@@ -106,13 +106,17 @@ function FlightDeals() {
      
     </div>
   </div>
-</div> 
+</div> <div class="bttn">
+    <button>Explore more stays</button>
+  </div>
   </div>
 
 
-
+  
       {/* ************************************ */}
+     
     </div>
+  
   )
 }
 
