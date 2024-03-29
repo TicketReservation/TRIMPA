@@ -23,11 +23,7 @@
     flex-direction: row;
 } 
 
-/* .rightside {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-} */
+
 
 .flightsTable {
     width: 872px;

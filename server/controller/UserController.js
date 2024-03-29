@@ -4,10 +4,11 @@ const jwt = require('jsonwebtoken');
 module.exports = {
     getAll: async (req, res) => {
       try {
-        const user = await db.User.findAll({})
-        res.status(200).send(user)
-      } catch (error) {
-        throw error
+        const aab = await db.User.findAll({})
+        res.status(200).send(aab)
+      } 
+      catch (error) {
+        console.log(error)
       }
     },
 

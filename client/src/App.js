@@ -19,7 +19,6 @@ function App() {
       </header>
       <Header />
       <MainPage />
-
       <Routes>
       <Route path="/seats" element={<Seats />} /> 
         <Route path="/payment" element={<Paye />} /> 
