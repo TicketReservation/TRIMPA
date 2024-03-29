@@ -11,7 +11,7 @@ function SignInBtn() {
     const handleClick = (event) => {
       setAnchor(anchor ? null : event.currentTarget);
     };
-  
+
     const open = Boolean(anchor);
     const _id = open ? 'simple-popper' : undefined;
 
@@ -49,7 +49,7 @@ function SignInBtn() {
       <br/> 
       <label htmlFor="email">Email</label>
       <input type="email" onChange={(e)=>handleInput(e)} value={signIn.email} id="email" name="email"  required />
-     
+
       <label htmlFor="password">Password</label>
       <input type="password" onChange={(e)=>handleInput(e)} value={signIn.password} id="password" name="password"   required />
       <br/>
@@ -57,13 +57,13 @@ function SignInBtn() {
       <br/>
       <br/>
       <br/>
-      
+
       <button type="submit" className='signInBtn' >Sign in</button>
     </form>
     </div>
       </BasePopup>
   </div>
-  
+
 }
 
 export default SignInBtn
