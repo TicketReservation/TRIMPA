@@ -8,7 +8,7 @@ const SitRoute = require('./Routers/sit.routes.js')
 const BookingRoute = require('./Routers/booking.routes.js')
 
 
-
+const Payment=require('./Routers/Payment.Routes.js')
 
 
 
@@ -19,6 +19,7 @@ app.use('/api/user', UserRoute);
 app.use('/api/flight', FlightRoute);
 app.use('/api/sit', SitRoute);
 app.use('/api/booking', BookingRoute);
+app.use('/api/payment', Payment);
 
 
 

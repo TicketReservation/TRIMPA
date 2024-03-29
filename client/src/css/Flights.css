@@ -9,7 +9,7 @@
     width: 50px;
     fill: 1,312px;
     height: 547px;
-    hug: 40px;
+    /* hug: 40px; */
 }
 
 
@@ -43,11 +43,7 @@
     flex-direction: row;
 } 
 
-/* .rightside {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-} */
+
 
 .flightsTable {
     width: 872px;
@@ -115,9 +111,7 @@
     margin-bottom: 50px;
 }
 
-.table{
 
-}
 
 .Diagram {
     width: 397px;
