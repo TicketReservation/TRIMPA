@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import "../css/homePage.css"
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -27,4 +28,4 @@ function MainPage() {
   </div>
 }
 
-export default MainPage
+export default MainPage;
