@@ -106,9 +106,7 @@ function FlightDeals() {
      
     </div>
   </div>
-</div> <div class="bttn">
-    <button>Explore more stays</button>
-  </div>
+</div>
   </div>
 
 

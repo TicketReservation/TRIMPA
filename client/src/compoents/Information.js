@@ -48,6 +48,7 @@ function Information() {
                 <input type="text"  placeholder="Middle name" className="form-control" />
               </div>
               <br />
+              
               <div className="md-form mb-0">
                 <input type="date"  placeholder="Date of birth" className="form-control" />
               </div>

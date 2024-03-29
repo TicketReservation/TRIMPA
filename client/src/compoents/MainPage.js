@@ -1,27 +1,4 @@
-<<<<<<< HEAD
-import React from "react";
-import "../css/mainfolter.css";
 
-function MainPage() {
-  return (
-    <div id="aabc">
-    <div className="landnig">
-      <div className="saying-container">
-        <p className="saying">It's more than</p>
-        <p className="saying">just a trip</p>
-      </div>
-      <div className="input-container">
-<center>
-        <input className="inputs" type="text" placeholder=" From where?" />
-        <input className="inputs" type="text" placeholder="Where to?" />
-        <input className="inputs" type="date" placeholder="Where to?" />
-
-        <input className="inputs" type="number" placeholder="adult" />
-        <button className="searchBtn">Search</button></center>
-      </div>
-    </div></div>
-  );
-=======
 import * as React from 'react';
 import "../css/homePage.css"
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -49,7 +26,6 @@ function MainPage() {
     <button className="searchBtn">Search</button>
     </span>
   </div>
->>>>>>> 175deead37b20e4de7f4d88319a0cee156a6e66a
 }
 
 export default MainPage;
