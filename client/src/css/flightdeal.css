@@ -2,4 +2,18 @@
 
  margin-bottom: 25px;
  margin-top: 25px;
+ .allll{
+
+    margin-bottom: 25px;
+    margin-top: 250px;
+    margin-left: 255px;
+   }
 }
+
+
+.bttn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+ }

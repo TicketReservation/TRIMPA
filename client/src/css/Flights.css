@@ -1,0 +1,116 @@
+.companyimage{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%
+}
+
+.FilterBar{
+    display: flex;
+    width: 704px;
+    height: 38px;
+    top: 208px;
+    left: 64px;
+    gap: 16px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyPage{
+    display: flex;
+    flex-direction: row;
+} 
+
+/* .rightside {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+} */
+
+.flightsTable {
+    width: 872px;
+    height: 456px;
+    top: 335px;
+    left: 64px;
+    border-radius: 12px;
+    border: 1px solid #E9E8FC;
+}
+.flightsTable.expanded {
+    height: auto;
+    flex-direction: column;
+  }
+
+.card {
+    border: none;
+    width: 840px;
+    height: 72px;
+    border-radius: 4px;
+    padding: 4px 16px;
+    gap: 8px;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-group-item > p {
+    margin: 0;
+}
+
+.buttonShowall{
+    width: 168px;
+    height: 48px;
+    top: 815px;
+    left: 768px;
+    border-radius: 4px;
+    border: 1px solid;
+    padding: 12px 20px;
+    gap: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #605DEC;
+}
+
+
+
+.tableprice {
+    width: 397px;
+    height: 247px;
+    top: 335px;
+    left: 976px;
+    border-radius: 12px;
+    border: 1px solid;
+    padding: 1px;
+    gap: 1px;
+    order: -1;
+    overflow: auto;
+}
+.table{
+    width: 100%;
+    height: 100%; 
+}
+
+
+.Diagram {
+    width: 400px;
+    height: 192px;
+    top: 663px;
+    left: 976px;
+    border-radius: 12px;
+    border: 1px solid;
+    overflow: auto;
+}
+.linechart {
+    width: 100%;
+    height: 100%;
+  }
+  /* .leftSide {
+    display: flex;
+    flex-direction: column;
+    width: 30%; 
+    max-width: 90%; 
+  } */

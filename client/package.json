@@ -5,21 +5,16 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
-    "@mui/lab": "^5.0.0-alpha.169",
+    "@mui/base": "^5.0.0-beta.40",
     "@mui/material": "^5.15.14",
-    "@mui/x-date-pickers": "^7.0.0",
-    "@mui/x-date-pickers-pro": "^7.0.0",
     "@reduxjs/toolkit": "^2.2.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.6.8",
+    "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
-    "date-fns": "^3.6.0",
-    "dayjs": "^1.11.10",
-    "luxon": "^3.4.4",
-    "moment": "^2.30.1",
     "react": "^18.2.0",
+    "react-datepicker": "^6.6.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
@@ -27,10 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
@@ -49,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.24.1"
   }
 }

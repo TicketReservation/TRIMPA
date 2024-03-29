@@ -4,10 +4,10 @@ const jwt = require('jsonwebtoken');
 module.exports = {
     getAll: async (req, res) => {
       try {
-        const user = await db.User.findAll({});
-        res.status(200).send(user);
+        const user = await db.User.findAll({})
+        res.status(200).send(user)
       } catch (error) {
-        throw error;
+        throw error
       }
     },
 
@@ -55,8 +55,8 @@ module.exports = {
 
       deleteOne: async (req, res) => {
       try {
-        const user = await db.User.destroy({where: { id: req.params.id }});
-        res.sendStatus(201);
+        const user = await db.User.destroy({where: { id: req.params.id }})
+        res.sendStatus(201)
 
         }
         catch (error) {
