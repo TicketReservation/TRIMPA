@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import SignIn from './SignIn.js';
+import SignInBtn from './SignInBtn.js';
+import SignUpBtn from './SignUpBtn.js';
 import style from '../css/homePage.css';
-
-
+import { NavLink } from 'react-router-dom';
 
 function Header() {
    
-    const [login,setLogin]=useState(false);
+    const [view,setView]=useState('signIn')
+
+
+    const switchView=(v)=>{
+        setView(v)
+    }
+
     return (
         <div className="header">
 
@@ -15,28 +21,18 @@ function Header() {
                 
             
 
-
+        
             <span>
-                <h1 className="trimpa">Tripma</h1>
+                <NavLink to="/" className="trimpa">Tripma</NavLink>
             </span>
-            <SignIn trigger={login} setTrigger={setLogin}/>
-            {/* <SignUp trigger={login} setTrigger={setLogin}/> */}
+            
+            
             <span className="topnav">
-                <p id="nav" href="#Fligth">
-                    Fligth
-                </p>
-                <p id="nav" href="#Hotels">
-                    Hotels
-                </p>
-                <p id="nav" href="#Packages">
-                    Packages
-                </p>
-                <a onClick={()=>setLogin(true)} id="log" href="#Sign in">
-                    Sign in
-                </a>
-                <a id="log" className="active" href="#Singn up">
-                    Sign up
-                </a>
+                <NavLink to="/flight" id="nav">Flights</NavLink>
+                <NavLink to="/hotels" id="nav">Hotels</NavLink>
+                <NavLink to="/packages" id="nav">Packages</NavLink>
+                <SignInBtn/>
+                <SignUpBtn />
             </span>
         </div>
     );

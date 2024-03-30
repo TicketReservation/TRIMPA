@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const {selectAll,addOne,updateOne,deleteOne} = require('../controller/FlightController')
+const {selectAll,addOne,updateOne,deleteOne, Select} = require('../controller/FlightController')
 
 
 
-// Define your routes here
+
+router.get('/:destination/:departure', Select)
 router.get('/', selectAll)
 router.post('/newFlight', addOne)
 router.put('/:id',updateOne)

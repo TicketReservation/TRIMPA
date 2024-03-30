@@ -1,5 +1,5 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite:///:memory:');
+const { Sequelize, DataTypes } = require('sequelize')
+const sequelize = new Sequelize('sqlite:///:memory:')
 
 module.exports=(sequelize,DataTypes)=>{
 const Sit = sequelize.define('sit', {

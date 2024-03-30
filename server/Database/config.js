@@ -1,5 +1,5 @@
 module.exports = {
-    DATABASE_NAME: "tripma",
+    // DATABASE_NAME: "",
     DATABASE_USERNAME: "root",
-    DATABASE_PASSWORD: "dhia2002",
-  };
+    DATABASE_PASSWORD: "root",
+  }

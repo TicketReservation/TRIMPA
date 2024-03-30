@@ -1,58 +1,134 @@
 import React from 'react';
-import '../css/Paye.css'
+import { styled } from '@mui/system';
+import TextField from '@mui/material/TextField';
+import '../css/Paye.css';
+import googleLogo from '../img/google.png';
+import appleLogo from '../img/apple-logo.png';
+import facebookLogo from '../img/facebook1.png';
+import cryptoLogo from '../img/money.png';
+import applePayLogo from '../img/apple-pay.png';
+import paypalLogo from '../img/paypal.png';
+import googlepayLogo from '../img/google-pay.png';
+import creditCardLogo from '../img/credit-card.png';
+
 
 function Paye() {
   return (
     <div className="payment-container">
-    <h1>Payment method</h1>
-
-    <div className="payment-inputs">
-      <div className="input-container">
-        <input type="text" placeholder="Name on card" style={{flex: '1 1 0', height: 32, color: '#7C8DB0', fontSize: 18, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'}} />
-        <input type="text" placeholder="Card number"style={{flex: '1 1 0', height: 32, color: '#7C8DB0', fontSize: 18, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'}} />
-        <input type="date" placeholder="Expiration date" style={{flex: '1 1 0', height: 32, color: '#7C8DB0', fontSize: 18, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'}} />
-        <input type="text" placeholder="CCV"  style={{flex: '1 1 0', height: 32, color: '#7C8DB0', fontSize: 18, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'}}/>
+      <div className="payment-header">Payment method</div>
+      <div className="payment-description">
+        Select a payment method below. Tripma processes your payment securely
+        with end-to-end encryption.
+      </div>
+      <div className="payment-options">
+  <button className="payment-option">
+    <img src={creditCardLogo} alt="Credit Card Logo" className="logooo" />
+    Credit card
+  </button>
+  <button className="payment-option">
+    <img src={googlepayLogo} alt="Google Pay Logo" className="logooo" />
+    Google Pay
+  </button>
+  <button className="payment-option">
+    <img src={applePayLogo} alt="Apple Pay Logo" className="logooo" />
+    Apple Pay
+  </button>
+  <button className="payment-option">
+    <img src={paypalLogo} alt="PayPal Logo" className="logooo" />
+    Paypal
+  </button>
+  <button className="payment-option">
+    <img src={cryptoLogo} alt="Crypto Logo" className="logooo" />
+    Crypto
+  </button>
+</div>
+      <div className="credit-card-details">
+        <div className="credit-card-header">Credit card details</div>
+        <TextField
+          label="Name on card"
+          variant="outlined"
+          className="credit-card-input"
+          style={{width:500,marginBottom:24}}
+        />
+        <br />
+        <TextField
+          label="Card number"
+          variant="outlined"
+          className="credit-card-input"
+          style={{width:500,marginBottom:24}}
+        />
+        <div className="credit-card-inputs">
+          <TextField
+            label="Expiration date"
+            variant="outlined"
+            className="credit-card-input"
+            style={{width:230, }}
+          />
+          <TextField
+            label="CCV"
+            variant="outlined"
+            className="credit-card-input"
+            style={{width:230,marginLeft:30}}
+          />
+        </div>
       </div>
       <div className="create-account">
-        <h1>Create Account</h1>
-        <div style={{width: 682, color: '#7C8DB0', fontSize: 16, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'}}>
-        Tripma is free to use as a guest, but if you create an account today,
-         you can save and view flights, manage your trips, earn rewards, and more.</div>
-        <input type="text" placeholder="Email address or phone number" />
-        <input type="password" placeholder="Password" />
+        <div className="create-account-header">Create an account</div>
+        <div className="create-account-description">
+          Tripma is free to use as a guest, but if you create an account today,
+          you can save and view flights, manage your trips, earn rewards, and
+          more.
+        </div>
+       
+        <div className="save-card-option">
+        <input type="checkbox" className="save-card-checkbox" />
+          <div className="save-card-text">Save card and create account for later</div>
+        </div>
+        <TextField
+          label="Email address or phone number"
+          variant="outlined"
+          className="create-account-input"
+          style={{width:500, marginBottom:20}}
+        />
+        <br />
+        <TextField
+          label="Password"
+          type="password"
+          variant="outlined"
+          className="create-account-input"
+          style={{width:500}}
+        />
       </div>
-    </div>
-
-    <div className="payment-buttons">
-      <button className="back-button">Back to seat select</button>
-      <button className="confirm-button">Confirm and pay</button>
-    </div>
-    <div className="payment-options">
-        <div className="payment-option">
-          <button className="payment-button"  
-           style={{color: '#6E7491', fontSize: 18, fontFamily: 'Nunito Sans', fontWeight: '600', wordWrap: 'break-word'}}
-          >Credit card</button>
-        </div>
-        <div className="payment-option">
-          <button className="payment-button">Sign up with Google</button>
-        </div>
-        <div className="payment-option">
-          <button className="payment-button">Continue with Apple</button>
-        </div>
-        <div className="payment-option">
-          <button className="payment-button">Continue With Facebook</button>
-          
-        </div>
-      </div>
-      {/* <div style={{width: 682}}><span style="color: '#7C8DB0', fontSize: 16, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'">This flight has a flexible cancellation policy. If you cancel or change your 
-          flight up to 30 days before the departure date,
-           you are eligible for a free refund.
-            All flights booked on Tripma are backed by our satisfaction guarantee, however cancellation policies vary by airline. See the</span>
-        </div> */}
-        <div style={{width: 682}}>
-  <span style={{color: '#7C8DB0', fontSize: 16, fontFamily: 'Nunito Sans', fontWeight: '400', wordWrap: 'break-word'}}>This flight has a flexible cancellation policy. If you cancel or change your flight up to 30 days before the departure date, you are eligible for a free refund. All flights booked on Tripma are backed by our satisfaction guarantee, however cancellation policies vary by airline. See the</span>
+      <div className="sign-in-options">
+  <button className="sign-in-button">
+    <img src={googleLogo} alt="Google Logo" className="logooo" />
+    Sign in with Google
+  </button>
+  <button className="sign-in-button">
+    <img src={appleLogo} alt="Apple Logo" className="logooo" />
+    Sign in with Apple
+  </button>
+  <button className="sign-in-button">
+    <img src={facebookLogo} alt="Facebook Logo" className="logooo" />
+    Sign in with Facebook
+  </button>
 </div>
-  </div>
+
+      <div className="cancellation-policy">
+        <div className="cancellation-policy-header">Cancellation policy</div>
+        <div className="cancellation-policy-description">
+          This flight has a flexible cancellation policy. If you cancel or change your
+          flight up to 30 days before the departure date, you are eligible for a free
+          refund. All flights booked on Tripma are backed by our satisfaction
+          guarantee, however cancellation policies vary by airline. See the full
+          cancellation policy for this flight.
+        </div>
+        <div className="buttons">
+          <button className="back-button">Back to seat select</button>
+          <button className="confirm-button">Confirm and pay</button>
+        </div>
+      </div>
+    </div>
   );
 }
 

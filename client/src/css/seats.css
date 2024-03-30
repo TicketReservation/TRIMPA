@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .bigdiv {
     background-color: white;
     margin: 1rem;
@@ -460,3 +461,153 @@
     color: #605DEC;
     
   }
+=======
+header{
+  background-color: 	#8A2BE2;
+  color: white;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 50px;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.topnav #log {
+  float: left;
+  color: grey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 8px;
+}
+
+.topnav #log:hover {
+  background-color: #8A2BE2;
+  color: white;
+}
+
+.topnav #log.active {
+  margin-left: 4px;
+  background-color: #8A2BE2;
+  color: white;
+  margin-right: 20px;
+}
+.topnav #nav{
+  float: left;
+  color: grey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 8px;
+}
+.topnav #nav:hover{
+  color: #8A2BE2;
+  cursor: pointer;
+}
+.saying{
+  text-align: center;
+  background: -webkit-linear-gradient(#0d70da, #8A2BE2);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-size: 600%;
+font-weight: bold;
+}
+.trimpa{
+  margin-left: 20px;
+  color: #8A2BE2;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: "Brush Script MT", "Brush Script Std", cursive;
+
+}
+
+.filter{
+margin-top: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.inputs{
+margin-top: 9px;
+height: 55px;
+padding: 5px;
+margin-right: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+#nbrInp{
+margin-left: 10px;
+}
+.landing{
+margin-top: 40px;
+}
+.searchBtn {
+margin-top: 7px;
+height: 55px;
+padding: 8px 16px;
+background-color: #8A2BE2;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.topnav{
+display: flex;
+justify-content: center;
+}
+.signIn {
+margin-right: 550px;
+width: 400px;
+height: 500px;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: #f9f9f9;
+}
+
+.signIn form {
+margin-top: 20px;
+}
+
+.signIn h2 {
+margin-bottom: 20px;
+}
+
+.signIn label {
+display: block;
+margin-bottom: 5px;
+}
+
+.signIn input[type="text"],
+.signIn input[type="email"],
+.signIn input[type="password"],
+.signIn input[type="file"] {
+width: calc(100% - 22px);
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+.signInBtn{
+margin-top: 7px;
+}
+.signIn button[type="submit"] {
+width: 100%;
+background-color: #8A2BE2;
+color: white;
+padding: 10px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.signIn button[type="submit"]:hover {
+background-color: #8A2BE2;
+}
+>>>>>>> 1afb5628a833c4d0c96f4aad970c52ef49d6143e

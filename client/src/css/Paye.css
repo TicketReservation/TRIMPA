@@ -1,52 +1,176 @@
+.payment-header {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3f51b5;
+  padding: 10px;
+}
 
+.payment-description {
+  font-size: 18px;
+  color: #60699c;
+  padding: 10px;
+}
 
+.payment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+.payment-option {
+  flex: 1 1 auto;
+  padding: 10px;
+  color: #3f51b5;
+  border: none;
+  border-radius: 5px;
+}
+
+.payment-option:hover {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.credit-card-details {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #3f51b5;
+}
+
+.credit-card-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  padding: 10px;
+}
+
+.credit-card-input {
+  margin-top: 10px;
+}
+
+.create-account {
+  padding: 10px;
+}
+
+.create-account-header {
+  font-size: 23px;
+  font-weight: bold;
+  color: #3f51b5;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.create-account-description {
+  font-size: 22px;
+  color: #60699c;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.save-card-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.save-card-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3f51b5;
+  border-radius: 3px;
+
+}
+.save-card-checkbox:checked {
+  background-color: #3f51b5; 
+}
+.save-card-text {
+  margin-left: 10px;
+  color:#60699c
+}
+
+.create-account-input {
+  margin-top: 10px;
+}
+
+.cancellation-policy {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.cancellation-policy-header {
+  font-size: 26px;
+  font-weight: bold;
+  color: #3f51b5;
+  padding: 10px;
+}
+
+.cancellation-policy-description {
+  font-size: 22px;
+  color: #60699c;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.back-button,
+.confirm-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  border: 1px solid #3f51b5;
+  border-radius: 5px;
+  background-color: #3f51b5;
+  cursor: pointer;
+  margin: 0 10px; 
+  color:white
+}
+
+.confirm-button {
+  background-color: #3f51b5;
+  color: white;
+  border-color: #2196f3;
+}
 
 .payment-container {
-    width: 100%;
-    max-width: 1000px; 
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  
-  .input-container {
-    margin-bottom: 20px;
-  }
-  
-
-  .payment-buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-
-  .back-button {
-    padding: 10px 20px;
-    background-color: #ccc; 
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-
-  .confirm-button {
-    padding: 10px 20px;
-    background-color: #605DEC;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  p {
-    font-size:small;
+  width: 70%;
+  margin: 0 auto; 
+}
+.sign-in-options {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
 }
 
-h1 {
-    font-size: small;
+.sign-in-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  width: 300; 
+  border: 1px solid #3f51b5;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 26px;
+  color: #3f51b5;
+  background-color: white; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.payment-option{
-   
-    background-color: #a9a9b6
 
+.sign-in-button:hover {
+  background-color: #3f51b5;
+  color: white;
 }
-  
+
+.logooo {
+  width: 30px; /* Set the width of the logo */
+  height: 30px; /* Set the height of the logo */
+  margin-right: 10px; /* Add some spacing between the logo and text */
+}
+
+

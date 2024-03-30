@@ -37,5 +37,22 @@ module.exports = {
     } catch (error) {
         throw error
     }
-}
+},
+Select:async function(req,res){
+    try { 
+        const dep = req.params.departure;
+        const des = req.params.destination;
+        
+        const flights = await Flight.findAll({ 
+            where: { 
+                destination: des, // Assuming 'Destination' is the field representing destination in your Flight model
+                departure: dep // Assuming 'departure' is the field representing departure in your Flight model
+            } 
+        });
+        
+        res.send(flights);
+    } catch (error) {
+        console.error(error); // Logging the error for debugging purposes
+        res.status(500).send('Internal Server Error'); // Sending an appropriate error response to the client
+    }},
 }
