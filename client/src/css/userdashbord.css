@@ -1,0 +1,149 @@
+/* .imageuser{
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+}
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover; 
+  }
+
+  .user-name {
+    font-size: 18px; 
+    margin-left: 10px; 
+    font-weight: bold; 
+    color: #333;
+  } */
+  .user-item {
+    display: flex; /* Display items side by side */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px; /* Optional: Adjust margin as needed */
+  }
+  
+  .user-image {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fills the container without stretching */
+    margin-right: 10px; /* Optional: Adjust margin as needed */
+  }
+  
+  .user-name {
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: Add bold styling */
+    color: #333; /* Optional: Adjust text color */
+  }
+  
+  button {
+    /* Optional: Style the delete button */
+    padding: 5px 10px;
+    margin: 6px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .admin-dashboard {
+    display: flex;
+  }
+  
+  .sidebarr {
+    width: 250px;
+    /* background-image: url('https://static.vecteezy.com/system/resources/thumbnails/011/004/881/small/computer-chip-electronic-circuit-board-for-technology-and-finance-concept-and-education-for-future-vector.jpg'); */
+    color: #fff;
+    background-color: #8A2BE2;
+    padding: 20px;
+    height: 100rem;
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+    color: #fff;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .sidebarr button {
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #8A2BE2, #48137a);
+    color: #fff;
+    width: 210px;
+    height: 80px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .sidebar button:hover {
+    background: linear-gradient(to right, #ffffff, #b99ed2);
+    color: #8A2BE2;
+    
+  }
+  
+  .sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #b99ed2;
+    margin-left: 10px;
+  }
+  .title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    color: #8A2BE2; 
+  }
+  .div1{
+    background-color: #fff;
+    max-width: 100%; 
+    max-height: 100%;
+    display: block; 
+    margin: auto;
+    height: 100%;
+    width: 1175px;
+    margin: 5px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+  }
+  .divv{
+    background: linear-gradient(to right, #c6b9ee, #9e70c9,#9b81e7);;
+    color: #fff;
+    height: 200px;
+    width: 200px;
+    margin: 5px;
+    margin-left: 68px;
+    text-align: center;
+    
+  }
+  .threedivs{
+    display: flex;
+  }
+  .div2222{
+    background-color: #fff;
+    height: 330px;
+    width: 385px;
+    margin: 5px;
+  }
+  .div3333{
+    background-color: #fff;
+    height: 330px;
+    width: 385px;
+    margin: 5px;
+    
+   
+  }
+  .div4444{
+    background-color: #fff;
+    height: 330px;
+    width: 385px;
+    margin: 5px;
+  }

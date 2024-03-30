@@ -351,12 +351,13 @@
     padding: 1em;
   }
   
-  .tripma{
+  .trimpa{
     position: absolute; 
-    top: 1.5; 
+    top: 1; 
     left: 2;
     margin: 10px; 
     color: #605DEC;
+    font-size:x-large;
   }
   .flight-info{
     

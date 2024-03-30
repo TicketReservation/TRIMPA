@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import Header from './compoents/Header';
 import MainPage from './compoents/MainPage'
 import './App.css';
@@ -7,10 +8,16 @@ import Footer from './compoents/Footer';
 import Information from './compoents/Information';
 import Revieux from './compoents/Revieux';
 import Seats from './compoents/seats'
-
+import axios from 'axios'
+import AdminDashboard from './compoents/admindashboard';
 
 import Paye from './compoents/Paye'
 function App() {
+
+  const [sit ,setsit] = useState(false)
+  const [onesitdata,setonesitdata]=useState([])
+  
+  
   return (
     <div>
       
@@ -21,7 +28,7 @@ function App() {
  {/* <Paye/> */}
       {/* <Header/>
       <MainPage/> */}
-//  <Seats/>
+ <AdminDashboard   />
      {/* <FlightDeals/> */}
     {/* < Information/> */}
      {/* <Revieux />  */}
