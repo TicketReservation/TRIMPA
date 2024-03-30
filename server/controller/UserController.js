@@ -77,5 +77,25 @@ register: async (req, res) => {
         catch (error) {
         throw error
     }
+},
+updateOne : async (req, res) => {
+  try {
+      await db.User.update(req.body, {
+          where: { name: req.params.name },
+      })
+      res.status(201).send("Flight updated successfully")
+  } catch (error) {
+      throw error
+  }
+},
+
+addOne : async (req, res) => {
+   try {
+       const add = await db.User.create(req.body)
+       res.status(201).send(add)
+   } catch (error) {
+       throw error
+   }
 }
+
 }
