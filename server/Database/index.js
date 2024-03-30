@@ -43,8 +43,6 @@ db.Booking.belongsTo(db.Flight, { foreignKey: 'flightId' })
 
 
 
-
-
 // Sync the models with the database
 // connection.sync({ force: true })
 //     .then(() => {

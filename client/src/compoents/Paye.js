@@ -1,5 +1,6 @@
-import React from 'react';
-import { styled } from '@mui/system';
+import React ,{useState} from 'react';
+import axios from 'axios';
+// import { styled } from '@mui/system';
 import TextField from '@mui/material/TextField';
 import '../css/Paye.css';
 import googleLogo from '../img/google.png';
@@ -12,8 +13,35 @@ import googlepayLogo from '../img/google-pay.png';
 import creditCardLogo from '../img/credit-card.png';
 
 
+
 function Paye() {
+
+  // const [Nameoncard, setNameoncard] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [Cardnumber,setCardnumber]=useState("")
+  // const [Expirationdate,setExpirationdate] = useState("MM/YY")
+  // const [CVV,SetCVV]=useState('')
+
+  const [form,setForme]=useState({})
+
+
+
+
+
+  const  handleSubmit= (event) => {
+    event.preventDefault();
+    axios.post('http:localhost:3000/api/Pay',{form:form}).then((res)=>{
+      
+      
+      console.log(res)
+    }).catch((err)=> console.log(err))
+    // alert(`You submitted the form with name "${Nameoncard}`)
+
+
+
   return (
+
+
     <div className="payment-container">
       <div className="payment-header">Payment method</div>
       <div className="payment-description">
@@ -42,13 +70,22 @@ function Paye() {
     Crypto
   </button>
 </div>
+
       <div className="credit-card-details">
         <div className="credit-card-header">Credit card details</div>
+        <TextField
+          label="amount"
+          variant="outlined"
+          className="credit-card-input"
+          style={{width:500,marginBottom:24}}
+          onChange={(e)=>{setForme(e.target.value)}}
+        />
         <TextField
           label="Name on card"
           variant="outlined"
           className="credit-card-input"
           style={{width:500,marginBottom:24}}
+          // onChange={(e)=>{setNameoncard(e.target.value)}}
         />
         <br />
         <TextField
@@ -56,6 +93,7 @@ function Paye() {
           variant="outlined"
           className="credit-card-input"
           style={{width:500,marginBottom:24}}
+          // onChange={(e)=>{setCardnumber(e.target.value)}}
         />
         <div className="credit-card-inputs">
           <TextField
@@ -63,16 +101,17 @@ function Paye() {
             variant="outlined"
             className="credit-card-input"
             style={{width:230, }}
+            // onChange={(e)=>{setExpirationdate(e.target.value)}}
           />
           <TextField
             label="CCV"
             variant="outlined"
             className="credit-card-input"
             style={{width:230,marginLeft:30}}
+            // onChange={(e)=>{SetCVV(e.target.value)}}
           />
         </div>
       </div>
-<<<<<<< HEAD
       <div className="create-account">
         <div className="create-account-header">Create an account</div>
         <div className="create-account-description">
@@ -99,23 +138,6 @@ function Paye() {
           className="create-account-input"
           style={{width:500}}
         />
-=======
-
-      <TextField
-        label="Email address or phone number"
-        variant="outlined"
-        className="mt-4"
-      />
-       <br></br>
-      <TextField
-        label="Password"
-        type="password"
-        variant="outlined"
-        className="mt-4"
-      />
-        <div className="mt-7 text-lg font-semibold text-slate-500 max-md:max-w-full">
-        Cancellation policy
->>>>>>> 6f3b64d5f7ff385f669b1389de6467889c2cfa0b
       </div>
       <div className="sign-in-options">
   <button className="sign-in-button">
@@ -143,19 +165,14 @@ function Paye() {
         </div>
         <div className="buttons">
           <button className="back-button">Back to seat select</button>
-          <button className="confirm-button">Confirm and pay</button>
+          <button className="confirm-button"
+          onClick={handleSubmit}
+          >Confirm and pay</button>
         </div>
       </div>
     </div>
-<<<<<<< HEAD
   );
+}
 }
 
 export default Paye;
-=======
-    );
-  }
-  export default Paye;
-   
-
->>>>>>> 6f3b64d5f7ff385f669b1389de6467889c2cfa0b
