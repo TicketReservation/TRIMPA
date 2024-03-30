@@ -7,11 +7,10 @@ import SearchBar from './compoents/SearchBar';
 import "./css/homePage.css"
 
 import './App.css';
-// import Footer from './compoents/Footer';
-// import Information from './compoents/Information';
 
 import MainPage from './compoents/MainPage'
 import Seats from './compoents/seats';
+import Flights from './compoents/Flights'
 import Footer from './compoents/Footer';
 import Information from './compoents/Information';
 import Paye from './compoents/Paye'
@@ -20,16 +19,16 @@ import Revieux from './compoents/Revieux';
 
 function App() {
   return <BrowserRouter>
-    <header>
+  <Flights/>
+  {/* <header>
       Join Tripma today and save up to 20% on your fligth using code TRAVEL at checkout. Promotion valid for new users only.
       </header>
       <Header />
       <MainPage />
       <Routes>
-      <Route path="/seats" element={<Seats />} /> 
         <Route path="/payment" element={<Paye />} /> 
         <Route path="/flight" element={<FlightPage />} />
-      </Routes>
+      </Routes>  */}
     </BrowserRouter>
   
 }
