@@ -1,3 +1,4 @@
+const { DefinePlugin } = require('webpack')
 const db = require('../Database/index')
 module.exports = {
 
@@ -37,5 +38,22 @@ module.exports = {
     } catch (error) {
         throw error
     }
-}
+},
+Select:async function(req,res){
+    try { 
+        const dep = req.params.departure;
+        const des = req.params.destination;
+        
+        const flights = await Flight.findAll({ 
+            where: { 
+                destination: des,
+                departure: DefinePlugin
+            } 
+        });
+        
+        res.send(flights);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error'); 
+    }},
 }

@@ -58,10 +58,32 @@ register: async (req, res) => {
           return res.status(401).json({ error: 'Wrong password' });
         }
 
-        const token = jwt.sign({ id: user.id }, "mlop09", { expiresIn: "1h" });
+        const token = jwt.sign({  id: user.id, role: user.role  }, "mlop09", { expiresIn: "1h" });
         res.status(200).json({ token });
       } catch (error) {
         console.error("Error during login:", error);
+        res.status(500).json({ error: "Internal server error" });
+      }
+    },
+
+    adminLogin: async (req, res) => {
+      try {
+        const { email, password } = req.body;
+        const user = await db.User.findOne({ where: { email, role: 'admin' } });
+  
+        if (!user) {
+          return res.status(401).json({ error: 'Invalid admin' });
+        }
+  
+        const correctPass = await bcrypt.compare(password, user.password);
+        if (!correctPass) {
+          return res.status(401).json({ error: 'Wrong password' });
+        }
+  
+        const token = jwt.sign({ id: user.id, role: user.role }, "mlop09", { expiresIn: "1h" });
+        res.status(200).json({ token });
+      } catch (error) {
+        console.error("Error during admin login:", error);
         res.status(500).json({ error: "Internal server error" });
       }
     },
@@ -77,5 +99,25 @@ register: async (req, res) => {
         catch (error) {
         throw error
     }
+},
+updateOne : async (req, res) => {
+  try {
+      await db.User.update(req.body, {
+          where: { name: req.params.name },
+      })
+      res.status(201).send("Flight updated successfully")
+  } catch (error) {
+      throw error
+  }
+},
+
+addOne : async (req, res) => {
+   try {
+       const add = await db.User.create(req.body)
+       res.status(201).send(add)
+   } catch (error) {
+       throw error
+   }
 }
+
 }

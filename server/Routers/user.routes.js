@@ -23,12 +23,19 @@
 
 const express = require("express");
 const router = express.Router();
-const {getAll,register,remove,login}=require('../controller/UserController')
+
+
+const {getAll,register,login,updateOne,addOne,adminLogin}=require('../controller/UserController');
+
+
 
 router.get("/",getAll);
 router.post("/register",register);
 router.post("/login",login)
-router.delete("/del/:id",remove);
+router.put("/:name",updateOne)
+router.post("/",addOne)
+router.post('/admin/login',adminLogin);
+
 
 
 

@@ -25,10 +25,10 @@
 >>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
 
 
-//     const [signIn,setSignIn]=React.useState({
-//       email:"",
-//       password:""
-//     })
+    const [signIn,setSignIn]=React.useState({
+      email:"",
+      password:""
+    })
 
 //     const handleInput=(e)=>{
 //       setSignIn({...signIn,
@@ -44,6 +44,15 @@
 //       })
 //       .catch(err=>console.log(err))
 //     }
+const adminLogin = () => {
+  axios.post("http://localhost:3000/api/admin/login", signIn)
+    .then(res => {
+      const token = res.data.token;
+      localStorage.setItem("jwtToken", token);
+      console.log("Token Stored in the local storage", token);
+    })
+    .catch(err => console.log(err));
+}
 
 <<<<<<< HEAD
 //   return <div>
@@ -101,6 +110,7 @@
       <br/>
 
       <button type="submit" className='signInBtn' >Sign in</button>
+      <button type="button" className='signInBtn' onClick={adminLogin}>Admin Sign in</button>
     </form>
     </div>
       </BasePopup>
