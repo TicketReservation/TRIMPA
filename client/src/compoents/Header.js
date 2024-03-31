@@ -29,7 +29,7 @@ function Header() {
             
             <span className="topnav">
                 <NavLink to="/flight" id="nav">Flights</NavLink>
-                <NavLink to="/hotels" id="nav">Hotels</NavLink>
+                <NavLink to="/flight" id="nav">Hotels</NavLink>
                 <NavLink to="/packages" id="nav">Packages</NavLink>
                 <SignInBtn/>
                 <SignUpBtn />

@@ -5,24 +5,12 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
-<<<<<<< HEAD
     "@mui/material": "^5.15.14",
-=======
-    "@material-ui/lab": "^4.0.0-alpha.61",
-    "@mui/base": "^5.0.0-beta.40",
-    "@mui/material": "^5.15.14",
-    "@mui/x-date-pickers": "^7.1.0",
-    "@mui/x-date-pickers-pro": "^7.1.0",
->>>>>>> 1afb5628a833c4d0c96f4aad970c52ef49d6143e
     "@reduxjs/toolkit": "^2.2.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
-<<<<<<< HEAD
-=======
-    "bcrypt": "^5.1.1",
->>>>>>> 1afb5628a833c4d0c96f4aad970c52ef49d6143e
     "bootstrap": "^5.3.3",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
