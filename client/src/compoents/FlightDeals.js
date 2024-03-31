@@ -1,9 +1,15 @@
 // import React from 'react'
 // import "../css/flightdeal.css"
 
+<<<<<<< HEAD
 // function FlightDeals() {
 //   return (
 //     <div>
+=======
+function FlightDeals() {
+  return (
+    <div className='allll'>
+>>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
       
 //       {/* ******************************* */}
 //       <div className="container">
@@ -104,6 +110,7 @@
 //         </p>
 //       </div>
      
+<<<<<<< HEAD
 //     </div>
 //   </div>
 // </div> 
@@ -115,5 +122,20 @@
 //     </div>
 //   )
 // }
+=======
+    </div>
+  </div>
+</div>
+  </div>
+
+
+  
+      {/* ************************************ */}
+     
+    </div>
+  
+  )
+}
+>>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
 
 // export default FlightDeals

@@ -8,12 +8,21 @@
 
 //     const [anchor, setAnchor] = React.useState(null);
 
+<<<<<<< HEAD
 //     const handleClick = (event) => {
 //       setAnchor(anchor ? null : event.currentTarget);
 //     };
   
 //     const open = Boolean(anchor);
 //     const _id = open ? 'simple-popper' : undefined;
+=======
+    const handleClick = (event) => {
+      setAnchor(anchor ? null : event.currentTarget);
+    };
+
+    const open = Boolean(anchor);
+    const _id = open ? 'simple-popper' : undefined;
+>>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
 
 
 //     const [signIn,setSignIn]=React.useState({
@@ -36,6 +45,7 @@
 //       .catch(err=>console.log(err))
 //     }
 
+<<<<<<< HEAD
 //   return <div>
 //       <a onClick={handleClick} id="log" href="#Sign in">
 //                     Sign in
@@ -67,3 +77,36 @@
 // }
 
 // export default SignInBtn
+=======
+  return <div>
+      <a onClick={handleClick} id="log" href="#Sign in">
+                    Sign in
+                </a>
+                <BasePopup id={_id} open={open} anchor={anchor}>
+    <div className='signIn'>
+    <form onSubmit={()=>handleSubmit()} >
+      <h2>Sign in</h2>
+      <br/> 
+      <br/> 
+      <br/> 
+      <label htmlFor="email">Email</label>
+      <input type="email" onChange={(e)=>handleInput(e)} value={signIn.email} id="email" name="email"  required />
+
+      <label htmlFor="password">Password</label>
+      <input type="password" onChange={(e)=>handleInput(e)} value={signIn.password} id="password" name="password"   required />
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+      <button type="submit" className='signInBtn' >Sign in</button>
+    </form>
+    </div>
+      </BasePopup>
+  </div>
+
+}
+
+export default SignInBtn
+>>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
