@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Assuming you want the landing content to take up the full viewport height */
+    height: 100vh; 
   }
   
   .center-content {

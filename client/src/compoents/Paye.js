@@ -22,23 +22,23 @@ function Paye() {
       </div>
       <div className="payment-options">
   <button className="payment-option">
-    <img src={creditCardLogo} alt="Credit Card Logo" className="logo" />
+    <img src={creditCardLogo} alt="Credit Card Logo" className="logooo" />
     Credit card
   </button>
   <button className="payment-option">
-    <img src={googlepayLogo} alt="Google Pay Logo" className="logo" />
+    <img src={googlepayLogo} alt="Google Pay Logo" className="logooo" />
     Google Pay
   </button>
   <button className="payment-option">
-    <img src={applePayLogo} alt="Apple Pay Logo" className="logo" />
+    <img src={applePayLogo} alt="Apple Pay Logo" className="logooo" />
     Apple Pay
   </button>
   <button className="payment-option">
-    <img src={paypalLogo} alt="PayPal Logo" className="logo" />
+    <img src={paypalLogo} alt="PayPal Logo" className="logooo" />
     Paypal
   </button>
   <button className="payment-option">
-    <img src={cryptoLogo} alt="Crypto Logo" className="logo" />
+    <img src={cryptoLogo} alt="Crypto Logo" className="logooo" />
     Crypto
   </button>
 </div>
@@ -101,15 +101,15 @@ function Paye() {
       </div>
       <div className="sign-in-options">
   <button className="sign-in-button">
-    <img src={googleLogo} alt="Google Logo" className="logo" />
+    <img src={googleLogo} alt="Google Logo" className="logooo" />
     Sign in with Google
   </button>
   <button className="sign-in-button">
-    <img src={appleLogo} alt="Apple Logo" className="logo" />
+    <img src={appleLogo} alt="Apple Logo" className="logooo" />
     Sign in with Apple
   </button>
   <button className="sign-in-button">
-    <img src={facebookLogo} alt="Facebook Logo" className="logo" />
+    <img src={facebookLogo} alt="Facebook Logo" className="logooo" />
     Sign in with Facebook
   </button>
 </div>

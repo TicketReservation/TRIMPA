@@ -1,9 +1,41 @@
-import React from "react"
+import React,{useState} from "react"
 import style from "../css/seats.css"
 import imagebus from "../img/BusinessSeats.jpg"
 import imageeco from "../img/EconomySeats.jpg"
+import axios from 'axios' 
 
-function Seats (){
+function Seats (props){
+
+  const [onesitdata,setonesitdata]=useState([])
+  const [name,setname]=useState("")
+const [valid,setvalid]=useState(false)
+const [type,settype]=useState("")
+
+
+const getone = () =>{
+  axios.get(`http://localhost:3000/api/sit/${name}`)
+  .then((response)=>setonesitdata(response.data))
+  .catch((err)=>console.log(err))
+  }
+
+const add = (body) =>{
+  axios.post(("http://localhost:3000/api/sit/",body))
+  .then((response)=>console.log(response.data))
+  .catch((err)=>console.log(err))
+ 
+  }
+  const update = (name,body) =>{
+    axios.put(`http://localhost:3000/api/pokemon/${name}`,body)
+    .then((response)=>console.log(response.data))
+    .catcrsh((err)=>console.log(err))
+   
+    }
+const adddd =()=>{
+ add({Name:name,
+      Type:type,
+      valid:valid
+  })
+}
 return (
     <div>
         <h1 class="trimpa">TRIMPA</h1>
@@ -18,15 +50,15 @@ return (
       <ol class="seats" type="A">
         <li class="seatbusiness">
           <input type="checkbox" id="1A" />
-          <label for="1A">1A</label>
+          {/* <label onClick={() => { setname("1A");()=> setvalid(!valid);()=>  settype("vip"); adddd() }} for="1A">1A</label> */}
         </li>
         <li class="seatbusiness">
           <input type="checkbox" id="1B" />
-          <label for="1B">1B</label>
+          <label onClick={() => { setname("1B");setvalid(!valid); settype("vip"); adddd() }} for="1B">1B</label>
         </li>
         <li class="seatbusiness">
           <input type="checkbox" id="1C" />
-          <label for="1C">1C</label>
+          <label  for="1C">1C</label>
         </li>
         <li class="seatbusiness">
           <input type="checkbox" id="1D" />
@@ -38,7 +70,7 @@ return (
     <li class="row row--2">
       <ol class="seats" type="A">
         <li class="seatbusiness">
-          <input type="checkbox" id="2A" />
+          {/* <input type="checkbox" id="2A" /> */}
           <label for="2A">2A</label>
         </li>
         <li class="seatbusiness">
@@ -704,7 +736,7 @@ return (
      
       <div>
          <img class="imageseats" src={imageeco} alt="" />
-      <h2>Economic class Selected</h2>
+      <h2>Economic class<br></br> Selected</h2>
       <p class="pp">Rest and recharge during your flight with
 extended leg room, personalized service,
 and a multi-course meal service</p>
