@@ -10,6 +10,7 @@
     fill: 1,312px;
     height: 547px;
     /* hug: 40px; */
+    margin-bottom: 100rem;
 }
 
 
@@ -32,10 +33,11 @@
   
 }
 
-.cont {
+.container {
     display: flex;
     flex-direction: column;
     margin-left: 15px;
+    padding-bottom: 25rem;
 }
 
 .bodyPage{
@@ -59,7 +61,7 @@
     flex-direction: column;
   }
 
-.car {
+.card {
     border: none;
     width: 840px;
     height: 72px;

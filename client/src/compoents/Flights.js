@@ -23,7 +23,7 @@ const Flights = (props) => {
       }))
     ///
   return (
-    <div className="cont" >
+    <div className="container" >
      
     <div className="FilterBar">
       <select style={{
@@ -104,7 +104,7 @@ const Flights = (props) => {
         const formattedDepartureDate = departureDate.toLocaleDateString()
 
         return (
-          <div className="car">
+          <div className="card">
           <ul className="list-group list-group-flush">
             <li className="list-group-item d-flex align-items-center">
               <img className="companyimage" src={flight.imgUrl} alt={flight.name} />
@@ -230,7 +230,7 @@ const Flights = (props) => {
 
   <div className="row ">
   <div className="col-4">
-  <div className="car">
+  <div className="card">
       <img style={{width:"397px",height:"410px"}} src="https://s3-alpha-sig.figma.com/img/8125/5891/ea1583d20a3fb02917ad104af6587f3e?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oS2m5uq9ST9FfCanuvp78~qA5OIFapZw2-pWxZbks2NTGqZk9UhcfadV6HGRHEoDdgzXkuFyMgFbTAR2-EPi23ipkbJHQNZU4VWcEzgmYkOMpP1FZfPsxd06Mkbm~gfWOezVEg6VONCdNfJ3cVvNIaqwwvSFU5-GILHI--Yrd5UZwsRmHzTJag9obTV-n01lmsfu1m6GN3RHC1NXGieLVmPJ1Wb62zUQ4pZP24ImKw6fPHAAU6mRAXSEY3-Zt0SVeG7z8lRuY47tIwVI2BaQMfIpLBUKh9hXBaEHgisN3vGlRUh44laoWhI07shXBHWOGn0oebl3uV-u3I0i-QHSjw__" className="card-img-top" alt="Skyscrapers"/>
       <div className="card-body">
       <h5 className="card-title">
@@ -243,7 +243,7 @@ const Flights = (props) => {
     </div>
   </div>
   <div className="col-4">
-  <div className="car" >
+  <div className="card" >
       <img style={{width:"397px",height:"410px"}}  src="https://s3-alpha-sig.figma.com/img/ca89/1425/cf94faaf7d2ea932cf5ce939144da65c?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FAX0ndMMeGWnaBHDMDb~Z2wtrZrnol8pR~VcynF4Dwdu-eo~0Ly235fkua6PzcYjlEStpKJ3umUhoIoeLvjeuSaEfgFJwjt8A2Iofd2b6uXnDnjUHyo71mHurxqIX~o-AWIp1ac6EWi1U9mGbdWuupnfYGjO1bPrLwvnhbwYjSqpj6iQFzVwSVco6U3ArOzByT8j6Uv2-g-mLqmFLC3pwu8Qz4yTZ8XeY8s1toUQ7pGFlnCD5obCMiggWcO7psk6QYwRig691OuYhDzPOadv~AZA04eiPs14DuitIoZ-joOu3r1EMJl5nMQ3L92CN0vqeK1H4VFq5K6JvQ7GHTEe2Q__" className="card-img-top" alt="Los Angeles Skyscrapers"/>
       <div className="card-body">
         <h5 className="card-title">Sydney Opera House, Sydney     $981</h5>
@@ -253,7 +253,7 @@ const Flights = (props) => {
     </div>
   </div>
   <div className="col-4">
-  <div className="car">
+  <div className="card">
       <img  style={{width:"397px",height:"410px"}} src="https://s3-alpha-sig.figma.com/img/3fda/53a3/3484d5625d49b225735e042218c3677f?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=W7dS6We~OD~PLFDdWe5T~Wkv0uz~6jcZipCoMvY4~LdjAvayVROlPt1ofwnNSJBh24qQWnePRBHbAHL-jkD1iqgBOUSblggesmqU68g3ps7WuFkhXMZFnSTTUIAuN7kIhqjacUpmcjuZcWksI6bkfNoqHnZHlk4LsLbay8DxiQHhDXyurx2jGQezlYVlVyTTBFndWVCUOJbZJ2C5gR7HSspTSCi79gYwwliJ~5fDTOinB1sFOhkrA9YOYdfQTZkMyvp8go~CazaKbFi9fwrDyjPr7LStvxYZQ8CafUbEQO7NCDBK588wCdd2imjc7tjzYBvRC91IeVnhWKwvlqiKbg__" className="card-img-top" alt="Palm Springs Road"/>
       <div className="card-body">
         <h5 className="card-title">Kōdaiji Temple, Kyoto    $633</h5>
@@ -266,7 +266,7 @@ const Flights = (props) => {
   </div>
 </div> 
   </div>
-    </div> // end of cont
+    </div> // end of container
   )
 }
 
