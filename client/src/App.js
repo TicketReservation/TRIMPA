@@ -25,8 +25,9 @@ function App() {
       Join Tripma today and save up to 20% on your fligth using code TRAVEL at checkout. Promotion valid for new users only.
       </header>
       <Header/>
-      <Profile/>
-      {/* <div className="landing">
+      
+      
+      <div className="landing">
     <p className='saying'>It's more than</p><p className='saying'> just a trip</p>
     <SearchBar/>
   </div>
@@ -36,7 +37,8 @@ function App() {
       <Route path="/seats" element={<Seats />} /> 
         <Route path="/payment" element={<Paye />} /> 
         <Route path="/flight" element={<FlightPage />} />
-      </Routes> */}
+        <Route path="/profile" element={<Profile/>}/>
+      </Routes>
     </BrowserRouter>
   
 }

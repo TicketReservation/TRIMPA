@@ -29,6 +29,14 @@ module.exports = {
       }
     },
 
+    getOne: async (req, res) => {
+      try {
+        const user = await db.User.findOne({ where: { id: req.params.id } });
+        res.json(user);
+      } catch (error) {
+        throw error;
+      }
+    },
 
     login: async (req, res) => {
       try {
@@ -56,11 +64,19 @@ module.exports = {
       deleteOne: async (req, res) => {
       try {
         const user = await db.User.destroy({where: { id: req.params.id }})
-        res.sendStatus(201)
+        res.json(user)
 
         }
         catch (error) {
         throw error
     }
-}
+},
+  updateOne:async(req,res)=>{
+    try {
+      const user=await db.User.update({where:{id:req.params.id}})
+      res.json(user)
+    } catch (error) {
+      throw error
+    }
+  }
 }
