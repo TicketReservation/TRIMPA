@@ -53,6 +53,11 @@
     font-size: xx-large;
     color: #8A2BE2; 
   }
+  .nmbrflights{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+    color: #d12828; 
+  }
   .div1{
     background-color: #fff;
     /* max-width: 100%; 
@@ -76,7 +81,7 @@
     text-align: center;
     
   }
-  .threedivs{
+  /* .threedivs{
     display: flex;
   }
   .div2{
@@ -102,7 +107,7 @@
     margin: 5px;
     margin-top: 50px;
 
-  }
+  } */
   /* @bg-blue: #337ab7;
 @bg-hoki: #67809F;
 @bg-red: #e7505a;
@@ -115,13 +120,27 @@ body {
     width: 1300px;
     height: 800px;
 }
+.photoflight{
+    margin-top: 30px;
+    width: 230px;
+    height: 250px;
+    margin-left: -12px;
+}
 .wrapper {
   position: relative;  
 }
 .wrapper-container{
     height: 200px;
 }
-
+.user-item {
+    display: flex; 
+    align-items: center; 
+    margin: 10px; 
+    border-radius: 3px;
+    border-color: #333;
+    background-color: #cebdd5;
+   
+  }
 .heading{
     margin: 25px 0;
     font-size: 24px;  

@@ -5,12 +5,14 @@ import StaticsDashboard from './staticsdashbord';
 import axios from 'axios';
 import UserDashboard from './userdashbord';
 import Adduser from './adduserdashbord';
-
+import AddFlight from './addflight';
 
 function AdminDashboard() {
 
     const [view, setView] = useState("UserDashboard")
     const [data, setdata] = useState([])
+    const [flight, setflight] = useState([])
+
     const [updater,setupdater] =useState(true)
 
 
@@ -22,14 +24,22 @@ function AdminDashboard() {
         .then((response)=>setdata(response.data))
         .catch((err)=>console.log(err))
         }
+        const fetchflight = () =>{
+            axios.get("http://localhost:3000/api/flight/")
+            .then((response)=>setflight(response.data))
+            .catch((err)=>console.log(err))
+            }
         const add = (body) =>{
             axios.post("http://localhost:3000/api/user",body)
             .then((response)=>console.log(response.data))
             .catch((err)=>console.log(err))
-           
+ }
+ const addflight = (body) =>{
+    axios.post("http://localhost:3000/api/flight/newFlight",body)
+    .then((response)=>console.log(response.data))
+    .catch((err)=>console.log(err))
+}
 
-            }
-      
           const deletee = (id) =>{
             axios.delete(`http://localhost:3000/api/user/del/${id}`)
             .then((response)=>console.log(response.data))
@@ -37,14 +47,23 @@ function AdminDashboard() {
             setupdater(!updater)
 
             }
+            const deleteflight = (id) =>{
+                axios.delete(`http://localhost:3000/api/flight/${id}`)
+                .then((response)=>console.log(response.data))
+                .catch((err)=>console.log(err))
+                setupdater(!updater)
+    
+                }
+    
 
         useEffect(()=>{
             fetch()
+            fetchflight()
           },[updater])
 
       const renderView = () => {
         if (view === "FlightDashboard") {
-          return <FlightDashboard changeView={changeView} />;
+          return <FlightDashboard changeView={changeView} flight={flight} deleteflight={deleteflight} addflight={addflight}/>;
         }
         else if (view === "StaticsDashboard"){
         return <StaticsDashboard changeView={changeView} />
@@ -55,6 +74,9 @@ function AdminDashboard() {
             else if (view === "add"){
                 return <Adduser changeView={changeView} data={data} deletee={deletee} add={add} setupdater={setupdater}/>
                 }
+                else if (view === "addflight"){
+                    return <AddFlight changeView={changeView}  flight={flight} deleteflight={deleteflight} addflight={addflight} />
+                    }
           }
   return (
   

@@ -1,7 +1,7 @@
 const mysql = require('mysql2')
 const { Sequelize ,DataTypes } = require('sequelize')
 // const { DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD } = require("./config.js")
-const connection = new Sequelize('tripma', 'root', 'root', {
+const connection = new Sequelize('tripma', 'root', 'dhia2002', {
   host: 'localhost',
   dialect: 'mysql',
   logging:false
@@ -51,13 +51,13 @@ db.Booking.belongsTo(db.Flight, { foreignKey: 'flightId' })
 
 
 // Sync the models with the database
-connection.sync({ force: true })
-    .then(() => {
-        console.log('Models synced with the database.')
-    })
-    .catch((error) => {
-        console.error('Unable to sync models with the database: ', error)
-    })
+// connection.sync({ force: true })
+//     .then(() => {
+//         console.log('Models synced with the database.')
+//     })
+//     .catch((error) => {
+//         console.error('Unable to sync models with the database: ', error)
+//     })
  
 
 module.exports = db

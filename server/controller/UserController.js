@@ -96,6 +96,14 @@ addOne : async (req, res) => {
    } catch (error) {
        throw error
    }
+},
+deleteOne: async (req, res) => {
+  try {
+      await db.User.destroy({ where: { id: req.params.id } })
+      res.sendStatus(201)
+  } catch (error) {
+      throw error
+  }
 }
 
 }
