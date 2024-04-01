@@ -26,7 +26,7 @@ function Header() {
                 <SignInBtn/>
                 <SignUpBtn />
             </span>
-            
+
         </div>
     );
 }
