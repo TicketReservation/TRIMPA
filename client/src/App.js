@@ -12,6 +12,8 @@ import Flights from './compoents/Flights'
 import Information from './compoents/Information';
 import Seats from './compoents/seats'
 import SearchBar from './compoents/SearchBar';
+import UserInfo from './compoents/UserInfo';
+
 function App() {
   const [flights, setFlights] = useState([]);
 
@@ -39,10 +41,18 @@ function App() {
       console.log(err);
     }
   }
+
+
+  const [view,setView]=useState("main")
+
+
+  const switchView=(view)=>{
+    setView=view
+  }
   return (
     <div>
       <BrowserRouter>
-          
+   
 
         <Routes>
         <Route path="/" element={<AccPage />} />
@@ -50,8 +60,9 @@ function App() {
         <Route path="/flight" element={<FlightPage />} />
         <Route path="/information" element={<InfoPage />} />
         <Route path="/seats" element={<Seats />} />
+        <Route path="/hotels" element={<HotelPage />} />
 
-          <Route path="/hotels" element={<HotelPage />} />
+          <Route path="/profil" element={<ProfilePage />} />
           <Route path="/payment" element={<PayPgae />} />
         </Routes>
       </BrowserRouter>
@@ -96,13 +107,33 @@ function InfoPage() {
 function AccPage() {
   return (
     <>
-    <Header />
-     <MainPage />
+    {/* <Header /> */}
+    <Header switchView={switchView}/>
+
+{view==="main"&&(
+  <div className="landing">
+  <p className='saying'>It's more than</p><p className='saying'> just a trip</p>
+  <SearchBar/>
+</div>
+)}
+{view==="update"&&(<UserInfo/>)}
+     {/* <MainPage /> */}
     </>
   );
 }
 
 
+function ProfilePage() {
+  return (
+    <>
+    <Header />
+    <br/><br/>
+     
+    <UserInfo/>
+      <Footer />
+    </>
+  );
+}
 
 function HotelPage() {
   return (

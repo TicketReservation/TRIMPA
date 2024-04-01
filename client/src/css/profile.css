@@ -1,0 +1,40 @@
+.userInfo {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .userInfo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .userName {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .userAdress {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
