@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import style from '../css/adduserdash.css'
+// import style from '../css/adduserdash.css'
 
 const Adduser = (props) => {
 

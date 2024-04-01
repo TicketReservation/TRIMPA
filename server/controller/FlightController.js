@@ -39,15 +39,15 @@ module.exports = {
         throw error
     }
 },
-Select:async function(req,res){
+Select: async function(req, res) {
     try { 
         const dep = req.params.departure;
         const des = req.params.destination;
         
-        const flights = await Flight.findAll({ 
+        const flights = await db.Flight.findAll({
             where: { 
                 destination: des,
-                departure: DefinePlugin
+                departure: dep
             } 
         });
         
@@ -55,5 +55,7 @@ Select:async function(req,res){
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error'); 
-    }},
+    }
+}
+
 }
