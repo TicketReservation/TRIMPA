@@ -4,7 +4,6 @@
   "description": "just a starter repo for the MVP project",
   "main": "index.js",
   "scripts": {
-    "react-dev": "webpack --mode development --watch",
     "server-dev": "nodemon index.js"
   },
   "author": "",

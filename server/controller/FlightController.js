@@ -1,3 +1,4 @@
+const { DefinePlugin } = require('webpack')
 const db = require('../Database/index')
 module.exports = {
 
@@ -45,14 +46,14 @@ Select:async function(req,res){
         
         const flights = await Flight.findAll({ 
             where: { 
-                destination: des, // Assuming 'Destination' is the field representing destination in your Flight model
-                departure: dep // Assuming 'departure' is the field representing departure in your Flight model
+                destination: des,
+                departure: DefinePlugin
             } 
         });
         
         res.send(flights);
     } catch (error) {
-        console.error(error); // Logging the error for debugging purposes
-        res.status(500).send('Internal Server Error'); // Sending an appropriate error response to the client
+        console.error(error);
+        res.status(500).send('Internal Server Error'); 
     }},
 }

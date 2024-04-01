@@ -33,7 +33,7 @@
   
 }
 
-.container {
+.cont {
     display: flex;
     flex-direction: column;
     margin-left: 15px;
@@ -61,7 +61,7 @@
     flex-direction: column;
   }
 
-.card {
+.car {
     border: none;
     width: 840px;
     height: 72px;
