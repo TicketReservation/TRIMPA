@@ -1,9 +1,9 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
     width: 99%;
     
-}
+} */
 
 .Ccard{
     width: 50px;
@@ -33,12 +33,7 @@
   
 }
 
-.dd {
-    display: flex;
-    flex-direction: column;
-    margin-left: 15px;
-    padding-bottom: 25rem;
-}
+
 
 .bodyPage{
     display: flex;
@@ -61,7 +56,7 @@
     flex-direction: column;
   }
 
-.card {
+.mah {
     border: none;
     width: 840px;
     height: 72px;
@@ -136,9 +131,7 @@
     width: 30%; 
     max-width: 90%; 
   } */
-.card{
-    width: 100%;
-}
+
 .imagemap{
     margin-top: 15px;
 }

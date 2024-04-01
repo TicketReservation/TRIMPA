@@ -1,28 +1,19 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import "../css/homePage.css"
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import { SingleInputDateRangeField } from '@mui/x-date-pickers-pro/SingleInputDateRangeField';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import axios from 'axios';
 
-function SearchBar() {
-  const [flights, setFlights] = useState([]);
+function SearchBar(props) {
+  // const [flights, setFlights] = useState([]);
   const [departure, setDeparture] = useState('');
   const [destination, setDestination] = useState('');
 
-  const handleSearch = async () => {
-    try {
-      const response = await fetch(`http://localhost:3000/api/flights/${departure}/${destination}`);
-     
-      const flightsData = await response.json();
-      setFlights(flightsData);
-    } catch (error) {
-      console.error(error);
-      
-    }
-  };
+  console.log(props)
 
   return (
     <span className='filter'>
@@ -54,7 +45,8 @@ function SearchBar() {
         id='nbrInp'
         type="number"
       />
-      <button className="searchBtn" onClick={handleSearch}>Search</button>
+      <button className="searchBtn" onClick={() => props.searchFlights(departure, destination)}>Search</button>
+
     </span>
   );
 }

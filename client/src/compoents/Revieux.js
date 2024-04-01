@@ -15,7 +15,7 @@ function Revieux() {
             <div className="card mb-3">
             <div className="card-body d-flex align-items-center">
                 <img src="https://s3-alpha-sig.figma.com/img/cdf8/4f78/a0d24ee8a2573ce39911ae32c42177d7?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cVRRbX-1tXEwVRHqI1clsWI78CYCybMhbxIc2Fs4c6OoiTwukVNZuwwRhOyUsHSXyYNkT~z055y0kSCVwhhD8~WmwojjMuRxuoFWzR52ngBv8H8TyDjLa0ktd0HcQCnYEwurn3thH4U4WEGJ0XD4AeWzRmYz9hWCxtc8fig1-z0przkO2ovFvQuVmT5l8TgpcGESAw287TSB-cyxrXcQbV9woexwTXNzgqwVhErVJwYdvFfpa5UkGnVlEuKY~5IZbQMMVFo1PJniNF5O-DxaC5EdIAffr6-jKGF85BoGi8nFcfXmDbtp9JmxJW74BxJ5aU0ilUq18vaLYmn9Y9JBMg__" className="rounded-circle mr-3" style={{ width: '48px', height: '48px' }} alt="John Doe" />
-            <div>z
+            <div>
                 <h5 className="card-title mb-1">John Doe</h5>
                 <p className="card-subtitle text-muted mb-0">March 25, 2024</p>
                 <p>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
