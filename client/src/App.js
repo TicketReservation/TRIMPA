@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Header from './compoents/Header';
@@ -11,6 +11,7 @@ import Paye from './compoents/Paye';
 import Flights from './compoents/Flights'
 import Information from './compoents/Information';
 import Seats from './compoents/seats'
+import SearchBar from './compoents/SearchBar';
 function App() {
   const [flights, setFlights] = useState([]);
 
@@ -27,19 +28,31 @@ function App() {
     flightList();
   }, []);
 
+  
+  const searchFlights = async (departure, destination) => {
+    try {
+      const res = await axios.get(`http://localhost:3000/api/flight/${departure}/${destination}`);
+      console.log(res.data,'hhhhhhhhhhhhhhh')
+      setFlights(res.data);
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
   return (
     <div>
       <BrowserRouter>
-          <Header />
-          <MainPage />
+          
+
         <Routes>
+        <Route path="/" element={<AccPage />} />
         
         <Route path="/flight" element={<FlightPage />} />
-        <Route path="/information" element={<Information />} />
+        <Route path="/information" element={<InfoPage />} />
         <Route path="/seats" element={<Seats />} />
 
-          <Route path="/hotel" element={<HotelPage />} />
-          <Route path="/payment" element={<Paye />} />
+          <Route path="/hotels" element={<HotelPage />} />
+          <Route path="/payment" element={<PayPgae />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -49,10 +62,42 @@ function App() {
 function FlightPage() {
   return (
     <>
+    <Header />
+    <SearchBar searchFlights={searchFlights}/>
+    <br/><br/>
      <Flights  flights={flights} />
      <br/>
-      <Revieux />
+      <Revieux /><br/>
       <Footer />
+    </>
+  );
+}
+
+function PayPgae() {
+  return (
+    <>
+    <Header />
+    <br/><br/>
+      <Paye />
+    </>
+  );
+}
+
+function InfoPage() {
+  return (
+    <>
+    <Header />
+    <br/><br/>
+      <Information />
+    </>
+  );
+}
+
+function AccPage() {
+  return (
+    <>
+    <Header />
+     <MainPage />
     </>
   );
 }
@@ -62,6 +107,8 @@ function FlightPage() {
 function HotelPage() {
   return (
     <>
+    <Header />
+    <br/><br/>
       <FlightDeals />
       <Revieux />
       <Footer />

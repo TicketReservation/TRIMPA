@@ -52,13 +52,13 @@ db.Booking.belongsTo(db.Flight, { foreignKey: 'flightId' })
 
 
 // Sync the models with the database
-connection.sync({ force: true })
-    .then(() => {
-        console.log('Models synced with the database.')
-    })
-    .catch((error) => {
-        console.error('Unable to sync models with the database: ', error)
-    })
+// connection.sync({ force: true })
+//     .then(() => {
+//         console.log('Models synced with the database.')
+//     })
+//     .catch((error) => {
+//         console.error('Unable to sync models with the database: ', error)
+//     })
  
 
 module.exports = db

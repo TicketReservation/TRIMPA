@@ -1,5 +1,5 @@
-import React from 'react';
-import { styled } from '@mui/system';
+import React, { useState } from 'react';
+import axios from 'axios';
 import TextField from '@mui/material/TextField';
 import '../css/Paye.css';
 import googleLogo from '../img/google.png';
@@ -13,6 +13,43 @@ import creditCardLogo from '../img/credit-card.png';
 
 
 function Paye() {
+  const [formData, setFormData] = useState({
+    amount: '',
+    accept_card: true,
+    session_timeout_secs: 1200,
+    success_link: 'http://localhost:3000/success',
+    fail_link: 'http://localhost:3000/fail',
+    developer_tracking_id: '5aa70c0d-fc2a-4571-8bb0-358a8bfcebe8',
+    name_on_card: '',
+    card_number: '',
+    expiration_date: '',
+    ccv: '',
+    email_or_phone: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handlePayment =  (e) => {
+    e.preventDefault()
+  axios.post('http://localhost/api/payment/pay', formData).then((response)=>{
+    console.log(response.data)
+    const {result}=response.data
+    window.location.href=result.link
+    
+
+  })
+     .catch((error)=> {
+      console.error('Error:', error);
+   
+    })
+  };
+
   return (
     <div className="payment-container">
       <div className="payment-header">Payment method</div>
@@ -21,54 +58,66 @@ function Paye() {
         with end-to-end encryption.
       </div>
       <div className="payment-options">
-  <button className="payment-option">
-    <img src={creditCardLogo} alt="Credit Card Logo" className="logooo" />
-    Credit card
-  </button>
-  <button className="payment-option">
-    <img src={googlepayLogo} alt="Google Pay Logo" className="logooo" />
-    Google Pay
-  </button>
-  <button className="payment-option">
-    <img src={applePayLogo} alt="Apple Pay Logo" className="logooo" />
-    Apple Pay
-  </button>
-  <button className="payment-option">
-    <img src={paypalLogo} alt="PayPal Logo" className="logooo" />
-    Paypal
-  </button>
-  <button className="payment-option">
-    <img src={cryptoLogo} alt="Crypto Logo" className="logooo" />
-    Crypto
-  </button>
-</div>
+        <button className="payment-option">
+          <img src={creditCardLogo} alt="Credit Card Logo" className="logo" />
+          Credit card
+        </button>
+        <button className="payment-option">
+          <img src={googlepayLogo} alt="Google Pay Logo" className="logo" />
+          Google Pay
+        </button>
+        <button className="payment-option">
+          <img src={applePayLogo} alt="Apple Pay Logo" className="logo" />
+          Apple Pay
+        </button>
+        <button className="payment-option">
+          <img src={paypalLogo} alt="PayPal Logo" className="logo" />
+          Paypal
+        </button>
+        <button className="payment-option">
+          <img src={cryptoLogo} alt="Crypto Logo" className="logo" />
+          Crypto
+        </button>
+      </div>
       <div className="credit-card-details">
         <div className="credit-card-header">Credit card details</div>
         <TextField
           label="Name on card"
           variant="outlined"
           className="credit-card-input"
-          style={{width:500,marginBottom:24}}
+          style={{ width: 500, marginBottom: 24 }}
+          name="name_on_card"
+          value={formData.name_on_card}
+          onChange={handleChange}
         />
         <br />
         <TextField
           label="Card number"
           variant="outlined"
           className="credit-card-input"
-          style={{width:500,marginBottom:24}}
+          style={{ width: 500, marginBottom: 24 }}
+          name="card_number"
+          value={formData.card_number}
+          onChange={handleChange}
         />
         <div className="credit-card-inputs">
           <TextField
             label="Expiration date"
             variant="outlined"
             className="credit-card-input"
-            style={{width:230, }}
+            style={{ width: 230 }}
+            name="expiration_date"
+            value={formData.expiration_date}
+            onChange={handleChange}
           />
           <TextField
             label="CCV"
             variant="outlined"
             className="credit-card-input"
-            style={{width:230,marginLeft:30}}
+            style={{ width: 230, marginLeft: 30 }}
+            name="ccv"
+            value={formData.ccv}
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -79,16 +128,18 @@ function Paye() {
           you can save and view flights, manage your trips, earn rewards, and
           more.
         </div>
-       
         <div className="save-card-option">
-        <input type="checkbox" className="save-card-checkbox" />
+          <input type="checkbox" className="save-card-checkbox" />
           <div className="save-card-text">Save card and create account for later</div>
         </div>
         <TextField
           label="Email address or phone number"
           variant="outlined"
           className="create-account-input"
-          style={{width:500, marginBottom:20}}
+          style={{ width: 500, marginBottom: 20 }}
+          name="email_or_phone"
+          value={formData.email_or_phone}
+          onChange={handleChange}
         />
         <br />
         <TextField
@@ -96,24 +147,26 @@ function Paye() {
           type="password"
           variant="outlined"
           className="create-account-input"
-          style={{width:500}}
+          style={{ width: 500 }}
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
         />
       </div>
       <div className="sign-in-options">
-  <button className="sign-in-button">
-    <img src={googleLogo} alt="Google Logo" className="logooo" />
-    Sign in with Google
-  </button>
-  <button className="sign-in-button">
-    <img src={appleLogo} alt="Apple Logo" className="logooo" />
-    Sign in with Apple
-  </button>
-  <button className="sign-in-button">
-    <img src={facebookLogo} alt="Facebook Logo" className="logooo" />
-    Sign in with Facebook
-  </button>
-</div>
-
+        <button className="sign-in-button">
+          <img src={googleLogo} alt="Google Logo" className="logo" />
+          Sign in with Google
+        </button>
+        <button className="sign-in-button">
+          <img src={appleLogo} alt="Apple Logo" className="logo" />
+          Sign in with Apple
+        </button>
+        <button className="sign-in-button">
+          <img src={facebookLogo} alt="Facebook Logo" className="logo" />
+          Sign in with Facebook
+        </button>
+      </div>
       <div className="cancellation-policy">
         <div className="cancellation-policy-header">Cancellation policy</div>
         <div className="cancellation-policy-description">
@@ -125,11 +178,11 @@ function Paye() {
         </div>
         <div className="buttons">
           <button className="back-button">Back to seat select</button>
-          <button className="confirm-button">Confirm and pay</button>
+          <button className="confirm-button" onClick={handlePayment}>Confirm and pay</button>
         </div>
       </div>
     </div>
   );
 }
 
-export default Paye;
+export default Paye
