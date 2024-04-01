@@ -1,0 +1,187 @@
+.admin-dashboard {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    /* background-image: url('https://static.vecteezy.com/system/resources/thumbnails/011/004/881/small/computer-chip-electronic-circuit-board-for-technology-and-finance-concept-and-education-for-future-vector.jpg'); */
+    color: #fff;
+    background-color: #8A2BE2;
+    padding: 20px;
+    height: 680px;
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+    color: #fff;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .sidebar button {
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #8A2BE2, #48137a);
+    color: #fff;
+    width: 210px;
+    height: 80px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .sidebar button:hover {
+    background: linear-gradient(to right, #ffffff, #b99ed2);
+    color: #8A2BE2;
+    
+  }
+  
+  .sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #b99ed2;
+    margin-left: 10px;
+  }
+  .title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    color: #8A2BE2; 
+  }
+  .div1{
+    background-color: #fff;
+    /* max-width: 100%; 
+    max-height: 100; */
+    display: block; 
+    margin: auto;
+    height: 200px;
+    width: 1175px;
+    margin: 5px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+  }
+  .divv{
+    background: linear-gradient(to right, #c6b9ee, #9e70c9,#9b81e7);;
+    color: #fff;
+    height: 200px;
+    width: 200px;
+    margin: 5px;
+    margin-left: 68px;
+    text-align: center;
+    
+  }
+  .threedivs{
+    display: flex;
+  }
+  .div2{
+    background-color: #fff;
+    height: 650px;
+    width: 340px;
+    margin: 5px;
+    margin-top: 50px;
+  }
+  .div3{
+    background-color: #fff;
+    height: 650px;
+    width: 340px;
+    margin: 5px;
+    margin-top: 50px;
+
+   
+  }
+  .div4{
+    background-color: #fff;
+    height: 650px;
+    width: 340px;
+    margin: 5px;
+    margin-top: 50px;
+
+  }
+  /* @bg-blue: #337ab7;
+@bg-hoki: #67809F;
+@bg-red: #e7505a;
+@bg-purple: #8E44AD; */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.photostat{
+    margin-top: 30px;
+    width: 1300px;
+    height: 800px;
+}
+.wrapper {
+  position: relative;  
+}
+.wrapper-container{
+    height: 200px;
+}
+
+.heading{
+    margin: 25px 0;
+    font-size: 24px;  
+}
+.dashboard-stat {
+  position: relative;
+  display: block;
+  margin: 0 0 25px;
+  overflow: hidden;
+  border-radius: 4px;
+  .visual {
+    width: 80px;
+    height: 80px;
+    display: block;
+    float: left;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    font-size: 35px;
+    line-height: 35px;
+    > i {
+      margin-left: -15px;
+      font-size: 110px;
+      line-height: 110px;
+      color: #ffffff;
+      opacity: .1;
+    }
+  }
+  .details {
+    position: absolute;
+    right: 15px;
+    padding-right: 15px;
+    color: #fff;
+    .number {
+      padding-top: 25px;
+      text-align: right;
+      font-size: 34px;
+      line-height: 36px;
+      letter-spacing: -1px;
+      margin-bottom: 0;
+      font-weight: 300;
+      .desc {
+        text-transform: capitalize;
+        text-align: right;
+        font-size: 16px;
+        letter-spacing: 0;
+        font-weight: 300;
+      }
+    }
+  }
+  &.blue {
+    background-color:#337ab7
+  }
+  &.red {
+    background-color: #e7505a
+  }
+  &.purple {
+    background-color: #8E44AD
+  }
+  &.hoki {
+    background-color: #67809F
+  }
+}

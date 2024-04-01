@@ -19,7 +19,9 @@
   .user-item {
     display: flex; /* Display items side by side */
     align-items: center; /* Align items vertically */
-    margin-bottom: 10px; /* Optional: Adjust margin as needed */
+    margin: 10px; /* Optional: Adjust margin as needed */
+    border-radius: 3px;
+    border-color: #333;
   }
   
   .user-image {
