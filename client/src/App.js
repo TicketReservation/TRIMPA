@@ -11,21 +11,23 @@ import Paye from './compoents/Paye';
 import Flights from './compoents/Flights'
 import Information from './compoents/Information';
 import Seats from './compoents/seats'
-function App() {
-  const [flights, setFlights] = useState([]);
+// import confirmation from './compoents/confirmation';
 
-  useEffect(() => {
-    const flightList = () => {
-      axios.get("http://localhost:3000/api/flight")
-        .then((res) => {
-          console.log("App log", res);
-          const flightsdata = res.data;
-          setFlights(flightsdata);
-        })
-        .catch((error) => console.log(error));
-    };
-    flightList();
-  }, []);
+function App() {
+  // const [flights, setFlights] = useState([]);
+
+  // useEffect(() => {
+  //   const flightList = () => {
+  //     axios.get("http://localhost:3000/api/flight")
+  //       .then((res) => {
+  //         console.log("this is flights component data", res);
+  //         const flightsdata = res.data;
+  //         setFlights(flightsdata);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   };
+  //   flightList();
+  // }, []);
 
   return (
     <div>
@@ -49,7 +51,8 @@ function App() {
 function FlightPage() {
   return (
     <>
-     <Flights  flights={flights} />
+     <Flights  />
+     <br/>
       <Revieux />
       <Footer />
     </>

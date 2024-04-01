@@ -1,8 +1,10 @@
-import React,{ useState } from 'react'
+import React,{ useState, useEffect } from 'react'
 // import ReactRoundedImage from "react-rounded-image"
 import "../css/Flights.css"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
+import { LineChart, Line, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import myImage from '../img/map.PNG'
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchFlights } from '../actions/flightsActions'; 
 
 
 
@@ -10,18 +12,29 @@ import myImage from '../img/map.PNG'
 
 
 
+const Flights = () => {
 
-const Flights = (props) => {
+  const dispatch = useDispatch();
+  const flights = useSelector(state => state.flights.flights); 
+  console.log("useSelector",flights)
+
   const [showAll, setShowAll] = useState(false)
-  const flightsToShow = showAll ? props.flights : props.flights.slice(0,6)
-
+  
+  const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slice(0,6)) : [];
+    console.log(flightsToShow)
+  useEffect(() => {
+    dispatch(fetchFlights()); // dispatch the fetchFlights action when the component mounts
+  }, [dispatch]);
 
 
     // Prepare the data for diagram
-     const data = props.flights.map(flight => ({
-     name: flight.arrival,
-     price: flight.price
-      }))
+    let data = [];
+    if (Array.isArray(flights)) {
+      data = flights.map(flight => ({
+        name: flight.arrival,
+        price: flight.price
+      }));
+    }
     ///
   return (
     <div className="dd" >
@@ -37,12 +50,12 @@ const Flights = (props) => {
           }}
         >
           <option value="Max Price">Max Price</option>
-          {props.flights.map((flight, index) => (
-            <option key={index} value={flight.price}>
-              {flight.price}
-            </option>
-          ))}
-        </select>
+          {Array.isArray(flights) && flights.map((flight, index) => (
+  <option key={index} value={flight.price}>
+    {flight.price}
+  </option>
+))}
+</select>
 
       <select style={{
   width: '120px',
@@ -61,13 +74,8 @@ const Flights = (props) => {
   border: '1px solid #CBD4E6',
   padding: '8px 12px 8px 16px',
 }}>
-          <option value="Times">Times</option>
-          {props.flights.map((flight, index) => (
-              <option key={index} value={flight.departure}>
-                {flight.departure}
-              </option>
-          ))}
-        </select>
+        <option value="Times">Times</option>
+      </select>
 
       <select style={{
   width: '120px',
@@ -77,11 +85,6 @@ const Flights = (props) => {
   padding: '8px 12px 8px 16px',
 }}>
         <option value="Airlines">Airlines</option>
-        {props.flights.map((flight, index) => (
-              <option key={index} value={flight.companyName}>
-                {flight.companyName}
-              </option>
-               ))}
       </select>
 
       <select style={{
@@ -109,22 +112,22 @@ const Flights = (props) => {
     
     
     
-    {console.log(props.flights)}
+    {console.log(flights)}
 <div className="bodyPage"> 
 
 
       <div className="rigtside " >
         <h5>Choose a departing flight</h5>
-      <div className={`flightsTable ${showAll ? 'expanded' : ''}`} >
+      <div className={`flightsTable ${showAll ? 'expanded' : ''}`} id={''} >
       {flightsToShow.map((flight) => {
         const departureDate = new Date(flight.departure)
 
         const formattedDepartureDate = departureDate.toLocaleDateString()
 
         return (
-          <div className="card">
+          <div className="card" >
           <ul className="list-group list-group-flush">
-            <li className="list-group-item d-flex align-items-center">
+            <li className="list-group-item d-flex align-items-center" id={flight.id.toString()}>
               <img className="companyimage" src={flight.imgUrl} alt={flight.name} />
               <p>{flight.companyName}</p>
               <p>{formattedDepartureDate}</p> 
@@ -150,6 +153,13 @@ const Flights = (props) => {
 
 
 
+
+
+
+
+    
+
+
     <div className="leftSide">
 
 
@@ -165,26 +175,26 @@ const Flights = (props) => {
     <thead>
       <tr>
         <th>Company / Date</th>
-        {props.flights.map((flight, index) => {
-          const departureDate = new Date(flight.departure)
-          const formattedDepartureDate = departureDate.toLocaleDateString()
-          return <th key={index}>{formattedDepartureDate}</th> 
-        })}
+        {Array.isArray(flights) && flights.map((flight, index) => {
+  const departureDate = new Date(flight.departure)
+  const formattedDepartureDate = departureDate.toLocaleDateString()
+  return <th key={index}>{formattedDepartureDate}</th> 
+})}
       </tr>
     </thead>
     <tbody>
-      {props.flights.map((flight, index) => (
-        <tr key={index} onClick={()=>""}>
-          <td>{flight.companyName}</td>
-          {props.flights.map((innerFlight, innerIndex) => {
-            if (innerFlight.companyName === flight.companyName && innerFlight.departure === flight.departure) {
-              return <td key={innerIndex}>{innerFlight.price}</td>
-            } else {
-              return <td key={innerIndex}>-</td>
-            }
-          })}
-        </tr>
-      ))}
+    {Array.isArray(flights) && flights.map((flight, index) => (
+  <tr key={index}>
+    <td>{flight.companyName}</td>
+    {Array.isArray(flights) && flights.map((innerFlight, innerIndex) => {
+      if (innerFlight.companyName === flight.companyName && innerFlight.departure === flight.departure) {
+        return <td key={innerIndex}>{innerFlight.price}</td>
+      } else {
+        return <td key={innerIndex}>-</td>
+      }
+    })}
+  </tr>
+))}
     </tbody>
   </table>
 </div>
