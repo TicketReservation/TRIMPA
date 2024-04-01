@@ -2,7 +2,7 @@ import React from 'react';
 import style from '../css/Revieux.css'
 function Revieux() {
   return (
-    <div className="container">
+    <div className="TN">
 
 
 
