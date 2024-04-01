@@ -3,7 +3,7 @@ import { useState,useEffect } from 'react';
 
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'; 
-
+import  Profile from './compoents/Profile'
 import Header from './compoents/Header';
 import SearchBar from './compoents/SearchBar';
 import "./css/homePage.css"
