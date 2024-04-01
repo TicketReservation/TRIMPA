@@ -63,15 +63,6 @@ function App() {
   
 }
 
-function FlightPage() {
-  return (
-    <>
-     <header/>
-      <SearchBar/>
-      <Flights flights={flights}/>
-      <Footer />
-    </>
-  );
-}
+
 
 export default App;

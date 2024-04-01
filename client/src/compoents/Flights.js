@@ -23,18 +23,25 @@ const Flights = (props) => {
       }))
     ///
   return (
-    <div className="container" >
-     
+    <div className="container">
+      <div className="FilterBar"></div>
     <div className="FilterBar">
-      <select style={{
-  width: '120px',
-  height: '38px',
-  borderRadius: '4px',
-  border: '1px solid #CBD4E6',
-  padding: '8px 12px 8px 16px',
-}}>
-        <option value="Max Price">Max Price</option>
-      </select>
+    <select
+          style={{
+            width: '120px',
+            height: '38px',
+            borderRadius: '4px',
+            border: '1px solid #CBD4E6',
+            padding: '8px 12px 8px 16px',
+          }}
+        >
+          <option value="Max Price">Max Price</option>
+          {props.flights.map((flight, index) => (
+            <option key={index} value={flight.price}>
+              {flight.price}
+            </option>
+          ))}
+        </select>
 
       <select style={{
   width: '120px',
@@ -53,8 +60,13 @@ const Flights = (props) => {
   border: '1px solid #CBD4E6',
   padding: '8px 12px 8px 16px',
 }}>
-        <option value="Times">Times</option>
-      </select>
+          <option value="Times">Times</option>
+          {props.flights.map((flight, index) => (
+              <option key={index} value={flight.departure}>
+                {flight.departure}
+              </option>
+          ))}
+        </select>
 
       <select style={{
   width: '120px',
@@ -64,6 +76,11 @@ const Flights = (props) => {
   padding: '8px 12px 8px 16px',
 }}>
         <option value="Airlines">Airlines</option>
+        {props.flights.map((flight, index) => (
+              <option key={index} value={flight.companyName}>
+                {flight.companyName}
+              </option>
+               ))}
       </select>
 
       <select style={{
