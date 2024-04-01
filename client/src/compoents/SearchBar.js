@@ -15,9 +15,7 @@ function SearchBar() {
   const handleSearch = async () => {
     try {
       const response = await fetch(`http://localhost:3000/api/flights/${departure}/${destination}`);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
+     
       const flightsData = await response.json();
       setFlights(flightsData);
     } catch (error) {

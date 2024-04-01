@@ -10,6 +10,7 @@ import myImage from '../img/map.PNG'
 
 
 
+
 const Flights = (props) => {
   const [showAll, setShowAll] = useState(false)
   const flightsToShow = showAll ? props.flights : props.flights.slice(0,6)
@@ -23,18 +24,25 @@ const Flights = (props) => {
       }))
     ///
   return (
-    <div className="container" >
+    <div className="dd" >
      
     <div className="FilterBar">
-      <select style={{
-  width: '120px',
-  height: '38px',
-  borderRadius: '4px',
-  border: '1px solid #CBD4E6',
-  padding: '8px 12px 8px 16px',
-}}>
-        <option value="Max Price">Max Price</option>
-      </select>
+    <select
+          style={{
+            width: '120px',
+            height: '38px',
+            borderRadius: '4px',
+            border: '1px solid #CBD4E6',
+            padding: '8px 12px 8px 16px',
+          }}
+        >
+          <option value="Max Price">Max Price</option>
+          {props.flights.map((flight, index) => (
+            <option key={index} value={flight.price}>
+              {flight.price}
+            </option>
+          ))}
+        </select>
 
       <select style={{
   width: '120px',
@@ -111,6 +119,7 @@ const Flights = (props) => {
               <p>{flight.companyName}</p>
               <p>{formattedDepartureDate}</p> 
               <p>$ {flight.price}</p>
+              <a href='./information'>select</a>
             </li>
           </ul>
         </div>
@@ -266,7 +275,7 @@ const Flights = (props) => {
   </div>
 </div> 
   </div>
-    </div> // end of container
+    </div> // end of dd
   )
 }
 
