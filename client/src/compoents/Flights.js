@@ -10,6 +10,7 @@ import myImage from '../img/map.PNG'
 
 
 
+
 const Flights = (props) => {
   const [showAll, setShowAll] = useState(false)
   const flightsToShow = showAll ? props.flights : props.flights.slice(0,6)
@@ -23,8 +24,8 @@ const Flights = (props) => {
       }))
     ///
   return (
-    <div className="container">
-      <div className="FilterBar"></div>
+    <div className="dd" >
+     
     <div className="FilterBar">
     <select
           style={{
@@ -128,6 +129,7 @@ const Flights = (props) => {
               <p>{flight.companyName}</p>
               <p>{formattedDepartureDate}</p> 
               <p>$ {flight.price}</p>
+              <a href='./information'>select</a>
             </li>
           </ul>
         </div>
@@ -276,7 +278,7 @@ const Flights = (props) => {
   </div>
 </div> 
   </div>
-    </div> // end of container
+    </div> // end of dd
   )
 }
 

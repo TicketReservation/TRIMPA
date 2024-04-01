@@ -1,8 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    width: 100%;
-    
+    width: 99%;
 }
 
 .Ccard{
@@ -33,7 +32,7 @@
   
 }
 
-.container {
+.dd {
     display: flex;
     flex-direction: column;
     margin-left: 15px;

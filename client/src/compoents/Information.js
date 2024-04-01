@@ -111,7 +111,10 @@ function Information() {
               First Last <button onClick={mns}>-</button> {comteur}<button onClick={pls}>+</button>
             </div>
             <br />
-            <button>Save and close</button> <button>Select seats</button>
+            
+            <a href='/'>Save and close</a>
+            <br></br>
+            <a href='/seats'>Select seats</a>
           </div>
         </form>
       </div>

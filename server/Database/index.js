@@ -1,3 +1,4 @@
+
 const mysql = require('mysql2')
 const { Sequelize ,DataTypes } = require('sequelize')
 const { DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD } = require("./config.js")
@@ -12,7 +13,7 @@ const connection = new Sequelize (DATABASE_NAME, DATABASE_USERNAME, DATABASE_PAS
 })
 
 
-async function connectionTest (){     
+async function connectionTest (){
   try {
     await connection.authenticate()
     console.log('Connection has been established successfully.')

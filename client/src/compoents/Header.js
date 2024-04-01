@@ -11,9 +11,9 @@ function Header() {
                 <NavLink to="/" className="trimpa">Tripma</NavLink>
             </span>
             <span className="topnav">
-                <NavLink to="/flights" className="navLink">Flights</NavLink>
-                <NavLink to="/hotels" className="navLink">Hotels</NavLink>
-                <NavLink to="/packages" className="navLink">Packages</NavLink>
+                <NavLink to="/flight" className="navLink">Flights</NavLink>
+                <NavLink to="/hotel" className="navLink">Hotels</NavLink>
+                <NavLink to="/" className="navLink">Packages</NavLink>
                 <SignInBtn/>
                 <SignUpBtn />
             </span>
