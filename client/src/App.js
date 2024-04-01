@@ -11,22 +11,24 @@ import Paye from './compoents/Paye';
 import Flights from './compoents/Flights'
 import Information from './compoents/Information';
 import Seats from './compoents/seats'
+// import confirmation from './compoents/confirmation';
 import SearchBar from './compoents/SearchBar';
-function App() {
-  const [flights, setFlights] = useState([]);
 
-  useEffect(() => {
-    const flightList = () => {
-      axios.get("http://localhost:3000/api/flight")
-        .then((res) => {
-          console.log("App log", res);
-          const flightsdata = res.data;
-          setFlights(flightsdata);
-        })
-        .catch((error) => console.log(error));
-    };
-    flightList();
-  }, []);
+function App() {
+  // const [flights, setFlights] = useState([]);
+
+  // useEffect(() => {
+  //   const flightList = () => {
+  //     axios.get("http://localhost:3000/api/flight")
+  //       .then((res) => {
+  //         console.log("this is flights component data", res);
+  //         const flightsdata = res.data;
+  //         setFlights(flightsdata);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   };
+  //   flightList();
+  // }, []);
 
   
   const searchFlights = async (departure, destination) => {
@@ -62,10 +64,13 @@ function App() {
 function FlightPage() {
   return (
     <>
+
+
     <Header />
     <SearchBar searchFlights={searchFlights}/>
     <br/><br/>
      <Flights  flights={flights} />
+
      <br/>
       <Revieux /><br/>
       <Footer />
