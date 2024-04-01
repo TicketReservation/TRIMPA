@@ -50,11 +50,11 @@ return (
       <ol class="seats" type="A">
         <li class="seatbusiness">
           <input type="checkbox" id="1A" />
-          <label onClick={() => { setname("1A");()=> setvalid(!valid);()=>  settype("vip"); adddd() }} for="1A">1A</label>
+          {/* <label onClick={() => { setname("1A");()=> setvalid(!valid);()=>  settype("vip"); adddd() }} for="1A">1A</label> */}
         </li>
         <li class="seatbusiness">
           <input type="checkbox" id="1B" />
-          <label onClick={() => { setname("1B");setvalid(!valid); settype("vip"); adddd() }} for="1B">1B</label>
+          {/* <label onClick={() => { setname("1B");setvalid(!valid); settype("vip"); adddd() }} for="1B">1B</label> */}
         </li>
         <li class="seatbusiness">
           <input type="checkbox" id="1C" />

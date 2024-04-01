@@ -131,13 +131,6 @@ const Flights = (props) => {
 
 
 
-
-
-
-
-    
-
-
     <div className="leftSide">
 
 

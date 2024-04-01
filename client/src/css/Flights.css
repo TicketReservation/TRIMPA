@@ -10,6 +10,7 @@
     fill: 1,312px;
     height: 547px;
     /* hug: 40px; */
+    margin-bottom: 100rem;
 }
 
 
@@ -36,6 +37,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 15px;
+    padding-bottom: 25rem;
 }
 
 .bodyPage{
