@@ -17,6 +17,9 @@ function Header() {
                 <SignInBtn/>
                 <SignUpBtn />
             </span>
+            {/* <span className='topnav'>
+            <NavLink to="/profile" id='nav'>Profile</NavLink>
+            </span> */}
         </div>
     );
 }
