@@ -1,3 +1,4 @@
+
 import React,{ useState, useEffect } from 'react'
 // import ReactRoundedImage from "react-rounded-image"
 import "../css/Flights.css"
@@ -25,6 +26,12 @@ const Flights = () => {
   useEffect(() => {
     dispatch(fetchFlights()); // dispatch the fetchFlights action when the component mounts
   }, [dispatch]);
+
+
+
+  const handlePriceButtonClick = (flight) => {
+    setSelectedFlight(selectedFlight === flight ? null : flight);
+  };
 
 
     // Prepare the data for diagram
@@ -135,41 +142,16 @@ const Flights = () => {
               <a href='./information'>select</a>
             </li>
           </ul>
+
+  
         </div>
-        )
-      })}
-    </div> 
-    <button className="buttonShowall" onClick={() => setShowAll(!showAll)}>
-  {showAll ? 'Show less' : 'Show all flights'}
-</button>
-<div className="imagemap">
-<img src={myImage} alt="Description of the image" />
 
-</div>
-
-      </div>{/* // end of rightSide */}
-
-
-
-
-
-
-
-
-
-    
-
-
-    <div className="leftSide">
-
-
-
-
-
-
-
+        {/* Additional JSX content */}
+        <div className="leftSide">
+         
 <h5>Price grid (flexible dates)</h5>
       
+
     <div className="tableprice">
   <table className="table">
     <thead>
@@ -241,55 +223,55 @@ const Flights = () => {
 </div>{/* // leftSide end here */}
 
 <div>
+
   
-</div>
-
-
-</div>  
- {/*  end of bodyPage */}
- <div className="Ccards"  >
-      <h5> People in San Francisco also searched for </h5>
-
-  <div className="row ">
-  <div className="col-4">
-  <div className="card">
-      <img style={{width:"397px",height:"410px"}} src="https://s3-alpha-sig.figma.com/img/8125/5891/ea1583d20a3fb02917ad104af6587f3e?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oS2m5uq9ST9FfCanuvp78~qA5OIFapZw2-pWxZbks2NTGqZk9UhcfadV6HGRHEoDdgzXkuFyMgFbTAR2-EPi23ipkbJHQNZU4VWcEzgmYkOMpP1FZfPsxd06Mkbm~gfWOezVEg6VONCdNfJ3cVvNIaqwwvSFU5-GILHI--Yrd5UZwsRmHzTJag9obTV-n01lmsfu1m6GN3RHC1NXGieLVmPJ1Wb62zUQ4pZP24ImKw6fPHAAU6mRAXSEY3-Zt0SVeG7z8lRuY47tIwVI2BaQMfIpLBUKh9hXBaEHgisN3vGlRUh44laoWhI07shXBHWOGn0oebl3uV-u3I0i-QHSjw__" className="card-img-top" alt="Skyscrapers"/>
-      <div className="card-body">
-      <h5 className="card-title">
-      Shanghai, <span style={{fontFamily: 'Nunito Sans', fontWeight: 600, fontSize: '18px', lineHeight: '24.55px', color: '#605DEC'}}>China </span>           $598
-    </h5>        
-    <p className="card-text" >
-        An international city rich in culture    </p>
+  
+  
+  
+  <h5>Price history</h5>
+  <div className="Diagram">
+    <LineChart className="linechart"
+      width={500}
+      height={300}
+      data={data}
+      margin={{
+        top: 5, right: 30, left: 20, bottom: 5,
+      }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      {/* <XAxis dataKey="name" /> */}
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Line type="monotone" dataKey="price" stroke="#8884d8" activeDot={{ r: 8 }} 
+        shadow={{ stroke: 'PurpleBlue', strokeWidth: 10, opacity: 0.4 }} />
+    </LineChart>
+  </div>
+  
+  
+  <div className="flightpagemessage">
+  <h5 className="message">
+    Price Rating, 
+    <span style={{backgroundColor: '#5CD6C0', width: '100px', height: '26px', borderRadius: '4px', padding: '2px 8px', margin: '10px', display: 'inline-block'}}>
+      <span style={{fontFamily: 'Nunito Sans', fontWeight: 600, fontSize: '18px', lineHeight: '24.55px', color: '#FFFFFF'}}>Buy soon</span>
+    </span>           
+  </h5>
+  <p style={{fontFamily: 'Nunito Sans', fontWeight: 400, fontSize: '16px', lineHeight: '21.82px', margin: '8px', color: '#6E7491'}}>
+    We recommend booking soon. The average cost of this flight is $750, but could rise 18% to $885 in two weeks.</p>
+    <p style={{fontFamily: 'Nunito Sans', fontWeight: 400, fontSize: '16px', lineHeight: '21.82px', margin: '8px', color: '#A1B0CC'}}>
+    Tripma analyzes thousands of flights, prices, and trends to ensure you get the best deal.
+  </p>
+  
+  </div>
+        </div>
       </div>
-     
-    </div>
-  </div>
-  <div className="col-4">
-  <div className="card" >
-      <img style={{width:"397px",height:"410px"}}  src="https://s3-alpha-sig.figma.com/img/ca89/1425/cf94faaf7d2ea932cf5ce939144da65c?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FAX0ndMMeGWnaBHDMDb~Z2wtrZrnol8pR~VcynF4Dwdu-eo~0Ly235fkua6PzcYjlEStpKJ3umUhoIoeLvjeuSaEfgFJwjt8A2Iofd2b6uXnDnjUHyo71mHurxqIX~o-AWIp1ac6EWi1U9mGbdWuupnfYGjO1bPrLwvnhbwYjSqpj6iQFzVwSVco6U3ArOzByT8j6Uv2-g-mLqmFLC3pwu8Qz4yTZ8XeY8s1toUQ7pGFlnCD5obCMiggWcO7psk6QYwRig691OuYhDzPOadv~AZA04eiPs14DuitIoZ-joOu3r1EMJl5nMQ3L92CN0vqeK1H4VFq5K6JvQ7GHTEe2Q__" className="card-img-top" alt="Los Angeles Skyscrapers"/>
-      <div className="card-body">
-        <h5 className="card-title">Sydney Opera House, Sydney     $981</h5>
-        <p className="card-text">Take a stroll along the famous harbor    </p>
-      </div>
-     
-    </div>
-  </div>
-  <div className="col-4">
-  <div className="card">
-      <img  style={{width:"397px",height:"410px"}} src="https://s3-alpha-sig.figma.com/img/3fda/53a3/3484d5625d49b225735e042218c3677f?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=W7dS6We~OD~PLFDdWe5T~Wkv0uz~6jcZipCoMvY4~LdjAvayVROlPt1ofwnNSJBh24qQWnePRBHbAHL-jkD1iqgBOUSblggesmqU68g3ps7WuFkhXMZFnSTTUIAuN7kIhqjacUpmcjuZcWksI6bkfNoqHnZHlk4LsLbay8DxiQHhDXyurx2jGQezlYVlVyTTBFndWVCUOJbZJ2C5gR7HSspTSCi79gYwwliJ~5fDTOinB1sFOhkrA9YOYdfQTZkMyvp8go~CazaKbFi9fwrDyjPr7LStvxYZQ8CafUbEQO7NCDBK588wCdd2imjc7tjzYBvRC91IeVnhWKwvlqiKbg__" className="card-img-top" alt="Palm Springs Road"/>
-      <div className="card-body">
-        <h5 className="card-title">Kōdaiji Temple, Kyoto    $633</h5>
-        <p className="card-text">
-        Step back in time in the Gion district
-        </p>
-      </div>
-      
-    </div>
-  </div>
-</div> 
-  </div>
-    </div> // end of dd
-  )
-}
 
-export default Flights
+      {/* Additional JSX content */}
+      <div className="Ccards">
+        {/* Your additional card content JSX */}
+      </div>
+    </div>
+  );
+};
+
+export default Flights;
