@@ -29,4 +29,6 @@ export const { setFlights } = flightsSlice.actions;
 export default flightsSlice.reducer;
 export const { setShowAll } = flightsSlice.actions;
 export const{setSelectedFlight} = flightsSlice.actions;
+
 export const{setShowPaymentCard} = flightsSlice.actions;
+

@@ -9,11 +9,21 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import axios from 'axios';
 
 function SearchBar(props) {
-  // const [flights, setFlights] = useState([]);
+  const [flights, setFlights] = useState([]);
   const [departure, setDeparture] = useState('');
   const [destination, setDestination] = useState('');
 
-  console.log(props)
+  const searchFlights = async (departure, destination) => {
+    try {
+      const res = await axios.get(`http://localhost:3000/api/flight/${departure}/${destination}`);
+      setFlights(res.data);
+     
+
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
 
   return (
     <span className='filter'>
