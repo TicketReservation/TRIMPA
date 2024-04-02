@@ -1,7 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
 import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux'
 
 import './App.css';
@@ -22,11 +20,9 @@ import Confirmation from './compoents/confirmation';
 function App() {
   const dispatch = useDispatch();
   const flights = useSelector(state => state.flights.flights); 
+  console.log(flights)
   
   
-
-
- 
 
 
 
