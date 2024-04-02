@@ -4,10 +4,9 @@ import '../css/homePage.css'
 import axios from 'axios';
 
 
-function SignInBtn({toggle}) {
+function SignInBtn() {
 
     const [anchor, setAnchor] = React.useState(null);
-    const [id,setId]=React.useState(null)
 
     const handleClick = (event) => {
       setAnchor(anchor ? null : event.currentTarget);
@@ -43,7 +42,7 @@ function SignInBtn({toggle}) {
                 </a>
                 <BasePopup id={_id} open={open} anchor={anchor}>
     <div className='signIn'>
-    <form onSubmit={()=>{handleSubmit();toggle("profile")}} >
+    <form onSubmit={()=>handleSubmit()} >
       <h2>Sign in</h2>
       <br/> 
       <br/> 

@@ -39,7 +39,8 @@ function SignUpBtn() {
         ;
         setUrl(res.data.secure_url);
     };
-const handleSubmit = async () => {
+
+    const handleSubmit = async () => {
         await uploadImage();
         console.log("uploaded")
         axios.post("http://localhost:3000/api/user/register", {
