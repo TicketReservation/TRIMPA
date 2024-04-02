@@ -25,8 +25,7 @@ function Paye() {
     expiration_date: '',
     ccv: '',
     email_or_phone: '',
-    password: '',
-    amount:''
+    password: ''
   });
 
   const handleChange = (e) => {
@@ -38,7 +37,7 @@ function Paye() {
 
   const handlePayment =  (e) => {
     e.preventDefault()
-  axios.post('http://localhost:3000/api/payment/pay', formData).then((response)=>{
+  axios.post('http://localhost/api/payment/pay', formData).then((response)=>{
     console.log(response.data)
     const {result}=response.data
     window.location.href=result.link
@@ -82,16 +81,6 @@ function Paye() {
       </div>
       <div className="credit-card-details">
         <div className="credit-card-header">Credit card details</div>
-        <TextField
-          label="amount"
-          variant="outlined"
-          className="credit-card-input"
-          style={{ width: 500, marginBottom: 24 }}
-          name="amount"
-          value={formData.amount}
-          onChange={handleChange}
-        />
-        <br />
         <TextField
           label="Name on card"
           variant="outlined"
