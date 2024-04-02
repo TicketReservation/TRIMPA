@@ -34,3 +34,4 @@ export const fetchFlights = createAsyncThunk('flights/getFlights',async () => {
   //     console.log(err);
   //   }
   // }
+

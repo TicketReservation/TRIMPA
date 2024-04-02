@@ -1,0 +1,45 @@
+.visa{background-color:#ED5E76;
+width: 300px;
+height: 188px;
+color: white;
+text-align: start;}
+#visa{color: white;}
+#tt{width: 400px;}
+#paymenetMthd{
+    text-align: start;
+
+}
+#caardim{
+    width: 400px;
+    height: 330px;
+}
+#aa{
+    text-align: start;
+}
+.imgg{
+   
+    width: 765px;
+    height: 400px;
+}
+#email{
+    border-width: 3px;
+margin: 4px;}
+#inpt{
+    margin-top: 35px;
+}
+#bord{
+    text-align: center;
+    align-items: center;
+    color: #007B65;
+ border-color: green;
+border-width: 1px;
+border-style: solid;
+width: 1200px;
+}
+#bon{
+    text-align: start;
+    color:#605DEC;
+}
+#tata{
+    width: 1200px;
+}
