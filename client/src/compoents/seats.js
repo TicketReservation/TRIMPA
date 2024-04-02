@@ -56,7 +56,7 @@ return (
         </li>
         <li class="seatbusiness">
           <input type="checkbox" id="1B" />
-          <label onClick={() => { setname("1B");setvalid(!valid); settype("vip"); adddd() }} for="1B">1B</label>
+          {/* <label onClick={() => { setname("1B");setvalid(!valid); settype("vip"); adddd() }} for="1B">1B</label> */}
         </li>
         <li class="seatbusiness">
           <input type="checkbox" id="1C" />

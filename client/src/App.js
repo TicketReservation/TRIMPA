@@ -11,24 +11,24 @@ import Paye from './compoents/Paye';
 import Flights from './compoents/Flights'
 import Information from './compoents/Information';
 import Seats from './compoents/seats'
+// import confirmation from './compoents/confirmation';
 import SearchBar from './compoents/SearchBar';
-import UserInfo from './compoents/UserInfo';
 
 function App() {
   const [flights, setFlights] = useState([]);
 
-  useEffect(() => {
-    const flightList = () => {
-      axios.get("http://localhost:3000/api/flight")
-        .then((res) => {
-          console.log("App log", res);
-          const flightsdata = res.data;
-          setFlights(flightsdata);
-        })
-        .catch((error) => console.log(error));
-    };
-    flightList();
-  }, []);
+  // useEffect(() => {
+  //   const flightList = () => {
+  //     axios.get("http://localhost:3000/api/flight")
+  //       .then((res) => {
+  //         console.log("this is flights component data", res);
+  //         const flightsdata = res.data;
+  //         setFlights(flightsdata);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   };
+  //   flightList();
+  // }, []);
 
   
   const searchFlights = async (departure, destination) => {
@@ -41,18 +41,10 @@ function App() {
       console.log(err);
     }
   }
-
-
-  const [view,setView]=useState("main")
-
-
-  const switchView=(view)=>{
-    setView=view
-  }
   return (
     <div>
       <BrowserRouter>
-   
+          
 
         <Routes>
         <Route path="/" element={<AccPage />} />
@@ -60,9 +52,8 @@ function App() {
         <Route path="/flight" element={<FlightPage />} />
         <Route path="/information" element={<InfoPage />} />
         <Route path="/seats" element={<Seats />} />
-        <Route path="/hotels" element={<HotelPage />} />
 
-          <Route path="/profil" element={<ProfilePage />} />
+          <Route path="/hotels" element={<HotelPage />} />
           <Route path="/payment" element={<PayPgae />} />
         </Routes>
       </BrowserRouter>
@@ -73,10 +64,13 @@ function App() {
 function FlightPage() {
   return (
     <>
+
+
     <Header />
     <SearchBar searchFlights={searchFlights}/>
     <br/><br/>
      <Flights  flights={flights} />
+
      <br/>
       <Revieux /><br/>
       <Footer />
@@ -107,33 +101,13 @@ function InfoPage() {
 function AccPage() {
   return (
     <>
-    {/* <Header /> */}
-    <Header switchView={switchView}/>
-
-{view==="main"&&(
-  <div className="landing">
-  <p className='saying'>It's more than</p><p className='saying'> just a trip</p>
-  <SearchBar/>
-</div>
-)}
-{view==="update"&&(<UserInfo/>)}
-     {/* <MainPage /> */}
-    </>
-  );
-}
-
-
-function ProfilePage() {
-  return (
-    <>
     <Header />
-    <br/><br/>
-     
-    <UserInfo/>
-      <Footer />
+     <MainPage />
     </>
   );
 }
+
+
 
 function HotelPage() {
   return (

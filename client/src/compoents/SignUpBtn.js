@@ -75,4 +75,4 @@ const handleSubmit = async () => {
     );
 }
 
-export default SignUpBtn
+export default SignUpBtn;
