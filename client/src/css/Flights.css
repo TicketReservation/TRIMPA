@@ -38,7 +38,7 @@
 
 .flightsTable {
     width: 872px;
-    height: 456px;
+    height: 370px;
     top: 335px;
     left: 64px;
     border-radius: 12px;
@@ -50,7 +50,7 @@
     flex-direction: column;
   }
 
-.mah {
+
 .mah {
     border: none;
     width: 840px;

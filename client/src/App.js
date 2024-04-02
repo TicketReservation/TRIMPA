@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import axios from 'axios';
 import './App.css';
 import Header from './compoents/Header';
 import MainPage from './compoents/MainPage';
@@ -12,22 +12,12 @@ import Flights from './compoents/Flights'
 import Information from './compoents/Information';
 import Seats from './compoents/seats'
 // import confirmation from './compoents/confirmation';
+// import SearchBar from './compoents/SearchBar';
+
 
 function App() {
+  
   // const [flights, setFlights] = useState([]);
-
-  // useEffect(() => {
-  //   const flightList = () => {
-  //     axios.get("http://localhost:3000/api/flight")
-  //       .then((res) => {
-  //         console.log("this is flights component data", res);
-  //         const flightsdata = res.data;
-  //         setFlights(flightsdata);
-  //       })
-  //       .catch((error) => console.log(error));
-  //   };
-  //   flightList();
-  // }, []);
 
   return (
     <div>
@@ -48,27 +38,51 @@ function App() {
   );
 
 
-function FlightPage() {
-  return (
-    <>
-     <Flights  />
-     <br/>
-      <Revieux />
-      <Footer />
-    </>
-  );
-}
-
-
-
-function HotelPage() {
-  return (
-    <>
-      <FlightDeals />
-      <Revieux />
-      <Footer />
-    </>
-  );
-}
-}
+  function FlightPage() {
+    return (
+      <>
+      <Header />
+      {/* <SearchBar searchFlights={searchFlights}/> */}
+      <br/><br/>
+       <Flights />
+       <br/>
+        <Revieux /><br/>
+        <Footer />
+      </>
+    );
+  }
+  
+  // function InfoPage() {
+  //   return (
+  //     <>
+  //     <Header />
+  //     <br/><br/>
+  //       <Information />
+  //     </>
+  //   );
+  // }
+  
+  // function AccPage() {
+  //   return (
+  //     <>
+  //     <Header />
+  //      <MainPage />
+  //     </>
+  //   );
+  // }
+  
+  
+  
+  function HotelPage() {
+    return (
+      <>
+      <Header />
+      <br/><br/>
+        <FlightDeals />
+        <Revieux />
+        <Footer />
+      </>
+    );
+  }
+  }
 export default App;
