@@ -32,6 +32,7 @@ function App() {
           <Route path="/" element={<AccPage />} />
           <Route path="/flight" element={<FlightPage />} />
           <Route path="/confir" element={<ConfirPgae />} />
+          <Route path="/seats" element={<Seats />} />
 
           <Route path="/profil" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />
