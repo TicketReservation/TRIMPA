@@ -1,36 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import "../css/Flights.css";
 import { LineChart, Line, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import myImage from '../img/map.PNG';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchFlights } from '../actions/flightsActions'; 
 import { NavLink } from 'react-router-dom';
-
+import { setShowAll } from '../reducers/flightsReducer';
+import { setSelectedFlight } from '../reducers/flightsReducer';
+import { setShowPaymentCard } from '../reducers/flightsReducer';
 const Flights = () => {
   const dispatch = useDispatch();
   const flights = useSelector(state => state.flights.flights); 
+  const showAll = useSelector(state => state.flights.showAll); 
+const selectedFlight = useSelector(state => state.flights.selectedFlight);
+const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
   console.log("useSelector",flights);
 
-  
-  
-  
-  
-  
-  const [showAll, setShowAll] = useState(false);
-  const [selectedFlight, setSelectedFlight] = useState(null);
-  const [showPaymentCard, setShowPaymentCard] = useState(false);
-
-  
 
 
 
-const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slice(0,6)) : [];
+
+  const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slice(0,6)) : [];
   console.log(flightsToShow);
-
-
-
-
-
+  
+  
 
   useEffect(() => {
     dispatch(fetchFlights());
@@ -38,15 +31,16 @@ const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slic
 
 
 
-
-
-
   const handleCardClick = (flight) => {
-    setSelectedFlight(flight);
-    setShowPaymentCard(true);
+    dispatch(setShowAll(!showAll)); 
+    dispatch(setSelectedFlight(flight));
+    dispatch(setShowPaymentCard(true));
   };
+  
 
-
+  const handleShowAll = () => {
+    dispatch(setShowAll(!showAll));
+  };
 
 
 
@@ -60,7 +54,7 @@ const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slic
 
 
 
-  // Prepare the data for diagram
+/////////// Prepare the data for diagram
   let data = [];
   if (Array.isArray(flights)) {
     data = flights.map(flight => ({
@@ -68,8 +62,7 @@ const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slic
       price: flight.price
     }));
   }
-
-
+////////////////////////////////////////
 
 
 
@@ -170,11 +163,11 @@ const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slic
               );
             })}
           </div> 
-          <button className="buttonShowall" onClick={() => setShowAll(!showAll)}>
+          <button className="buttonShowall" onClick={handleShowAll}>
             {showAll ? 'Show less' : 'Show all flights'}
           </button>
           <div className="imagemap">
-            <img src={myImage} alt="Description of the image" />
+            <img src={myImage} alt="" />
           </div>
         </div>
 
@@ -355,6 +348,6 @@ const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slic
   );
 }
 
-export default Flights;
+
 
 export default Flights;
