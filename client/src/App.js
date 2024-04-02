@@ -54,7 +54,7 @@ function FlightPage() {
      <Flights  />
      <br/>
       <Revieux />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
