@@ -725,7 +725,7 @@ return (
     
   </div>
 </div>
-<div class="container">
+<div class="container-f">
     <div class="flight-info">
       <p>From: SFO, California, US</p>
       <p>To: NRT, Tokyo, Japan</p>

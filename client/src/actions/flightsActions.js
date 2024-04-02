@@ -1,6 +1,7 @@
 import axios from 'axios';
-// import { setFlights } from '../reducers/flightsReducer';
-// import { setShowAll } from '../reducers/flightsReducer';
+import { Dispatch } from 'redux';
+import { setFlights } from '../reducers/flightsReducer';
+import { setShowAll } from '../reducers/flightsReducer';
 import {createAsyncThunk  } from '@reduxjs/toolkit';
 
 export const fetchFlights = createAsyncThunk('flights/getFlights',async () => {
@@ -14,9 +15,9 @@ export const fetchFlights = createAsyncThunk('flights/getFlights',async () => {
   }
 })
 
-// export const showAllAsync = () => async (dispatch) => {
-//   dispatch(setShowAll(true));
-// };
+export const showAllAsync = () => async (dispatch) => {
+  dispatch(setShowAll(true));
+};
 
 
 
