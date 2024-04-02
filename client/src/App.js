@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux'
+
 import './App.css';
 import Profile from './compoents/Profile';
 import Header from './compoents/Header';
@@ -12,6 +14,7 @@ import Footer from './compoents/Footer';
 import Paye from './compoents/Paye';
 import Flights from './compoents/Flights';
 import Information from './compoents/Information';
+
 import Seats from './compoents/seats';
 import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
@@ -24,6 +27,8 @@ function App() {
 
 
  
+
+
 
   return (
     <div>
