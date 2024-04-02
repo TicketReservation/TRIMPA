@@ -24,10 +24,11 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
   console.log(flightsToShow);
   
   
-
   useEffect(() => {
     dispatch(fetchFlights());
   }, [dispatch]);
+  
+  console.log("flights",flights);
 
 
 
@@ -108,6 +109,11 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
           padding: '8px 12px 8px 16px',
         }}>
           <option value="Times">Times</option>
+          {Array.isArray(flights) && flights.map((flight, index) => (
+            <option key={index} value={flight.departure}>
+              {flight.departure}
+            </option>
+          ))}
         </select>
 
         <select style={{
@@ -118,6 +124,11 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
           padding: '8px 12px 8px 16px',
         }}>
           <option value="Airlines">Airlines</option>
+          {Array.isArray(flights) && flights.map((flight, index) => (
+            <option key={index} value={flight.companyName}>
+              {flight.companyName}
+            </option>
+          ))}
         </select>
 
         <select style={{
@@ -172,8 +183,8 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
         </div>
 
         <div className="leftSide">
-          {showPaymentCard ? (
-            selectedFlight && (
+          {showPaymentCard  ? (
+            selectedFlight (
               <li className="list-group-item">
                 <div className="paymentCard">
                 <img className="companyimage" src={selectedFlight.imgUrl} alt={selectedFlight.name} />
@@ -185,7 +196,7 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
                 </div>
               </li>
             )
-          ) : (
+          ) :  ( 
             <>
               <h5>Price grid (flexible dates)</h5>
               <div className="tableprice">

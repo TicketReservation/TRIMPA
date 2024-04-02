@@ -1,19 +1,22 @@
 import * as React from 'react';
-import { useState ,useEffect} from 'react';
+import { useState} from 'react';
 import "../css/homePage.css"
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import { SingleInputDateRangeField } from '@mui/x-date-pickers-pro/SingleInputDateRangeField';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import axios from 'axios';
 
-function SearchBar(props) {
+function SearchBar() {
+
+
+
+
   // const [flights, setFlights] = useState([]);
   const [departure, setDeparture] = useState('');
   const [destination, setDestination] = useState('');
 
-  console.log(props)
+
 
   return (
     <span className='filter'>
@@ -45,7 +48,7 @@ function SearchBar(props) {
         id='nbrInp'
         type="number"
       />
-      <button className="searchBtn" onClick={() => props.searchFlights(departure, destination)}>Search</button>
+      {/* <button className="searchBtn" onClick={() => searchFlights(departure, destination)}>Search</button> */}
 
     </span>
   );

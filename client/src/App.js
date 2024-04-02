@@ -12,7 +12,7 @@ import Flights from './compoents/Flights'
 import Information from './compoents/Information';
 import Seats from './compoents/seats'
 // import confirmation from './compoents/confirmation';
-// import SearchBar from './compoents/SearchBar';
+ import SearchBar from './compoents/SearchBar';
 
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
     return (
       <>
       <Header />
-      {/* <SearchBar searchFlights={searchFlights}/> */}
+      <SearchBar />
       <br/><br/>
        <Flights />
        <br/>
