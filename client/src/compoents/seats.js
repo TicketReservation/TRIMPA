@@ -3,6 +3,8 @@ import style from "../css/seats.css"
 import imagebus from "../img/BusinessSeats.jpg"
 import imageeco from "../img/EconomySeats.jpg"
 import axios from 'axios' 
+import { NavLink } from 'react-router-dom';
+
 
 function Seats (props){
 
@@ -35,7 +37,7 @@ const adddd =()=>{
       Type:type,
       valid:valid
   })
-}
+} 
 return (
     <div>
         <h1 class="trimpa">TRIMPA</h1>
@@ -763,8 +765,10 @@ and a multi-course meal service</p>
     <div class="passenger-info">
       <p class="passengerinfop">Passenger 1: Sofia Knowles</p>
       <p class="passengerinfop">Seat number: --</p>
-      <button class="save-close-btn">Save and close</button>
-      <button class="save-close-btn2">next flight</button>
+      {/* <button  class="save-close-btn"></button>
+      <button  class="save-close-btn2"></button> */}
+               <NavLink to="/" class="save-close-btn">Save and close</NavLink>
+                <NavLink to="/payment" class="save-close-btn2">next flight</NavLink>
     </div>
   </div>
 </div>

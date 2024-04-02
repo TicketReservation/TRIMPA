@@ -356,3 +356,5 @@ const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slic
 }
 
 export default Flights;
+
+export default Flights;

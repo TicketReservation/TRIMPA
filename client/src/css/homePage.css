@@ -1,4 +1,4 @@
- header{
+ /* header{
     background-color: 	#8A2BE2;
     color: white;
     display: flex;
@@ -10,7 +10,62 @@
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
+} */
+
+
+
+
+
+
+
+
+
+/* homePage.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  color:#605DEC;
+  padding: 10px 20px;
 }
+
+.trimpa {
+  margin: 0;
+}
+
+.topnav {
+  display: flex;
+}
+
+.nav {
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.nav:last-child {
+  margin-right: 0;
+}
+
+.SignInBtn,
+.SignUpBtn {
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .topnav #log {
     float: left;
     color: grey;

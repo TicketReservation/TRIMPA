@@ -18,7 +18,7 @@ function Information() {
 
 
   return (
-    <div className="container">
+    <div className="container   aazaz"   >
       <h4>Passenger information</h4>
       <p>
         Enter the required information for each traveler and be sure that it exactly 
@@ -112,9 +112,9 @@ function Information() {
             </div>
             <br />
             
-            <a href='/'>Save and close</a>
+            <a href='/'>Save and close</a>   <a href='/seats'>Select seats</a>
             <br></br>
-            <a href='/seats'>Select seats</a>
+            
           </div>
         </form>
       </div>

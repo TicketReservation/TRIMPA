@@ -28,6 +28,7 @@
 
 
 
+
 .bodyPage{
     display: flex;
     flex-direction: row;
@@ -49,6 +50,7 @@
     flex-direction: column;
   }
 
+.mah {
 .mah {
     border: none;
     width: 840px;
