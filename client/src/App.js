@@ -12,7 +12,6 @@ import Footer from './compoents/Footer';
 import Paye from './compoents/Paye';
 import Flights from './compoents/Flights';
 import Information from './compoents/Information';
-
 import Seats from './compoents/seats';
 import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
@@ -61,12 +60,14 @@ function App() {
   function FlightPage() {
     return (
       <>
-        <Header />
-        <SearchBar />
-        <br /><br />
-       <Flights flights={flights} /> 
-        <br />
-        <Revieux /><br />
+
+      <Header />
+      <SearchBar />
+      <br/><br/>
+       <Flights />
+       <br/>
+        <Revieux /><br/>
+
         <Footer />
 
       </>
