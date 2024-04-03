@@ -1,5 +1,18 @@
-import { createSlice  } from '@reduxjs/toolkit';
-import {fetchFlights} from '../actions/flightsActions';
+
+import { createSlice,createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+// import {fetchFlights} from "../actions/flightsActions"
+export  const fetchFlights = createAsyncThunk("/fetchFlights", async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/api/flight');
+    console.log("action response",response)
+return response.data
+    // return response.data
+  } catch (error) {
+    console.error('Failed to fetch flights', error);
+    // return error 
+  }
+})
 
 export const flightsSlice = createSlice({
   name: 'flights',

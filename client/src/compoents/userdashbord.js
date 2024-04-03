@@ -33,8 +33,13 @@ function UserDashboard(props) {
       <li className="user-item">
       <img className='user-image' src={user.picture} alt="User"></img>
       <div className='user-details'>
-        <h1 className='user-name'>NAME :{user.Name} ---- EMAIL:{user.email} ---- PASSWORD:{user.password}</h1>
-        {/* <p className='user-name'>{user.email}</p> */}
+        <h1 className='user-name'> <h3> NAME  :</h3>  {user.Name} </h1><hr></hr>
+        <h1 className='user-name'><h3> EMAIL  :</h3>  {user.email} </h1><hr></hr>
+        <h1 className='user-name'><h3> PASSWORD  :</h3>  {user.password} </h1><hr></hr>
+        
+        
+
+        
 
         <button onClick={()=>props.deletee(user.id)}>Delete</button>
         
@@ -53,4 +58,4 @@ function UserDashboard(props) {
   );
 }
 
-export default UserDashboard;
+export default UserDashboard
