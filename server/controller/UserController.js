@@ -1,4 +1,3 @@
-
 const db = require('../Database/index')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -43,7 +42,8 @@ try {
         res.status(500).json({ error: 'Registration failed' });
       }
     },
-getOne: async (req, res) => {
+
+    getOne: async (req, res) => {
       try {
         const _id= req.params.id 
         const user = await db.User.findOne({ where: { id:_id} });
@@ -62,8 +62,7 @@ getOne: async (req, res) => {
         throw error
     }
 },
-
-    login: async (req, res) => {
+login: async (req, res) => {
       try {
         const { email, password } = req.body;
         const user = await db.User.findOne({ where: { email } });
@@ -85,14 +84,7 @@ getOne: async (req, res) => {
       }
     },
 
-  updateOOne:async(req,res)=>{
-    try {
-      const user=await db.User.update({where:{id:req.params.id}})
-      res.json(user)
-    } catch (error) {
-      throw error
-    }
-  },
+
 //
 updateOne : async (req, res) => {
   try {
