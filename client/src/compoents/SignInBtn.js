@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 import '../css/homePage.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 function SignInBtn() {
+
+     const [anchor, setAnchor] = useState(null);
+     const navigate=useNavigate()
+      const url="http://localhost:3000/api/admin/login"
+
+function SignInBtn({ toggle }) {
+
      const [anchor, setAnchor] = useState(null);
      const navigate=useNavigate()
       const url="http://localhost:3000/api/admin/login"
@@ -82,4 +90,6 @@ function SignInBtn({ toggle }) {
   );
 }}
 
+
 export default SignInBtn
+

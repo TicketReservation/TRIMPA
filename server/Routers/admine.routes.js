@@ -7,7 +7,6 @@ router.post('/login', adminController.login);
 router.post('/signup', adminController.signup);
 
 
+
 module.exports = router;
 
-
-module.exports=router;
