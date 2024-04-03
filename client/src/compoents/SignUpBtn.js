@@ -1,17 +1,17 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 import '../css/homePage.css';
 import axios from 'axios';
 
 function SignUpBtn() {
-    const [anchor, setAnchor] = React.useState(null);
-    const [signUp, setSignUp] = React.useState({
+    const [anchor, setAnchor] = useState(null);
+    const [signUp, setSignUp] = useState({
         Name: "",
         email: "",
         password: ""
     });
-    const [image, setImage] = React.useState(null);
-    const [url, setUrl] = React.useState("");
+    const [image, setImage] = useState(null);
+    const [url, setUrl] = useState("");
 
     const handleClick = (event) => {
         setAnchor(anchor ? null : event.currentTarget);
@@ -30,30 +30,36 @@ function SignUpBtn() {
     const handleImage = (e) => {
         setImage(e.target.files[0]);
     };
-
-    const uploadImage = async () => {
-        const form = new FormData();
-        form.append("file", image);
-        form.append("upload_preset", "tripma");
-        const res = await axios.post("https://api.cloudinary.com/v1_1/dockwpvkl/upload", form);
-        ;
-        setUrl(res.data.secure_url);
+const uploadImage = async () => {
+        try {
+            const form = new FormData();
+            form.append("file", image);
+            form.append("upload_preset", "tripma"); 
+            const res = await axios.post("https://api.cloudinary.com/v1_1/dockwpvkl/upload", form);
+            setUrl(res.data.secure_url);
+            console.log("Image uploaded successfully");
+        } catch (error) {
+            console.error("Error uploading image:", error);
+        }
     };
 
-    const handleSubmit = async () => {
-        await uploadImage();
-        console.log("uploaded")
-        axios.post("http://localhost:3000/api/user/register", {
-            ...signUp,
-            picture: url
-        })
-        .then(res =>console.log("signed", res))
-        .catch(err => console.log(err, "err"));
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await uploadImage();
+            const response = await axios.post("http://localhost:3000/api/user/register", {
+                ...signUp,
+                picture: url
+            });
+            console.log("User signed up:", response.data);
+        } catch (error) {
+            console.log("Error during signup:", error);
+        }
     };
 
     return (
         <div>
-            <a onClick={handleClick} className="active" id="log" href="#Sign in">
+<a onClick={handleClick} className="active" id="log" href="#Sign in">
                 Sign up
             </a>
             <BasePopup id={id} open={open} anchor={anchor}>
@@ -76,4 +82,4 @@ function SignUpBtn() {
     );
 }
 
-export default SignUpBtn;
+export default SignUpBtn

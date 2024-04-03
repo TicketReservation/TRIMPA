@@ -29,15 +29,15 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<AccPage />} /> */}
+          <Route path="/" element={<AccPage />} />
           <Route path="/flight" element={<FlightPage />} />
-          {/* <Route path="/confir" element={<ConfirPgae />} />
+          <Route path="/confir" element={<ConfirPgae />} />
 
           <Route path="/profil" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />
           <Route path="/seats" element={<Seats />} />
           <Route path="/hotels" element={<HotelPage />} />
-          <Route path="/payment" element={<Paye />} /> */}
+          <Route path="/payment" element={<Paye />} />
         </Routes>
       </BrowserRouter>
     </div>
