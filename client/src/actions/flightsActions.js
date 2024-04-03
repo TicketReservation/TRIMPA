@@ -1,32 +1,27 @@
 import axios from 'axios';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { Dispatch } from 'redux';
-import { setFlights } from '../reducers/flightsReducer';
-import { setShowAll } from '../reducers/flightsReducer';
-import {createAsyncThunk  } from '@reduxjs/toolkit';
-=======
-import { setFlights } from '../reducers/flightsReducer';
-import { setShowAll } from '../reducers/flightsReducer';
->>>>>>> 8c67ef4b25af1432ebce95c525f93889800ecea7
-=======
-import { setFlights } from '../reducers/flightsReducer';
-import { setShowAll } from '../reducers/flightsReducer';
->>>>>>> efa029367085abaa947a529cc4de77528611f019
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchFlights = () => async (dispatch) => {
+// import { setFlights } from '../reducers/flightsReducer';
+// import { setShowAll } from '../reducers/flightsReducer';
+
+
+
+ export const fetchFlights = createAsyncThunk("/fetchFlights", async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/flight');
-    dispatch(setFlights(response.data));
+    // const response = await axios.get('http://localhost:3000/api/flight');
+   const response =await  axios.get(`http://localhost:3000/api/booking`)
     console.log("action response",response)
+return response.data
+    // return response.data
   } catch (error) {
     console.error('Failed to fetch flights', error);
+    // return error 
   }
-};
+})
 
-export const showAllAsync = () => async (dispatch) => {
-  dispatch(setShowAll(true));
-};
+// export const showAllAsync = () => async (dispatch) => {
+//   dispatch(setShowAll(true));
+// };
 
 
 
