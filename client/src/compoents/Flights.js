@@ -5,10 +5,10 @@ import myImage from '../img/map.PNG';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchFlights } from '../actions/flightsActions'; 
 import { NavLink } from 'react-router-dom';
-// import { setShowAll } from '../reducers/flightsReducer';
-// import { setSelectedFlight } from '../reducers/flightsReducer';
-// import { setShowPaymentCard } from '../reducers/flightsReducer';
-const FlightsComp = () => {
+import { setShowAll } from '../reducers/flightsReducer';
+import { setSelectedFlight } from '../reducers/flightsReducer';
+import { setShowPaymentCard } from '../reducers/flightsReducer';
+const Flights = () => {
   const dispatch = useDispatch();
   const flights = useSelector((state) => {
     console.log(state);
@@ -17,13 +17,12 @@ const FlightsComp = () => {
   const showAll = useSelector(state => state.flights.showAll); 
 const selectedFlight = useSelector(state => state.flights.selectedFlight);
 const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
-  
 
 
 
   useEffect(() => {
   dispatch(fetchFlights())
-  }, []);
+  }, [ dispatch]);
 
 
   const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slice(0,6)) : [];
@@ -35,20 +34,20 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
 
 
   const handleCardClick = (flight) => {
-    // dispatch(setShowAll(!showAll)); 
-    // dispatch(setSelectedFlight(flight));
-    // dispatch(setShowPaymentCard(true));
+    dispatch(setShowAll(!showAll)); 
+    dispatch(setSelectedFlight(flight));
+    dispatch(setShowPaymentCard(true));
   };
   
 
   const handleShowAll = () => {
-    // dispatch(setShowAll(!showAll));
+    dispatch(setShowAll(!showAll));
   };
 
 
 
   const handlePriceButtonClick = (flight) => {
-    // setSelectedFlight(selectedFlight === flight ? null : flight);
+    setSelectedFlight(selectedFlight === flight ? null : flight);
   };
 
 
@@ -115,6 +114,16 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
           padding: '8px 12px 8px 16px',
         }}>
           <option value="Times">Times</option>
+          {Array.isArray(flights) && flights.map((flight, index) => {
+  const departureDate = new Date(flight.departure);
+  const formattedDate = `${departureDate.getDate()}/${departureDate.getMonth()+1}/${departureDate.getFullYear()}`;
+
+  return (
+    <option key={index} value={flight.departure}>
+      {formattedDate}
+    </option>
+  );
+})}
         </select>
 
         <select id="airlines" style={{
@@ -125,6 +134,11 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
           padding: '8px 12px 8px 16px',
         }}>
           <option value="Airlines">Airlines</option>
+          {Array.isArray(flights) && flights.map((flight, index) => (
+            <option key={index} value={flight.companyName}>
+              {flight.companyName}
+            </option>
+          ))}
         </select>
 
         <select id="seatsClass"
@@ -360,4 +374,4 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
 
 
 
-export default FlightsComp;
+export default Flights;
