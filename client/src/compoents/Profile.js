@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import '../css/profile.css';
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
-
 
 function Profile() {
   const [id, setId] = useState(null);
   const [update, setUpdate] = useState({
-    name: "",
+    Name: "",
     email: "",
-    password: "", 
+    password: "",
     picture: null
   });
 
@@ -16,21 +16,23 @@ function Profile() {
     handleData();
   }, [id]);
 
-  const handleData = async () => {
+  const handleData = () => {
     const token = localStorage.getItem("jwtToken");
     const decoded = jwtDecode(token);
-    setId(decoded.id);
+    const userId = decoded.id;
 
-    try {
-      const response = await axios.get(`http://localhost:3000/api/user/${decoded.id}`);
-      setUpdate(response.data);
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-    }
+    setId(userId); 
+
+    axios.get(`http://localhost:3000/api/user/${userId}`)
+      .then(res => {
+        setUpdate(res.data);
+      })
+      .catch(err => console.log(err));
   };
 
+
   const uploadImage = async () => {
-    if (!update.picture) return null;
+    if (!update.picture) return;
 
     const formData = new FormData();
     formData.append("file", update.picture);
@@ -40,21 +42,18 @@ function Profile() {
       const response = await axios.post("https://api.cloudinary.com/v1_1/dockwpvkl/upload", formData);
       return response.data.secure_url;
     } catch (error) {
-      console.error("Error uploading image:", error);
+      console.log(error);
       return null;
     }
   };
 
   const handleImage = (e) => {
-    setUpdate(prevUpdate => ({
-      ...prevUpdate,
+    setUpdate({
+      ...update,
       picture: e.target.files[0]
-    }));
+    });
   };
-
-  const handleUpdate = async (e) => {
-    e.preventDefault();
-
+const handleUpdate = async () => {
     try {
       const imageUrl = await uploadImage();
       const updatedData = { ...update };
@@ -62,43 +61,36 @@ function Profile() {
       if (imageUrl) {
         updatedData.picture = imageUrl;
       }
-
-      await axios.put(`http://localhost:3000/api/user/profile/${id}`, updatedData);
+      
+      await axios.put(`http://localhost:3000/api/user/${id}`, updatedData);
       handleData();
-      // Clear input fields
-      setUpdate({
-        name: "",
-        email: "",
-        password: "",
-        picture: null
-      });
     } catch (error) {
-      console.error("Error updating profile:", error);
+      console.log("error",error);
     }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUpdate(prevUpdate => ({
-      ...prevUpdate,
+    setUpdate({
+      ...update,
       [name]: value
-    }));
+    });
   };
 
 
   return (
     <div className='updateProfile'>
-      <form onSubmit={handleUpdate}>
+      <form onSubmit={(e) => { e.preventDefault(); handleUpdate();handleData() }}>
         <h2>Update Profile</h2>
         <span className='NameEmail'>
           <label htmlFor="name">Name</label><br />
-          <input type="text" value={update.name} id="name" name="name" onChange={handleChange} required />
+          <input type="text" value={update.Name} id="name" name="Name" onChange={handleChange} required />
           <label htmlFor="email">Email</label><br />
           <input type="email" value={update.email} id="email" name="email" onChange={handleChange} required />
         </span>
         <span className='PasswordPicture'>
           <label htmlFor="password">Password</label><br />
-          <input type="password" placeholder='new password' id="password" name="password" onChange={handleChange} required /><br />
+          <input type="password" value={update.password} placeholder='new password' id="password" name="password" onChange={handleChange} required /><br />
           <label htmlFor="picture">Picture</label><br />
           <img src={update.picture} alt="User" /><br />
           <input type="file" id="picture" name="picture" onChange={handleImage} /><br /><br />
@@ -109,4 +101,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Profile

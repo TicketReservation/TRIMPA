@@ -31,14 +31,12 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
   
 
 
-
-
   const handleCardClick = (flight) => {
     dispatch(setShowAll(!showAll)); 
     dispatch(setSelectedFlight(flight));
     dispatch(setShowPaymentCard(true));
   };
-  
+
 
   const handleShowAll = () => {
     dispatch(setShowAll(!showAll));
@@ -51,11 +49,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
   };
 
 
-
-
-
-
-
 /////////// Prepare the data for diagram
   let data = [];
   if (Array.isArray(flights)) {
@@ -65,13 +58,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
     }));
   }
 ////////////////////////////////////////
-
-
-
-
-
-
-
   return (
     <div className="dd">
       <div className="FilterBar">
@@ -91,7 +77,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
             </option>
           ))}
         </select>
-
         <select id="shops"
          style={{
           width: '120px',
@@ -102,7 +87,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
         }}>
           <option value="Shops">Shops</option>
         </select>
-
         <select id="times"
         
         
@@ -151,7 +135,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
         }}>
           <option value="SeatsClass">Seats Class</option>
         </select>
-
         <select 
         id="more" 
         style={{
@@ -164,7 +147,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
           <option value="More">More</option>
         </select>
       </div>
-
       <div className="bodyPage"> 
         <div className="rigtside">
           <h5>Choose a departing flight</h5>
@@ -172,7 +154,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
             {flightsToShow.map((flight) => {
               const departureDate = new Date(flight.departure);
               const formattedDepartureDate = departureDate.toLocaleDateString();
-
               return (
                 <div className="cardofFlight" style={{ transform: selectedFlight === flight ? 'scale(0.95)' : 'scale(1)' }} onClick={() => handleCardClick(flight)} key={flight.id}>
                   <ul className="list-group list-group-flush">
@@ -194,7 +175,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
             <img src={myImage} alt="" />
           </div>
         </div>
-
         <div className="leftSide">
           {showPaymentCard ? (
             selectedFlight && (
@@ -243,7 +223,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
                   </tbody>
                 </table>
               </div>
-
               <h5>Price history</h5>
               <div className="Diagram">
                 <LineChart
@@ -271,7 +250,6 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
                   />
                 </LineChart>
               </div>
-
               <div className="flightpagemessage">
                 <h5 className="message">
                   Price Rating,
@@ -328,10 +306,8 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
           )}
         </div>
       </div>
-
       <div className="Ccards">
         <h5> People in San Francisco also searched for </h5>
-
         <div className="row">
           <div className="col-4">
             <div className="card">
@@ -371,7 +347,5 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
     </div>
   );
 }
-
-
 
 export default Flights;

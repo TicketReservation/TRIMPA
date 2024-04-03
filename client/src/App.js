@@ -14,6 +14,7 @@ import Information from './compoents/Information';
 import Seats from './compoents/seats';
 import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
+import Secondseats from './compoents/Secondseats';
 
 function App() {
 
@@ -29,17 +30,29 @@ function App() {
           <Route path="/" element={<AccPage />} />
           <Route path="/flight" element={<FlightPage />} />
           <Route path="/confir" element={<ConfirPgae />} />
+          <Route path="/Second" element={<SecPage />} />
 
           <Route path="profile" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />
-          <Route path="/seats" element={<Seats />} />
+          <Route path="/seats" element={<SeatPage />} />
           <Route path="/hotels" element={<HotelPage />} />
           <Route path="/payment" element={<Paye />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
-
+  function SeatPage() {
+    return (
+      < Seats/>
+    );
+  }
+  function SecPage() {
+    return (
+      
+        < Secondseats/>
+        
+    );
+  }
 
   function ConfirPgae() {
     return (
