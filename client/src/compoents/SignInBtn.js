@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 import '../css/homePage.css';
@@ -27,8 +25,7 @@ function SignInBtn({ toggle }) {
       [e.target.id]: e.target.value
     });
   };
-
-  const handleSubmit = (event) => {
+const handleSubmit = (event) => {
     axios.post("http://localhost:3000/api/user/login", signIn)
       .then(res => {
         const token = res.data.token;
@@ -56,8 +53,7 @@ function SignInBtn({ toggle }) {
           <form onSubmit={()=>{handleSubmit();toggle("profile")}}>
             <h2>Sign in</h2>
             <label htmlFor="email">Email</label>
-            <input type="email" onChange={handleInput} value={signIn.email} id="email"
-name="email" required />
+            <input type="email" onChange={handleInput} value={signIn.email} id="email" name="email" required />
             <label htmlFor="password">Password</label>
             <input type="password" onChange={handleInput} value={signIn.password} id="password" name="password" required />
             <button type="submit" className='signInBtn'>Sign in</button>
@@ -68,4 +64,4 @@ name="email" required />
   );
 }
 
-export default SignInBtn
+export default SignInBtn;

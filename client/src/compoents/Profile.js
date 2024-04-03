@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import '../css/profile.css';
 import axios from 'axios';
-
+import { jwtDecode } from "jwt-decode";
 function Profile() {
+  const [id,setId]=useState(null)
   const [update, setUpdate] = useState({
     Name: "",
     email: "",
@@ -11,11 +13,15 @@ function Profile() {
 
 
 
-  useEffect(() => {
-    handleData(4);
-  }, []);
+  useEffect(() => 
+    handleData(id)
+  , []);
 
-  const handleData = (id) => {
+  const handleData = () => {
+    const token=localStorage.getItem("jwtToken")
+    const decoded=jwtDecode(token)
+    console.log(decoded,'decoded');
+    setId(decoded.id)
     axios.get(`http://localhost:3000/api/user/${id}`)
       .then(res => {
         setUpdate(res.data)
@@ -32,23 +38,26 @@ function Profile() {
     const response = await axios.post("https://api.cloudinary.com/v1_1/dockwpvkl/upload", formData);
     return response.data.secure_url;
   };
-
-  const handleImage = (e) => {
+const handleImage = (e) => {
     setUpdate({
       ...update,
       picture: e.target.files[0]
     });
   };
 
-  const handleUpdate = async (id) => {
+  const handleUpdate = async () => {
     try {
       const imageUrl = await uploadImage();
       const updatedData = { ...update };
       if (imageUrl) {
         updatedData.picture = imageUrl;
       }
+      const token=localStorage.getItem("jwtToken")
+      const decoded=jwtDecode(token)
+    console.log(decoded,'decoded');
+    setId(decoded.id)
       await axios.put(`http://localhost:3000/api/user/profile/${id}`, updatedData);
-      handleData(id)
+      handleData(id);
     } catch (error) {
       console.log(error);
     }
@@ -61,9 +70,11 @@ function Profile() {
       [name]: value
     });
   };
-return (
+
+
+  return (
     <div className='updateProfile'>
-      <form onSubmit={(e) => { e.preventDefault(); handleUpdate(4); }}>
+      <form onSubmit={() => handleUpdate() }>
         <h2>Update Profile</h2>
         <span className='NameEmail'>
           <label htmlFor="name">Name</label><br />
@@ -84,4 +95,4 @@ return (
   );
 }
 
-export default Profile
+export default Profile;

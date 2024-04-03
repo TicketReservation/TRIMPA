@@ -11,10 +11,10 @@ function UserInfo() {
     const decoded = jwtDecode(token);
     console.log(decoded, 'decoded');
     setId(decoded.id);
-    axios.get(`http://localhost:3000/api/user/${decoded.id}`)
+    axios.get(`http://localhost:3000/api/user/${id}`)
       .then(res => {
         console.log('dataaaaa',res.data);
-        setData(res.data); // Set the retrieved data to the state
+        setData(res.data);
       })
       .catch(err => console.log(err));
   };
