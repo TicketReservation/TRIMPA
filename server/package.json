@@ -33,6 +33,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.15.0",
     "html-react-parser": "^5.1.9",
     "jquery": "^3.1.1",
