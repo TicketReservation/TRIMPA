@@ -27,7 +27,6 @@ function SignInBtn({ toggle }) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
     axios.post("http://localhost:3000/api/user/login", signIn)
       .then(res => {
         const token = res.data.token;
@@ -52,7 +51,7 @@ function SignInBtn({ toggle }) {
       </a>
       <BasePopup id={_id} open={open} anchor={anchor}>
         <div className='signIn'>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={()=>{handleSubmit();toggle("profile")}}>
             <h2>Sign in</h2>
             <label htmlFor="email">Email</label>
             <input type="email" onChange={handleInput} value={signIn.email} id="email" name="email" required />
