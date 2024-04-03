@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import SignInBtn from './SignInBtn.js';
 import SignUpBtn from './SignUpBtn.js';
 import { NavLink } from 'react-router-dom';
-import UserInfo from './UserInfo.js';
 
-function Header({switchView}) {
+function Header() {
     const [view, setView] = useState("main");
 
     const toggle = (view) => {
@@ -34,12 +33,19 @@ function Header({switchView}) {
                 </>
             )}
             {view === "profile" && (
-                <span className='topnav'>
-                    <NavLink onClick={()=>switchView("update")} id='nav'>Profile</NavLink>
-                    <a id='nav'onClick={()=>{logOut();toggle("main")}}>logout</a>
+                <>
+                <span>
+                    <NavLink className="trimpa">Tripma</NavLink>
                 </span>
+                <div className='topnav'>
+                    <NavLink to="/flight" id="nav">Flights</NavLink>
+                    <NavLink to="/hotels" id="nav">Hotels</NavLink>
+                    <NavLink to="/packages" id="nav">Packages</NavLink>
+                    <NavLink to='profile' id='nav'>Profile</NavLink>
+                    <a id='nav'onClick={()=>{logOut();toggle("main")}}>logout</a>
+                </div>
+                </>
             )}
-            {view==="update"&&<UserInfo/>}
         </div>
     );
 }
