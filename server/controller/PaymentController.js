@@ -9,7 +9,7 @@ module.exports = {
       "amount": req.body.amount,
       "accept_card": "true",
       "session_timeout_secs": 1200,
-      "success_link": "http://localhost:3000/client/cart/success",
+      "success_link": "http://localhost:3001/confir",
       "fail_link": "http://localhost:3000/client/cart/fail",
       "developer_tracking_id": "8761617a-e86c-4462-a4a5-85a7ac3ba3c0"
     };

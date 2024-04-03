@@ -10,27 +10,12 @@ function UserDashboard(props) {
    
     
    
-    
-      //  const renderView = () => {
-      //   if (view === "FlightDashboard") {
-      //     return <FlightDashboard changeView={changeView} />;
-      //   }
-      //   else if (view === "StaticsDashboard"){
-      //   return <StaticsDashboard changeView={changeView} />
-      //   }
-      //   else if (view === "UserDashboard"){
-      //       return <UserDashboard changeView={changeView} data={data} deletee={deletee} add={add} />
-      //       }
-      //       else if (view === "add"){
-      //           return <Adduser changeView={changeView} data={data} deletee={deletee} add={add} />
-      //           }
-      //     }
   return (
     <div className="admin-dashboard">
     <div className="sidebarr">
       
       
-
+        {/* <button>Dashboard</button><br></br> */}
         <button onClick={()=>props.changeView("UserDashboard")}>USERS</button><br></br>
         <button  onClick={()=>props.changeView("FlightDashboard")}>FLIGHTS</button><br></br>
         <button onClick={()=>props.changeView("StaticsDashboard")}>STATISTICS</button><br></br>
@@ -41,30 +26,36 @@ function UserDashboard(props) {
     <button onClick={()=>props.changeView("add")}>ADD USER</button>
     <div  className="div1"> 
     <ul>
+    {console.log(props.data)}
 
     {props.data.map((user) =>
     <div key={user.id}>
       <li className="user-item">
       <img className='user-image' src={user.picture} alt="User"></img>
       <div className='user-details'>
-        <h1 className='user-name'>NAME :{user.Name} ---- EMAIL:{user.email} ---- PASSWORD:{user.password}</h1>
-     
+        <h1 className='user-name'> <h3> NAME  :</h3>  {user.Name} </h1><hr></hr>
+        <h1 className='user-name'><h3> EMAIL  :</h3>  {user.email} </h1><hr></hr>
+        <h1 className='user-name'><h3> PASSWORD  :</h3>  {user.password} </h1><hr></hr>
+        
+        
+
+        
 
         <button onClick={()=>props.deletee(user.id)}>Delete</button>
         
 
       </div>
     </li>
-    
+      
       </div>
     )}
     </ul>
 
 
     </div>
-  
+    
     </div></div>
   );
 }
 
-export default UserDashboard;
+export default UserDashboard

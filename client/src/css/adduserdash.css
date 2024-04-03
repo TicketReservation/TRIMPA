@@ -1,38 +1,42 @@
-
-body {
-    background-color: #b99ed2; /* Set background color for the entire page */
-}
-
 .form-container {
-    display: flex;
-    flex-direction: column; /* Arrange items vertically */
-    max-width: 400px; /* Adjusted maximum width */
-    margin: 0 auto; /* Center the form horizontally */
-    padding: 20px; /* Added padding for better spacing */
-    border: 1px solid #000000; /* Added border around the form */
-    border-radius: 8px; /* Optional: Add border radius */
-    background-color: #8A2BE2; /* Added background color for the page */
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    background-color: #8A2BE2;
 }
 
-/* Style for individual input fields */
 .form-container input[type="text"],
-.form-container input[type="email"] {
-    margin-bottom: 15px; /* Increased space between input fields */
-    padding: 12px; /* Adjusted padding */
-    border: 2px solid #ccc; /* Added border to the input fields */
-    border-radius: 6px; /* Optional: Add border radius */
-    font-size: 16px; /* Adjusted font size */
-    width: 100%; /* Added to make input fields wider */
+.form-container input[type="email"],
+.form-container input[type="date"],
+.form-container input[type="number"] {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
-/* Style for the button */
+.form-container h4 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
 .form-container button {
-    padding: 12px 24px; /* Adjusted padding */
-    background-color: #240a3c; /* Optional: Change button color */
-    color: #fff; /* Optional: Change text color */
-    border: none; /* Optional: Remove border */
-    border-radius: 6px; /* Optional: Add border radius */
+    padding: 12px 24px;
+    background-color: #240a3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px; /* Adjusted font size */
-    width: 100%; /* Added to make button wider */
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease; /* Add smooth transition effect */
+}
+
+.form-container button:hover {
+    background-color: #48137a; /* Darker color on hover */
 }

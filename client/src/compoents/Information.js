@@ -67,7 +67,7 @@
 //               </div>
 =======
   return (
-    <div className="container">
+    <div className="container   aazaz"   >
       <h4>Passenger information</h4>
       <p>
         Enter the required information for each traveler and be sure that it exactly 
@@ -116,6 +116,7 @@
               </div>
 >>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
               
+<<<<<<< HEAD
 //               <br />
 //             </div>
 //           </div>
@@ -168,5 +169,62 @@
 //     </div>
 //   );
 // }
+=======
+              <br />
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <h4>Emergency contact information</h4>
+          <div>
+            <p>
+              <input type="checkbox" name="sameAsPassenger1" id="sameAsPassenger1" />
+              Same as Passenger 1
+            </p>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <div className="md-form mb-0">
+                <input type="text" name="emergencyFirstName" placeholder="First name*" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text" name="emergencyLastName" placeholder="Last Name*" className="form-control" />
+              </div>
+              <br />
+            </div>
+            <div className="col-md-6">
+              <div className="md-form mb-0">
+                <input type="text" name="emergencyEmail" placeholder="Email address*" className="form-control" />
+              </div>
+              <br />
+              <div className="md-form mb-0">
+                <input type="text" name="emergencyPhoneNumber" placeholder="Phone number" className="form-control" />
+              </div>
+              <br />
+            </div>
+          </div>
+          <h4>Bag information</h4>
+          <p>
+            Each passenger is allowed one free carry-on bag and one personal item. First checked bag for each passenger is also free.
+            Second bag check fees are waived for loyalty program members. See the full bag policy.
+          </p>
+          <div>
+            <div>
+              First Last <button onClick={mns}>-</button> {comteur}<button onClick={pls}>+</button>
+            </div>
+            <br />
+            
+            <a href='/'>Save and close</a>   <a href='/seats'>Select seats</a>
+            <br></br>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+>>>>>>> b949f90d42aff9e80b9b4d3eeb86efa0dc582ec9
 
 // export default Information;

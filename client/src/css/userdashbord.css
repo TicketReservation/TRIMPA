@@ -16,10 +16,31 @@
     font-weight: bold; 
     color: #333;
   } */
+  hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Set the height */
+    background-color: #000000; /* Choose a color for the line */
+    margin: 20px 0; /* Add some margin for spacing */
+    color: #48137a;
+  }
+  h3{
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: Add bold styling */
+    color: #ffffff; /* Optional: Adjust text color */
+    margin-bottom: 10px; /* Add margin at the bottom */
+    color: #28220c;
+    display: flex;  
+    align-items: center
+  }
   .user-item {
     display: flex; /* Display items side by side */
     align-items: center; /* Align items vertically */
-    margin-bottom: 10px; /* Optional: Adjust margin as needed */
+    margin: 25px; /* Optional: Adjust margin as needed */
+    border-radius: 30px;
+    border: 2px solid #48137a; /* Add border with desired color */
+    padding: 20px; /* Add padding to create space between border and content */
+    background-color: #a478ce;
+    
   }
   
   .user-image {
@@ -27,25 +48,43 @@
     height: 100px; /* Adjust the height as needed */
     border-radius: 50%; /* Makes the image circular */
     object-fit: cover; /* Ensures the image fills the container without stretching */
-    margin-right: 10px; /* Optional: Adjust margin as needed */
+    margin-right: 20px; /* Optional: Adjust margin as needed */
+  }
+  
+  .user-details {
+    flex-grow: 1; /* Allow the details to take remaining space */
   }
   
   .user-name {
     font-size: 18px; /* Adjust font size as needed */
     font-weight: bold; /* Optional: Add bold styling */
-    color: #333; /* Optional: Adjust text color */
+    color: #ffffff; /* Optional: Adjust text color */
+    margin-bottom: 10px; /* Add margin at the bottom */
   }
   
-  button {
-    /* Optional: Style the delete button */
-    padding: 5px 10px;
-    margin: 6px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  
+ /* userdashbord.css */
+
+/* Remove background color from the page */
+body {
+  background-color: transparent !important; /* Override any other background color */
+}
+
+/* Change the color of buttons to violet */
+button {
+  padding: 5px 10px;
+  margin: 6px;
+  background-color: #8a2be2; /* Violet color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6a1b9a; /* Darker violet color on hover */
+}
+
   .admin-dashboard {
     display: flex;
   }
@@ -93,8 +132,9 @@
   .content {
     flex: 1;
     padding: 20px;
-    background-color: #b99ed2;
+    /* background-color: #b99ed2; */
     margin-left: 10px;
+   
   }
   .title{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -115,7 +155,7 @@
     align-items: center;
   }
   .divv{
-    background: linear-gradient(to right, #c6b9ee, #9e70c9,#9b81e7);;
+    background: linear-gradient(to right, #c6b9ee, #9e70c9,#9b81e7);
     color: #fff;
     height: 200px;
     width: 200px;
@@ -124,6 +164,7 @@
     text-align: center;
     
   }
+  
   .threedivs{
     display: flex;
   }

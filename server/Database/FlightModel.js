@@ -13,7 +13,7 @@ module.exports=(sequelize,DataTypes)=>{
       
     },
     imgUrl: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull :false
     },
     description: {
