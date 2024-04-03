@@ -1,37 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
+import { useState} from 'react';
+import "../css/homePage.css"
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import { SingleInputDateRangeField } from '@mui/x-date-pickers-pro/SingleInputDateRangeField';
-import axios from 'axios';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 
 function SearchBar() {
-  const [flights, setFlights] = useState([]);
+
+
+
+
+  // const [flights, setFlights] = useState([]);
   const [departure, setDeparture] = useState('');
   const [destination, setDestination] = useState('');
 
-  useEffect(() => {
-    fetchFlights();
-  }, []);
 
-  const fetchFlights = async () => {
-    try {
-      const response = await axios.get("http://localhost:3000/api/flight");
-      setFlights(response.data);
-    } catch (error) {
-      console.error("Error fetching flights:", error);
-    }
-  };
-
-  const searchFlights = async (departure, destination) => {
-    try {
-      const response = await axios.get(`http://localhost:3000/api/flight/${departure}/${destination}`);
-      setFlights(response.data);
-      console.log(response.data);
-    } catch (error) {
-      console.error("Error searching flights:", error);
-    }
-  };
 
   return (
     <span className='filter'>
@@ -50,10 +35,12 @@ function SearchBar() {
         onChange={(e) => setDestination(e.target.value)}
       />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DateRangePicker
-          slots={{ field: SingleInputDateRangeField }}
-          name="allowedRange"
-        />
+        <DemoContainer components={['SingleInputDateRangeField']}>
+          <DateRangePicker
+            slots={{ field: SingleInputDateRangeField }}
+            name="allowedRange"
+          />
+        </DemoContainer>
       </LocalizationProvider>
       <input
         className='inputs'
@@ -61,11 +48,10 @@ function SearchBar() {
         id='nbrInp'
         type="number"
       />
-      <button className="searchBtn" onClick={() => searchFlights(departure, destination)}>Search</button>
+      <button className="searchBtn" >Search</button>
 
-      {flights && flights.length === 0 && <p>No flights available</p>}
     </span>
   );
 }
 
-export default SearchBar;
+export default SearchBar

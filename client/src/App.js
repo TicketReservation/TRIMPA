@@ -17,8 +17,8 @@ import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
 
 function App() {
-  const dispatch = useDispatch();
-  const flights = useSelector(state => state.flights.flights); 
+  // const dispatch = useDispatch();
+  // const flights = useSelector(state => state.flights.flights); 
 
 
 
@@ -29,15 +29,15 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<AccPage />} />
+          {/* <Route path="/" element={<AccPage />} /> */}
           <Route path="/flight" element={<FlightPage />} />
-          <Route path="/confir" element={<ConfirPgae />} />
+          {/* <Route path="/confir" element={<ConfirPgae />} />
 
           <Route path="/profil" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />
           <Route path="/seats" element={<Seats />} />
           <Route path="/hotels" element={<HotelPage />} />
-          <Route path="/payment" element={<Paye />} />
+          <Route path="/payment" element={<Paye />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
@@ -63,7 +63,7 @@ function App() {
         <Header />
         <SearchBar />
         <br /><br />
-       <Flights flights={flights} /> 
+       <Flights  /> 
         <br />
         <Revieux /><br />
         <Footer />
