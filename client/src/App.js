@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux'
 import './App.css';
 import Profile from './compoents/Profile';
@@ -17,8 +16,6 @@ import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
 
 function App() {
-  // const dispatch = useDispatch();
-  // const flights = useSelector(state => state.flights.flights); 
 
 
 
@@ -33,7 +30,7 @@ function App() {
           <Route path="/flight" element={<FlightPage />} />
           <Route path="/confir" element={<ConfirPgae />} />
 
-          <Route path="/profil" element={<ProfPage />} />
+          <Route path="profile" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />
           <Route path="/seats" element={<Seats />} />
           <Route path="/hotels" element={<HotelPage />} />

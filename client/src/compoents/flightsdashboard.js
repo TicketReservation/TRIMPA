@@ -1,7 +1,10 @@
 import React from 'react';
 import style from '../css/flightdashboard.css'
-import flightimage from '../img/pngegg.png'
+import flightimage from '../img/pngwing.png'
+import Seats from './seats';
+
 function FlightDashboard(props) {
+
     return (
         <div className="admin-dashboard">
         <div className="sidebar">
@@ -16,7 +19,7 @@ function FlightDashboard(props) {
         </div>
         <div className="content">
         <h1 className="title">FLIGHTS Dashboard</h1>
-        <h3 className="nmbrflights">FLIGHTS FOR THIS DAY : {props.flight.length}</h3>
+        {/* <h3 className="nmbrflights">FLIGHTS FOR THIS DAY : {props.flight.length}</h3> */}
 
             
         <div className="content">
@@ -31,12 +34,14 @@ function FlightDashboard(props) {
       <li className="user-item">
       <img className='user-image' src={onefly.imgUrl} alt="flight"></img>
       <div className='user-details'>
-        <h1 className='user-name'>COMPANY NAME : {onefly.companyName} </h1>
-        <h1 className='user-name'> DESCRIPTION : {onefly.description} </h1>
-        <h1 className='user-name'> DESTINATION : {onefly.destination}</h1>
+        <h1 className='user-name'><h3>COMPANY NAME :</h3> {onefly.companyName} </h1><hr></hr>
+        <h1 className='user-name'><h3> DESCRIPTION :</h3> {onefly.description} </h1><hr></hr>
+        <h1 className='user-name'><h3> DESTINATION :</h3> {onefly.destination}</h1><hr></hr>
 
-        <h1 className='user-name'>DEPARTURE :{onefly.departure} ---- ARRIVAL:{onefly.arrival} </h1>
-        <h1 className='user-name'>PRICE :{onefly.price} </h1>
+        <h1 className='user-name'><h3>DEPARTURE :</h3>{onefly.departure}</h1><hr></hr>
+        <h1 className='user-name'><h3>ARRIVAL :</h3>{onefly.arrival} </h1><hr></hr>
+
+        <h1 className='user-name'><h3>PRICE :</h3>{onefly.price} </h1><hr></hr>
 
         <button onClick={()=>props.deleteflight(onefly.id)}>Delete</button>
         
@@ -54,7 +59,8 @@ function FlightDashboard(props) {
         </div>
        
         
-      );
+      )
+      ;
 }
 
-export default FlightDashboard;
+export default FlightDashboard
