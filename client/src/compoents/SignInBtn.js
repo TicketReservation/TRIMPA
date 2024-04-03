@@ -5,17 +5,24 @@ import '../css/homePage.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 function SignInBtn() {
+
      const [anchor, setAnchor] = useState(null);
      const navigate=useNavigate()
       const url="http://localhost:3000/api/admin/login"
 
-// function SignInBtn({ toggle }) {
-//      const [anchor, setAnchor] = useState(null);
+function SignInBtn({ toggle }) {
+
+     const [anchor, setAnchor] = useState(null);
+     const navigate=useNavigate()
+      const url="http://localhost:3000/api/admin/login"
+
+function SignInBtn({ toggle }) {
+     const [anchor, setAnchor] = useState(null);
 
 
-//      const handleClick = (event) => {
-//       setAnchor(anchor ? null : event.currentTarget);
-//   };
+     const handleClick = (event) => {
+      setAnchor(anchor ? null : event.currentTarget);
+  };
 
   const open = Boolean(anchor);
   const _id = open ? 'simple-popper' : undefined;
@@ -81,9 +88,8 @@ function SignInBtn() {
       </BasePopup>
     </div>
   );
-}
-
-export default SignInBtn;
+}}
 
 
+export default SignInBtn
 

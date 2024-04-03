@@ -45,6 +45,10 @@ db.Admin = require('./AdminDachbord.js')(connection, DataTypes);
 const Admin = require('./AdminDachbord.js')(connection, DataTypes);
 const User =require('./UserModel.js')(connection,DataTypes)
 
+db.Admin = require('./AdminDachbord.js')(connection, DataTypes);
+const Admin = require('./AdminDachbord.js')(connection, DataTypes);
+const User =require('./UserModel.js')(connection,DataTypes)
+
 
 db.User.hasMany(db.Flight, { foreignKey: 'userId' })
 db.Flight.belongsTo(db.User, { foreignKey: 'userId' })
@@ -61,6 +65,9 @@ db.Booking.belongsTo(db.User, { foreignKey: 'userId' })
 db.Booking.belongsTo(db.Flight, { foreignKey: 'flightId' })
 
 
+
+db.User.hasMany(db.Admin, { foreignKey: 'userId' });
+db.Admin.belongsTo(db.User, { foreignKey: 'userId' });
 
 
 db.User.hasMany(db.Admin, { foreignKey: 'userId' });
