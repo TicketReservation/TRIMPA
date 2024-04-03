@@ -1,5 +1,6 @@
-const express = require('express');
+
 const { getAll, deleteOne , addOne ,updateOne, getOne} = require('../controller/SitController');
+const express = require('express')
 
 const router = express.Router()
 
@@ -9,5 +10,6 @@ router.get('/:name', getOne);
 router.post('/',addOne)
 router.put('/:name',updateOne)
 router.delete('/:id', deleteOne);
+router.get('/', getAll)
 
 module.exports = router

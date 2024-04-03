@@ -10,7 +10,7 @@ module.exports = {
       throw error
     }
   },
-    remove:async(req,res)=>{
+    deeleteOne:async(req,res)=>{
 try {
   const _id=req.params.id
   const user=db.User.destroy({where:{id:_id}})
@@ -19,7 +19,7 @@ try {
   throw error
 }
     },
-    update:async(req,res)=>{
+    updateOOne:async(req,res)=>{
       try {
         const _id=req.params.id
         const user=await db.User.update(req.body,{where:{id:_id}})
@@ -43,6 +43,14 @@ register: async (req, res) => {
       }
     },
 
+    getOne: async (req, res) => {
+      try {
+        const user = await db.User.findOne({ where: { id: req.params.id } });
+        res.json(user);
+      } catch (error) {
+        throw error;
+      }
+    },
 
     login: async (req, res) => {
       try {
@@ -69,8 +77,10 @@ register: async (req, res) => {
 
       getOne: async (req, res) => {
       try {
+
         const _id=req.params.id
         const user = await db.User.findOne({where:{id:_id}})
+
         res.json(user)
 
         }
@@ -78,6 +88,16 @@ register: async (req, res) => {
         throw error
     }
 },
+
+  updateOOne:async(req,res)=>{
+    try {
+      const user=await db.User.update({where:{id:req.params.id}})
+      res.json(user)
+    } catch (error) {
+      throw error
+    }
+  }
+
 updateOne : async (req, res) => {
   try {
       await db.User.update(req.body, {

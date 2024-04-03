@@ -61,14 +61,19 @@
     font-family: "Brush Script MT", "Brush Script Std", cursive;
 
   }
-
+  .css-nby9nv-MuiStack-root>.MuiTextField-root, .css-nby9nv-MuiStack-root>.MuiPickersTextField-root {
+    min-width: 185px;
+    overflow: visible;
+}
 .filter{
   margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 .inputs{
+  width: 170px;
   margin-top: 9px;
   height: 55px;
   padding: 5px;
@@ -97,7 +102,7 @@
   justify-content: center;
 }
 .signIn {
-  margin-right: 550px;
+  margin: auto;
   width: 400px;
   height: 500px;
   padding: 20px;
