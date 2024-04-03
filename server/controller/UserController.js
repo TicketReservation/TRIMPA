@@ -8,8 +8,10 @@ module.exports = {
         res.status(200).send(users);
     } catch (error) {
         throw error;
+        throw error;
     }
 }
+
 ,
   //
     deeleteOne:async(req,res)=>{
@@ -22,6 +24,7 @@ try {
 }
     },
     //
+    //
     updateOOne:async(req,res)=>{
       try {
         const _id=req.params.id
@@ -31,6 +34,7 @@ try {
         throw error
       }
     },
+    
     register: async (req, res) => {
       const { Name, email, password, picture } = req.body;
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -40,6 +44,7 @@ try {
       } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Registration failed' });
+        
       }
     },
 
@@ -62,8 +67,7 @@ try {
         throw error
     }
 },
-
-    login: async (req, res) => {
+login: async (req, res) => {
       try {
         const { email, password } = req.body;
         const user = await db.User.findOne({ where: { email } });
@@ -98,6 +102,7 @@ updateOne : async (req, res) => {
   }
 },
 //
+//
 deleteOne:async(req,res)=>{
   try {
     const _id=req.params.id
@@ -107,6 +112,7 @@ deleteOne:async(req,res)=>{
     throw error
   }
       },
+      //
       //
 addOne : async (req, res) => {
    try {

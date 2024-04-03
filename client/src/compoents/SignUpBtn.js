@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 import '../css/homePage.css';
 import axios from 'axios';
@@ -6,10 +7,14 @@ import axios from 'axios';
 function SignUpBtn() {
     const [anchor, setAnchor] = useState(null);
     const [signUp, setSignUp] = useState({
+    const [anchor, setAnchor] = useState(null);
+    const [signUp, setSignUp] = useState({
         Name: "",
         email: "",
         password: ""
     });
+    const [image, setImage] = useState(null);
+    const [url, setUrl] = useState("");
     const [image, setImage] = useState(null);
     const [url, setUrl] = useState("");
 
@@ -56,11 +61,23 @@ function SignUpBtn() {
         } catch (error) {
             console.log("Error during signup:", error);
         }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await uploadImage();
+            const response = await axios.post("http://localhost:3000/api/user/register", {
+                ...signUp,
+                picture: url
+            });
+            console.log("User signed up:", response.data);
+        } catch (error) {
+            console.log("Error during signup:", error);
+        }
     };
 
     return (
         <div>
-            <a onClick={handleClick} className="active" id="log" href="#Sign in">
+<a onClick={handleClick} className="active" id="log" href="#Sign in">
                 Sign up
             </a>
             <BasePopup id={id} open={open} anchor={anchor}>
@@ -83,4 +100,4 @@ function SignUpBtn() {
     );
 }
 
-export default SignUpBtn;
+export default SignUpBtn

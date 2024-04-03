@@ -4,7 +4,11 @@
   padding: 2rem 2rem;
   text-align: center;
 }
-
+#dsd{ display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  width: 137px;
+  margin-left: 10px}
 .plane {
   background-color: white;
   margin: 20px auto;
@@ -17,8 +21,7 @@
   top: 0px;
 }
 
-.container-f {
-  /* transform: translateY(-600px); */
+.container--v {
 
   
   position: absolute; 
@@ -442,7 +445,7 @@ h1, h2 {
   border: 2px solid rgb(211, 208, 208); 
   background-color:#d4d2d2 ;
   padding: 10px;
-  margin-top: 12%;
+  margin-top: 6%;
   display: flex
 }
 .passengerinfop {

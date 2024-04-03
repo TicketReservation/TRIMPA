@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../css/profile.css';
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
 
@@ -20,8 +19,6 @@ function Profile() {
     const token = localStorage.getItem("jwtToken");
     const decoded = jwtDecode(token);
     const userId = decoded.id;
-    console.log(decoded);
-  
     setId(userId); 
   
     axios.get(`http://localhost:3000/api/user/${userId}`)
@@ -46,7 +43,7 @@ function Profile() {
       console.log(error);
       return null;
     }
-  };
+  }
 
   const handleImage = (e) => {
     setUpdate({
@@ -55,7 +52,8 @@ function Profile() {
     });
   };
 
-  const handleUpdate = async () => {
+  const handleUpdate = async (e) => {
+    e.preventDefault();
     try {
       const imageUrl = await uploadImage();
       const updatedData = { ...update };
@@ -67,7 +65,7 @@ function Profile() {
       await axios.put(`http://localhost:3000/api/user/${id}`, updatedData);
       handleData();
     } catch (error) {
-      console.log("error",error);
+      console.log("error", error);
     }
   };
 
@@ -79,10 +77,9 @@ function Profile() {
     });
   };
   
-
   return (
     <div className='updateProfile'>
-      <form onSubmit={(e) => { e.preventDefault(); handleUpdate();handleData() }}>
+      <form onSubmit={handleUpdate}>
         <h2>Update Profile</h2>
         <span className='NameEmail'>
           <label htmlFor="name">Name</label><br />
@@ -93,8 +90,8 @@ function Profile() {
         <span className='PasswordPicture'>
           <label htmlFor="password">Current password</label><br />
           <input type="password" placeholder='old password' id="password" name="password" onChange={handleChange} required /><br />
-          <label htmlFor="password">Password</label><br />
-          <input type="password" placeholder='new password' id="password" name="password" onChange={handleChange} required /><br />
+          <label htmlFor="newPassword">New Password</label><br />
+          <input type="password" placeholder='new password' id="newPassword" name="newPassword" onChange={handleChange} required /><br />
           <label htmlFor="picture">Picture</label><br />
           <img src={update.picture} alt="User" /><br />
           <input type="file" id="picture" name="picture" onChange={handleImage} /><br /><br />
@@ -104,5 +101,5 @@ function Profile() {
     </div>
   );
 }
-
+  
 export default Profile;

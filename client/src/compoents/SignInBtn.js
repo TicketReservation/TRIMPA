@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
+import '../css/homePage.css';
 import '../css/homePage.css';
 import axios from 'axios';
 
 function SignInBtn({ toggle }) {
      const [anchor, setAnchor] = useState(null);
+function SignInBtn({ toggle }) {
+     const [anchor, setAnchor] = useState(null);
 
 
      const handleClick = (event) => {
+     const handleClick = (event) => {
       setAnchor(anchor ? null : event.currentTarget);
   };
+  };
 
+  const open = Boolean(anchor);
+  const _id = open ? 'simple-popper' : undefined;
   const open = Boolean(anchor);
   const _id = open ? 'simple-popper' : undefined;
 
@@ -60,7 +68,22 @@ function SignInBtn({ toggle }) {
             <button type="submit" className='signInBtn'>Sign in</button>
           </form>
         </div>
+        Sign in
+      </a>
+      <BasePopup id={_id} open={open} anchor={anchor}>
+        <div className='signIn'>
+          <form onSubmit={()=>{handleSubmit();toggle("profile")}}>
+            <h2>Sign in</h2>
+            <label htmlFor="email">Email</label>
+            <input type="email" onChange={handleInput} value={signIn.email} id="email" name="email" required />
+            <label htmlFor="password">Password</label>
+            <input type="password" onChange={handleInput} value={signIn.password} id="password" name="password" required />
+            <button type="submit" className='signInBtn'>Sign in</button>
+          </form>
+        </div>
       </BasePopup>
+    </div>
+  );
     </div>
   );
 }

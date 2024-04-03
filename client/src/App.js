@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux'
 import './App.css';
 import Profile from './compoents/Profile';
@@ -15,7 +14,14 @@ import Information from './compoents/Information';
 import Seats from './compoents/seats';
 import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
+import Secondseats from './compoents/Secondseats';
 function App() {
+
+
+
+
+
+
   return (
     <div>
       <BrowserRouter>
@@ -23,17 +29,29 @@ function App() {
           <Route path="/" element={<AccPage />} />
           <Route path="/flight" element={<FlightPage />} />
           <Route path="/confir" element={<ConfirPgae />} />
+          <Route path="/Second" element={<SecPage />} />
 
-          <Route path="/profile" element={<ProfPage />} />
+          <Route path="profilee" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />
-          <Route path="/seats" element={<Seats />} />
+          <Route path="/seats" element={<SeatPage />} />
           <Route path="/hotels" element={<HotelPage />} />
           <Route path="/payment" element={<Paye />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
-function ConfirPgae() {
+  function SeatPage() {
+    return (
+      < Seats/>
+    );
+  }
+  function SecPage() {
+    return (
+      
+        < Secondseats/>
+        
+    );
+  }function ConfirPgae() {
     return (
       <>
         <Header />
@@ -52,6 +70,7 @@ function ConfirPgae() {
         <Header />
         <SearchBar />
         <br /><br />
+       <Flights  /> 
        <Flights  /> 
         <br />
         <Revieux /><br />
