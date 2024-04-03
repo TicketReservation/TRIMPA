@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
-import axios from 'axios';
-// import { useSelector, useDispatch } from 'react-redux'
+import React from 'react';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Profile from './compoents/Profile';
 import Header from './compoents/Header';
@@ -13,12 +12,11 @@ import Paye from './compoents/Paye';
 import Flights from './compoents/Flights';
 import Information from './compoents/Information';
 import Seats from './compoents/seats';
-import SearchBar from './compoents/SearchBar';
+// import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
 
 function App() {
-  // const dispatch = useDispatch();
-  // const flights = useSelector(state => state.flights.flights); 
+
 
 
 
@@ -29,15 +27,15 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<AccPage />} /> */}
+          <Route path="/" element={<AccPage />} /> 
           <Route path="/flight" element={<FlightPage />} />
-          {/* <Route path="/confir" element={<ConfirPgae />} />
+          <Route path="/confir" element={<ConfirPgae />} />
 
           <Route path="/profil" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />
           <Route path="/seats" element={<Seats />} />
           <Route path="/hotels" element={<HotelPage />} />
-          <Route path="/payment" element={<Paye />} /> */}
+          <Route path="/payment" element={<Paye />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -61,7 +59,7 @@ function App() {
     return (
       <>
         <Header />
-        {/* <SearchBar /> */}
+       {/* <SearchBar />  */}
         <br /><br />
        <Flights  /> 
         <br />

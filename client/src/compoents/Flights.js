@@ -114,6 +114,16 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
           padding: '8px 12px 8px 16px',
         }}>
           <option value="Times">Times</option>
+          {Array.isArray(flights) && flights.map((flight, index) => {
+  const departureDate = new Date(flight.departure);
+  const formattedDate = `${departureDate.getDate()}/${departureDate.getMonth()+1}/${departureDate.getFullYear()}`;
+
+  return (
+    <option key={index} value={flight.departure}>
+      {formattedDate}
+    </option>
+  );
+})}
         </select>
 
         <select id="airlines" style={{
@@ -124,6 +134,11 @@ const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
           padding: '8px 12px 8px 16px',
         }}>
           <option value="Airlines">Airlines</option>
+          {Array.isArray(flights) && flights.map((flight, index) => (
+            <option key={index} value={flight.companyName}>
+              {flight.companyName}
+            </option>
+          ))}
         </select>
 
         <select id="seatsClass"
