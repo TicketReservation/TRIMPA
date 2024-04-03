@@ -85,14 +85,7 @@ try {
       }
     },
 
-  updateOOne:async(req,res)=>{
-    try {
-      const user=await db.User.update({where:{id:req.params.id}})
-      res.json(user)
-    } catch (error) {
-      throw error
-    }
-  },
+  
 //
 updateOne : async (req, res) => {
   try {

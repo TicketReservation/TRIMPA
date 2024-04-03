@@ -7,7 +7,7 @@ router.get('/:id',getOne)
 router.post("/register",register);
 router.post("/login",login)
 router.delete("/:id",remove);
-router.put("/:id",updateOne)
+router.put("/:id",updateOOne)
 
 
 

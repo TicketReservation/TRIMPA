@@ -15,16 +15,7 @@ import Information from './compoents/Information';
 import Seats from './compoents/seats';
 import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
-
 function App() {
-  const dispatch = useDispatch();
-  const flights = useSelector(state => state.flights.flights); 
-
-
-
-
-
-
   return (
     <div>
       <BrowserRouter>
@@ -33,7 +24,7 @@ function App() {
           <Route path="/flight" element={<FlightPage />} />
           <Route path="/confir" element={<ConfirPgae />} />
 
-          <Route path="/profil" element={<ProfPage />} />
+          <Route path="/profile" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />
           <Route path="/seats" element={<Seats />} />
           <Route path="/hotels" element={<HotelPage />} />
@@ -42,9 +33,7 @@ function App() {
       </BrowserRouter>
     </div>
   );
-
-
-  function ConfirPgae() {
+function ConfirPgae() {
     return (
       <>
         <Header />
@@ -63,7 +52,7 @@ function App() {
         <Header />
         <SearchBar />
         <br /><br />
-       <Flights flights={flights} /> 
+       <Flights  /> 
         <br />
         <Revieux /><br />
         <Footer />
@@ -112,7 +101,5 @@ function App() {
 
       </>
     );
-  }
-}
-
+  }}
 export default App
