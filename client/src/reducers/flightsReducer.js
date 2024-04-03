@@ -3,8 +3,7 @@ import axios from 'axios';
 // import {fetchFlights} from "../actions/flightsActions"
 export  const fetchFlights = createAsyncThunk("/fetchFlights", async () => {
   try {
-    // const response = await axios.get('http://localhost:3000/api/flight');
-   const response =await  axios.get(`http://localhost:3000/api/booking`)
+    const response = await axios.get('http://localhost:3000/api/flight');
     console.log("action response",response)
 return response.data
     // return response.data
