@@ -96,7 +96,7 @@ register: async (req, res) => {
     } catch (error) {
       throw error
     }
-  }
+  },
 
 updateOne : async (req, res) => {
   try {

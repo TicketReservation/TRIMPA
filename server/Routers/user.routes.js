@@ -14,5 +14,4 @@ router.put("/:id",updateOOne)
 router.delete("/del/:id",deleteOne)
 router.put("/:name",updateOne)
 router.post("/",addOne)
-
 module.exports = router

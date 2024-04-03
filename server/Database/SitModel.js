@@ -16,6 +16,7 @@ const Sit = sequelize.define('sit', {
         allowNull :false,
         defaultValue: false
     }
+  
 });
   return Sit
 }

@@ -6,6 +6,8 @@ import axios from 'axios';
 import UserDashboard from './userdashbord';
 import Adduser from './adduserdashbord';
 import AddFlight from './addflight';
+import Secondseats from "./secondseat"
+import Seats from './seats';
 
 function AdminDashboard() {
     const [view, setView] = useState("UserDashboard");
@@ -63,14 +65,18 @@ function AdminDashboard() {
     const renderView = () => {
         if (view === "FlightDashboard") {
             return <FlightDashboard changeView={changeView} flight={flight} deleteflight={deleteflight} addflight={addflight} />;
+        }else if (view === "Seats") {
+            return <Seats changeView={changeView} flight={flight}  />;
         } else if (view === "StaticsDashboard") {
-            return <StaticsDashboard changeView={changeView} />;
+            return <StaticsDashboard changeView={changeView} flight={flight} data={data}/>;
         } else if (view === "UserDashboard") {
             return <UserDashboard changeView={changeView} data={data} deletee={deletee} add={add} />;
         } else if (view === "add") {
             return <Adduser changeView={changeView} data={data} deletee={deletee} add={add} setupdater={setupdater} />;
         } else if (view === "addflight") {
             return <AddFlight changeView={changeView} flight={flight} deleteflight={deleteflight} addflight={addflight} />;
+        }else if (view === "Secondseats") {
+            return <Secondseats changeView={changeView}  />;
         }
     }
 

@@ -17,11 +17,11 @@ import Seats from './compoents/seats'
 import axios from 'axios'
 import AdminDashboard from './compoents/admindashboard';
 import Paye from './compoents/Paye'
+import Secondseats from './compoents/secondseat';
 
 function App() {
 
-  const [sit ,setsit] = useState(false)
-  const [onesitdata,setonesitdata]=useState([])
+  
 
   const [flights, setFlights] = useState([])
   const flightList = ()=>{
@@ -38,11 +38,15 @@ function App() {
   useEffect(() => {
       flightList()
     }, [])
-  
+  const funcflight = ()=>{
+    flights.map((oneflight)=>{
+      return oneflight
+    })}
+    const oneflight=funcflight()
   return (
     <div>
       {/* <Header/> */}
-<Flights flights={flights}/>
+{/* <Flights flights={flights}/> */}
        {/* <header>
       Join Tripma today and save up to 20% on your fligth using code TRAVEL at checkout. Promotion valid for new users only.
 
@@ -55,7 +59,9 @@ function App() {
     {/* < Information/> */}
      {/* <Revieux />  */}
    {/* <Footer/>   */}
-
+      <Seats flights={flights} oneflight={oneflight}/>  
+      {/* < Secondseats/> */}
+    
 
     </div>
   );

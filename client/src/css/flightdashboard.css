@@ -45,7 +45,7 @@
 .content {
   flex: 1;
   padding: 20px;
-  background-color: #b99ed2;
+  /* background-color: #b99ed2; */
   margin-left: 10px;
 }
 .title{
@@ -192,15 +192,15 @@ border-radius: 4px;
   }
 }
 &.blue {
-  background-color:#337ab7
+  background-color:#8E44AD
 }
 &.red {
-  background-color: #e7505a
+  background-color: #8E44AD
 }
 &.purple {
   background-color: #8E44AD
 }
 &.hoki {
-  background-color: #67809F
+  background-color: #8E44AD
 }
 }

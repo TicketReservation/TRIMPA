@@ -40,7 +40,7 @@ function StaticsDashboard(props) {
         </div>
         <div class="details">
           <div class="number">
-            <span>312</span>
+            <span>{props.data.length}</span>
           </div>
           <div class="desc">Total VISITORS </div>
         </div>
@@ -53,7 +53,7 @@ function StaticsDashboard(props) {
         </div>
         <div class="details">
           <div class="number">
-            <span>19</span>
+            <span>{props.flight.length}</span>
           </div>
           <div class="desc">FLIGHTS/week</div>
         </div>
@@ -86,8 +86,8 @@ function StaticsDashboard(props) {
         </div>
       </a>
     </div>
-    <h1 className='title'>OUR HIERARCHY</h1>
-    <img className="photostat" src={photostat}></img>
+    {/* <h1 className='title'>OUR HIERARCHY</h1>
+    <img className="photostat" src={photostat}></img> */}
 
   </div>
 </div>

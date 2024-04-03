@@ -44,7 +44,7 @@
 .content {
   flex: 1;
   padding: 20px;
-  background-color: #b99ed2;
+  /* background-color: #b99ed2; */
   margin-left: 10px;
 }
 .title{
