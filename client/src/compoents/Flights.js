@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-// import React from 'react';
-// // import ReactRoundedImage from "react-rounded-image"
-// import "../css/Flights.css"
-=======
-import React,{ useState } from 'react'
-// import ReactRoundedImage from "react-rounded-image"
-import "../css/Flights.css"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
-import myImage from '../img/map.PNG'
-=======
 import React, {  useEffect } from 'react';
 import "../css/Flights.css";
 import { LineChart, Line, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
@@ -29,301 +17,18 @@ const Flights = () => {
   const showAll = useSelector(state => state.flights.showAll); 
 const selectedFlight = useSelector(state => state.flights.selectedFlight);
 const showPaymentCard = useSelector(state => state.flights.showPaymentCard);
->>>>>>> b949f90d42aff9e80b9b4d3eeb86efa0dc582ec9
 
 
->>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
 
   useEffect(() => {
   dispatch(fetchFlights())
   }, [ dispatch]);
 
 
-<<<<<<< HEAD
-
-
-<<<<<<< HEAD
-// const Flights = (props) => {
-//   return (
-//     <div>
-//     <div className="FilterBar">
-//       <select>
-//         <option value="Max Price">Max Price</option>
-//       </select>
-
-//       <select>
-//         <option value="Shops">Shops</option>
-//       </select>
-
-//       <select>
-//         <option value="Times">Times</option>
-//       </select>
-
-//       <select>
-//         <option value="Airlines">Airlines</option>
-//       </select>
-
-//       <select>
-//         <option value="SeatsClass">Seats Class</option>
-//       </select>
-
-//       <select>
-//         <option value="More">More</option>
-//       </select>
-//     </div>
-=======
-const Flights = (props) => {
-  const [showAll, setShowAll] = useState(false)
-  const flightsToShow = showAll ? props.flights : props.flights.slice(0,6)
-
-
-
-    // Prepare the data for diagram
-     const data = props.flights.map(flight => ({
-     name: flight.arrival,
-     price: flight.price
-      }))
-    ///
-  return (
-    <div className="cont" >
-     
-    <div className="FilterBar">
-      <select style={{
-  width: '120px',
-  height: '38px',
-  borderRadius: '4px',
-  border: '1px solid #CBD4E6',
-  padding: '8px 12px 8px 16px',
-}}>
-        <option value="Max Price">Max Price</option>
-      </select>
-
-      <select style={{
-  width: '120px',
-  height: '38px',
-  borderRadius: '4px',
-  border: '1px solid #CBD4E6',
-  padding: '8px 12px 8px 16px',
-}}>
-        <option value="Shops">Shops</option>
-      </select >
-
-      <select style={{
-  width: '120px',
-  height: '38px',
-  borderRadius: '4px',
-  border: '1px solid #CBD4E6',
-  padding: '8px 12px 8px 16px',
-}}>
-        <option value="Times">Times</option>
-      </select>
-
-      <select style={{
-  width: '120px',
-  height: '38px',
-  borderRadius: '4px',
-  border: '1px solid #CBD4E6',
-  padding: '8px 12px 8px 16px',
-}}>
-        <option value="Airlines">Airlines</option>
-      </select>
-
-      <select style={{
-  width: '120px',
-  height: '38px',
-  borderRadius: '4px',
-  border: '1px solid #CBD4E6',
-  padding: '8px 12px 8px 16px',
-}}>
-        <option value="SeatsClass">Seats Class</option>
-      </select>
-
-      <select style={{
-  width: '120px',
-  height: '38px',
-  borderRadius: '4px',
-  border: '1px solid #CBD4E6',
-  padding: '8px 12px 8px 16px',
-}}>
-        <option value="More">More</option>
-      </select>
-    </div>
->>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
-    
-    
-    
-    
-    
-<<<<<<< HEAD
-//     {console.log(props.flights)}
-    
-//     <div className="flightsTable">
-//       {props.flights.map((flight) => (
-//          // Correct usage of style prop
-// <div className="card" style={{width: '40rem'}}>
-//   <ul className="list-group list-group-flush">
-//     <li className="list-group-item">
-//       <img className="companyimage"src={flight.imgUrl} alt={flight.name} />
-//       <p>{flight.companyName}</p>
-//       <p>{flight.departure}</p>
-//       <p>{flight.price}</p>
-//     </li>
-//   </ul>
-// </div>
-//       ))}
-//     </div>
-=======
-    {console.log(props.flights)}
-<div className="bodyPage"> 
-
-
-      <div className="rigtside " >
-        <h5>Choose a departing flight</h5>
-      <div className={`flightsTable ${showAll ? 'expanded' : ''}`} >
-      {flightsToShow.map((flight) => {
-        const departureDate = new Date(flight.departure)
-
-        const formattedDepartureDate = departureDate.toLocaleDateString()
-
-        return (
-          <div className="car">
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item d-flex align-items-center">
-              <img className="companyimage" src={flight.imgUrl} alt={flight.name} />
-              <p>{flight.companyName}</p>
-              <p>{formattedDepartureDate}</p> 
-              <p>$ {flight.price}</p>
-            </li>
-          </ul>
-        </div>
-        )
-      })}
-    </div> 
-    <button className="buttonShowall" onClick={() => setShowAll(!showAll)}>
-  {showAll ? 'Show less' : 'Show all flights'}
-</button>
-<div className="imagemap">
-<img src={myImage} alt="Description of the image" />
-
-</div>
-
-      </div>{/* // end of rightSide */}
-
-
-
-
-
-
-
-
-
-    
-
-
-    <div className="leftSide">
->>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-<h5>Price grid (flexible dates)</h5>
-      
-    <div className="tableprice">
-  <table className="table">
-    <thead>
-      <tr>
-        <th>Company / Date</th>
-        {props.flights.map((flight, index) => {
-          const departureDate = new Date(flight.departure)
-          const formattedDepartureDate = departureDate.toLocaleDateString()
-          return <th key={index}>{formattedDepartureDate}</th> 
-        })}
-      </tr>
-    </thead>
-    <tbody>
-      {props.flights.map((flight, index) => (
-        <tr key={index}>
-          <td>{flight.companyName}</td>
-          {props.flights.map((innerFlight, innerIndex) => {
-            if (innerFlight.companyName === flight.companyName && innerFlight.departure === flight.departure) {
-              return <td key={innerIndex}>{innerFlight.price}</td>
-            } else {
-              return <td key={innerIndex}>-</td>
-            }
-          })}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
->>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
-
-
-
-
-<<<<<<< HEAD
-
-
-
-
-//     </div>
-//   );
-// };
-
-// export default Flights;
-=======
-<h5>Price history</h5>
-<div className="Diagram">
-  <LineChart className="linechart"
-    width={500}
-    height={300}
-    data={data}
-    margin={{
-      top: 5, right: 30, left: 20, bottom: 5,
-    }}
-  >
-    <CartesianGrid strokeDasharray="3 3" />
-    {/* <XAxis dataKey="name" /> */}
-    <YAxis />
-    <Tooltip />
-    <Legend />
-    <Line type="monotone" dataKey="price" stroke="#8884d8" activeDot={{ r: 8 }} 
-      shadow={{ stroke: 'PurpleBlue', strokeWidth: 10, opacity: 0.4 }} />
-  </LineChart>
-</div>
-
-
-<div className="flightpagemessage">
-<h5 className="message">
-  Price Rating, 
-  <span style={{backgroundColor: '#5CD6C0', width: '100px', height: '26px', borderRadius: '4px', padding: '2px 8px', margin: '10px', display: 'inline-block'}}>
-    <span style={{fontFamily: 'Nunito Sans', fontWeight: 600, fontSize: '18px', lineHeight: '24.55px', color: '#FFFFFF'}}>Buy soon</span>
-  </span>           
-</h5>
-<p style={{fontFamily: 'Nunito Sans', fontWeight: 400, fontSize: '16px', lineHeight: '21.82px', margin: '8px', color: '#6E7491'}}>
-  We recommend booking soon. The average cost of this flight is $750, but could rise 18% to $885 in two weeks.</p>
-  <p style={{fontFamily: 'Nunito Sans', fontWeight: 400, fontSize: '16px', lineHeight: '21.82px', margin: '8px', color: '#A1B0CC'}}>
-  Tripma analyzes thousands of flights, prices, and trends to ensure you get the best deal.
-</p>
-
-</div>
-
-</div>{/* // leftSide end here */}
-
-<div>
-=======
   const flightsToShow = Array.isArray(flights) ? (showAll ? flights : flights.slice(0,6)) : [];
   console.log(flightsToShow);
   
->>>>>>> b949f90d42aff9e80b9b4d3eeb86efa0dc582ec9
   
-
-
 
 
   const handleCardClick = (flight) => {
@@ -331,7 +36,7 @@ const Flights = (props) => {
     dispatch(setSelectedFlight(flight));
     dispatch(setShowPaymentCard(true));
   };
-  
+
 
   const handleShowAll = () => {
     dispatch(setShowAll(!showAll));
@@ -344,11 +49,6 @@ const Flights = (props) => {
   };
 
 
-
-
-
-
-
 /////////// Prepare the data for diagram
   let data = [];
   if (Array.isArray(flights)) {
@@ -358,13 +58,6 @@ const Flights = (props) => {
     }));
   }
 ////////////////////////////////////////
-
-
-
-
-
-
-
   return (
     <div className="dd">
       <div className="FilterBar">
@@ -384,7 +77,6 @@ const Flights = (props) => {
             </option>
           ))}
         </select>
-
         <select id="shops"
          style={{
           width: '120px',
@@ -395,7 +87,6 @@ const Flights = (props) => {
         }}>
           <option value="Shops">Shops</option>
         </select>
-
         <select id="times"
         
         
@@ -444,7 +135,6 @@ const Flights = (props) => {
         }}>
           <option value="SeatsClass">Seats Class</option>
         </select>
-
         <select 
         id="more" 
         style={{
@@ -457,7 +147,6 @@ const Flights = (props) => {
           <option value="More">More</option>
         </select>
       </div>
-
       <div className="bodyPage"> 
         <div className="rigtside">
           <h5>Choose a departing flight</h5>
@@ -465,7 +154,6 @@ const Flights = (props) => {
             {flightsToShow.map((flight) => {
               const departureDate = new Date(flight.departure);
               const formattedDepartureDate = departureDate.toLocaleDateString();
-
               return (
                 <div className="cardofFlight" style={{ transform: selectedFlight === flight ? 'scale(0.95)' : 'scale(1)' }} onClick={() => handleCardClick(flight)} key={flight.id}>
                   <ul className="list-group list-group-flush">
@@ -487,7 +175,6 @@ const Flights = (props) => {
             <img src={myImage} alt="" />
           </div>
         </div>
-
         <div className="leftSide">
           {showPaymentCard ? (
             selectedFlight && (
@@ -536,7 +223,6 @@ const Flights = (props) => {
                   </tbody>
                 </table>
               </div>
-
               <h5>Price history</h5>
               <div className="Diagram">
                 <LineChart
@@ -564,7 +250,6 @@ const Flights = (props) => {
                   />
                 </LineChart>
               </div>
-
               <div className="flightpagemessage">
                 <h5 className="message">
                   Price Rating,
@@ -621,10 +306,8 @@ const Flights = (props) => {
           )}
         </div>
       </div>
-
       <div className="Ccards">
         <h5> People in San Francisco also searched for </h5>
-
         <div className="row">
           <div className="col-4">
             <div className="card">
@@ -665,11 +348,4 @@ const Flights = (props) => {
   );
 }
 
-<<<<<<< HEAD
-export default Flights
->>>>>>> a9baaa55cfa46d47fadf75c4d91bf4fff6240369
-=======
-
-
 export default Flights;
->>>>>>> b949f90d42aff9e80b9b4d3eeb86efa0dc582ec9

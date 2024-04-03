@@ -1,11 +1,11 @@
 import React,{useState,useEffect} from "react"
-import   "../css/seats.css"
+import style from "../css/seats.css"
 import imagebus from "../img/BusinessSeats.jpg"
 import imageeco from "../img/EconomySeats.jpg"
 import axios from 'axios' 
 import { NavLink } from 'react-router-dom';
 
-function Seats (props){
+function Secondseats (props){
 
   // const [onesitdata,setonesitdata]=useState([])
   const [name,setname]=useState("")
@@ -16,6 +16,7 @@ const [sits, setsits] = useState([]);
 
 console.log(props.oneflight);
 console.log(props.flight);
+
 
 const fetchsits = () => {
   axios.get("http://localhost:3000/api/sit/")
@@ -65,27 +66,14 @@ const upp =()=>{
 }
 return (
     <div>
-        {/* <h1 class="trimpa">TRIMPA</h1> */}
+        <h1 class="trimpa">TRIMPA</h1>
+        <h3 class="trimpa">second flight</h3>
     <div class ="bigdiv">
 <div class="plane">
   <div class="cockpit">
     <h1>Please select a seat</h1>
   </div>
-  {/* <div>
-  {props.flights.map((onefly) =>
-  <ol class="cabin fuselage">
-    
-    <li class="row row--1">
-      <ol class="seats" type="A">
-        <li class="seatbusiness">
-          <input type="checkbox" id="1A" />
-          <label onClick={() => { setname(props.flights.Name); setvalid(!valid);  settype("vip"); upp() }}  for="1A">1A</label>
-        </li>
-      </ol>
-    </li>
-  </ol>
-  )}
-  </div> */}
+  
   <ol class="cabin fuselage">
     <li class="row row--1">
       <ol class="seats" type="A">
@@ -768,7 +756,7 @@ return (
 <div class="container--v">
     <div class="flight-info">
       <p>From: SFO, California, US</p>
-      <p>To : </p>
+      <p>To :   </p>
       <p>Departure: </p>
       <p>Arrival: </p>
     </div>
@@ -805,8 +793,8 @@ and a multi-course meal service</p>
     <div class="passenger-info">
       <p class="passengerinfop">Passenger 1: Sofia Knowles</p>
       <p class="passengerinfop">Seat number: {sits.length}</p>
-      <NavLink  to='/'> <button id="dsd" class="save-close-btn">Save and close</button></NavLink>
-      <NavLink  to='/Second'><button   id="dsd" class="save-close-btn2">next flight</button></NavLink> 
+    <NavLink  to='/seats'> <button id="dsd" class="save-close-btn">Save and close</button></NavLink>
+    <NavLink   to='/payment'>  <button id="dsd" class="save-close-btn2">next flight</button></NavLink>
     </div>
   </div>
 </div>
@@ -816,4 +804,4 @@ and a multi-course meal service</p>
 }
 
 
-export default Seats
+export default Secondseats

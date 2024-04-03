@@ -1,18 +1,5 @@
-
-import { createSlice,createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-// import {fetchFlights} from "../actions/flightsActions"
-export  const fetchFlights = createAsyncThunk("/fetchFlights", async () => {
-  try {
-    const response = await axios.get('http://localhost:3000/api/flight');
-    console.log("action response",response)
-return response.data
-    // return response.data
-  } catch (error) {
-    console.error('Failed to fetch flights', error);
-    // return error 
-  }
-})
+import { createSlice  } from '@reduxjs/toolkit';
+import {fetchFlights} from '../actions/flightsActions';
 
 export const flightsSlice = createSlice({
   name: 'flights',
@@ -48,7 +35,7 @@ export const flightsSlice = createSlice({
 
     });
     builder.addCase(fetchFlights.pending, (state, action) => {
-      
+
       state.loading = true;
 
     });
@@ -60,4 +47,4 @@ export const { setShowAll } = flightsSlice.actions;
 export const { setSelectedFlight } = flightsSlice.actions;
 
 export const { setShowPaymentCard } = flightsSlice.actions;
-export default flightsSlice.reducer;
+export default flightsSlice.reducer

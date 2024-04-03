@@ -14,6 +14,7 @@ import Information from './compoents/Information';
 import Seats from './compoents/seats';
 import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
+import Secondseats from './compoents/Secondseats';
 
 function App() {
 
@@ -29,27 +30,103 @@ function App() {
           <Route path="/" element={<AccPage />} />
           <Route path="/flight" element={<FlightPage />} />
           <Route path="/confir" element={<ConfirPgae />} />
+          <Route path="/Second" element={<SecPage />} />
 
           <Route path="profile" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />
-          <Route path="/seats" element={<Seats />} />
+          <Route path="/seats" element={<SeatPage />} />
           <Route path="/hotels" element={<HotelPage />} />
           <Route path="/payment" element={<Paye />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
+  function SeatPage() {
+    return (<>
+      <Header/>
+      <br /><br />
+      < Seats/>
+      </>
+    );
+  }
+  function SecPage() {
+    return (<>
+       <Header/>
+      <br /><br />
+        < Secondseats/>
+        </>
+    );
+  }
 
-  
+  function ConfirPgae() {
+    return (
+      <>
+        <Header />
+        <br /><br />
+        <Confirmation />
+        <br /><br />
+
+        <br />
+        <Footer />
+      </>
+    );
+  }
+  function FlightPage() {
+    return (
+      <>
+        <Header />
+        <SearchBar />
+        <br /><br />
+       <Flights  /> 
+        <br />
+        <Revieux /><br />
+        <Footer />
+
+      </>
+    );
+  }
+
+
+  function ProfPage() {
+    return (
+      <>
+      <Header/>
+      <br/>
+        < Profile/>
+
+      </>
+    );
+  }
+  function AccPage() {
+    return (
+      <>
+        <Header />
+      <MainPage/>
+        <br /><br />
+      </>
+    );
+  }
+
+  function InfoPage() {
+    return (
+      <>
+      <Header/>
+        <Information />
+      </>
+    );
+  }
+
+  function HotelPage() {
+    return (
+      <>
+      <Header/>
+        <FlightDeals />
+        <Revieux />
+        <Footer />
+
+      </>
+    );
+  }
 }
 
-function FlightPage() {
-  return (
-    <>
-      <FlightDeals />
-      <Revieux />
-      <Footer />
-    </>
-  );
-}
-export default App;
+export default App
