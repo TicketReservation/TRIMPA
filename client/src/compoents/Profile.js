@@ -20,6 +20,7 @@ function Profile() {
     const token = localStorage.getItem("jwtToken");
     const decoded = jwtDecode(token);
     const userId = decoded.id;
+    console.log(decoded);
   
     setId(userId); 
   
@@ -90,8 +91,10 @@ function Profile() {
           <input type="email" value={update.email} id="email" name="email" onChange={handleChange} required />
         </span>
         <span className='PasswordPicture'>
+          <label htmlFor="password">Current password</label><br />
+          <input type="password" placeholder='old password' id="password" name="password" onChange={handleChange} required /><br />
           <label htmlFor="password">Password</label><br />
-          <input type="password" value={update.password} placeholder='new password' id="password" name="password" onChange={handleChange} required /><br />
+          <input type="password" placeholder='new password' id="password" name="password" onChange={handleChange} required /><br />
           <label htmlFor="picture">Picture</label><br />
           <img src={update.picture} alt="User" /><br />
           <input type="file" id="picture" name="picture" onChange={handleImage} /><br /><br />
