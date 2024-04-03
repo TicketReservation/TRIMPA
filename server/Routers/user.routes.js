@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const {getAll,register,deleteOne,login,updateOne,getOne,updateOOne,deeleteOne,addOne}=require('../controller/UserController')
+const {getAll,register,deleteOne,login,updateOne,getOne,updateOOne,deeleteOne,addOne,remove}=require('../controller/UserController')
 
-router.get("/",getAll);
+router.get('/',getAll)
 router.get('/:id',getOne)
 router.post("/register",register);
 router.post("/login",login)
+router.delete("/:id",remove);
+router.put("/:id",updateOne)
 
 
 

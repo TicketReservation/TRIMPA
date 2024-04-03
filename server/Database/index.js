@@ -9,7 +9,8 @@ const { DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD } = require("./confi
 // });
  
 const connection = new Sequelize (DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, {
-  dialect: 'mysql'
+  dialect: 'mysql',
+  host:"localhost",
 })
 
 

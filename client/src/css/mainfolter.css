@@ -1,13 +1,12 @@
 .landing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-  }
-  
-  .center-content {
-    text-align: center;
-  
-  }
-  
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center-content {
+  text-align: center;
+
+}
+

@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import '../css/profile.css';
 import axios from 'axios';
-
+import { jwtDecode } from "jwt-decode";
 function Profile() {
+  const [id,setId]=useState(null)
   const [update, setUpdate] = useState({
     Name: "",
     email: "",
     password: "",
     picture: null
   });
+  
+  
 
+  useEffect(() => 
+    handleData(id)
+  , []);
 
-
-  useEffect(() => {
-    handleData(4);
-  }, []);
-
-  const handleData = (id) => {
+  const handleData = () => {
+    const token=localStorage.getItem("jwtToken")
+    const decoded=jwtDecode(token)
+    console.log(decoded,'decoded');
+    setId(decoded.id)
     axios.get(`http://localhost:3000/api/user/${id}`)
       .then(res => {
         setUpdate(res.data)
@@ -40,15 +46,19 @@ function Profile() {
     });
   };
 
-  const handleUpdate = async (id) => {
+  const handleUpdate = async () => {
     try {
       const imageUrl = await uploadImage();
       const updatedData = { ...update };
       if (imageUrl) {
         updatedData.picture = imageUrl;
       }
+      const token=localStorage.getItem("jwtToken")
+      const decoded=jwtDecode(token)
+    console.log(decoded,'decoded');
+    setId(decoded.id)
       await axios.put(`http://localhost:3000/api/user/profile/${id}`, updatedData);
-      handleData(id)
+      handleData(id);
     } catch (error) {
       console.log(error);
     }
@@ -61,9 +71,11 @@ function Profile() {
       [name]: value
     });
   };
-return (
+  
+
+  return (
     <div className='updateProfile'>
-      <form onSubmit={(e) => { e.preventDefault(); handleUpdate(4); }}>
+      <form onSubmit={() => handleUpdate() }>
         <h2>Update Profile</h2>
         <span className='NameEmail'>
           <label htmlFor="name">Name</label><br />
@@ -84,4 +96,4 @@ return (
   );
 }
 
-export default Profile
+export default Profile;
