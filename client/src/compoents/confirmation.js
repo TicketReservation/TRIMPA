@@ -15,7 +15,7 @@ function Confirmation() {
       <div class="card-body text-success" id='bord'>
             <p>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Your flight has been booked successfully! Your confirmation number is #381029404387</p></div>  
            <div id='tata' > 
-            <h2 id='bon'>Bon voyage, Sophia!</h2> 
+            <h2 id='bon'>Bon voyage, RBK!</h2> 
             <p>Confirmation number: #381029404387</p>
             <p>Thank you for booking your travel with Tripma! Below is a summary of your trip to Narita airport in Tokyo, Japan. We’ve sent a copy of your booking confirmation to your email address. You can also find this page again in My trips.<br/></p>
            </div>
@@ -29,15 +29,15 @@ function Confirmation() {
                   <ul className="list-group list-group-flush"> 
                      <li className="list-group-item d-flex align-items-center" >
                        <img className="companyimage"  />
-                       <p>companyName</p> &nbsp; &nbsp;
+                       <p>companyName&nbsp; &nbsp;</p> &nbsp; &nbsp;
                        <p>DepartureDate</p>  &nbsp; &nbsp;
                        <p> price</p> &nbsp; &nbsp;
                      </li>
                      <li className="list-group-item d-flex align-items-center" >
                        <img className="companyimage"  />
-                       <p>companyName</p> &nbsp; &nbsp;
-                       <p>DepartureDate</p>  &nbsp; &nbsp;
-                       <p> price</p> &nbsp; &nbsp;
+                       <p>companyName:&nbsp; &nbsp;Lufthansa</p> &nbsp; &nbsp;
+                       <p>DepartureDate:&nbsp; &nbsp;2024-05-31T23:59:59.000Z</p>  &nbsp; &nbsp;
+                       <p> price&nbsp; &nbsp;1500</p> &nbsp; &nbsp;
                      </li>
                    </ul>
 
@@ -48,21 +48,21 @@ function Confirmation() {
     <div   id='tt'>
                 <h4>Price breakdown</h4>
              <div class="card"   >
-                <p>   Departing Flight   </p>
-                <p>   Arriving Flight     </p>
-                <p>  Baggage fees    </p>
-                <p>   Seat upgrade (business)   </p>
-                <p>    Subtotal  </p>
-                <p>    Taxes (9.4%)  </p>
-                <h4>Amount paid : </h4>
+                <p>   Departing Flight  &nbsp; &nbsp; 2024-04-04T00:27:03.000Z </p>
+                <p>   Arriving Flight  &nbsp; &nbsp;  2024-05-31T23:59:59.000Z  </p>
+                <p>  Baggage fees  &nbsp; &nbsp;658£   </p>
+                <p>   Seat upgrade (business) &nbsp; &nbsp;free   </p>
+                <p>    Subtotal &nbsp; &nbsp;2158£  </p>
+                <p>    Taxes (9.4%)&nbsp; &nbsp; 200£ </p>
+                <h4>Amount paid :&nbsp; &nbsp;2358£ </h4>
              </div>
      </div> 
 
   <div id='paymenetMthd'>  Payment method
          <div class="card visa  " >     <br/>
             <h1 id='visa'>&nbsp;&nbsp;&nbsp;visa</h1> <br/>
-            <h5>&nbsp;&nbsp;Sophia Knowles</h5><br/>
-                <h6>&nbsp; &nbsp;••••••••••••3456 &nbsp; &nbsp; &nbsp; &nbsp; 34/56</h6>
+            <h5>&nbsp;&nbsp;RBK</h5><br/>
+                <h6>&nbsp; &nbsp;••••••••••••14141414 &nbsp; &nbsp; &nbsp; &nbsp; 34/56</h6>
 
          </div>
     </div>

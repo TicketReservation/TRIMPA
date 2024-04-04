@@ -1,20 +1,7 @@
 import React, { useState } from 'react';
-import React, { useState } from 'react';
 import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 import '../css/homePage.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-function SignInBtn() {
-
-     const [anchor, setAnchor] = useState(null);
-     const navigate=useNavigate()
-      const url="http://localhost:3000/api/admin/login"
-
-function SignInBtn({ toggle }) {
-
-     const [anchor, setAnchor] = useState(null);
-     const navigate=useNavigate()
-      const url="http://localhost:3000/api/admin/login"
 
 function SignInBtn({ toggle }) {
      const [anchor, setAnchor] = useState(null);
@@ -38,35 +25,22 @@ function SignInBtn({ toggle }) {
       [e.target.id]: e.target.value
     });
   };
-
-  
-  const handleSubmit = () => {
-    axios.post(url, signIn)
-        .then(res => {
-            const token = res.data.token;
-            localStorage.setItem("jwtToken", token);
-            console.log("Token stored in local storage:", token);
-            navigate("/login"); // Redirect to login page after successful login
-        })
-        .catch(err => {
-            console.log(err);
-            // If admin login fails, attempt user login
-            axios.post("http://localhost:3000/api/user/login", signIn)
-                .then((res) => {
-                    const token = res.data.token;
-                    localStorage.setItem("jwtToken", token);
-                    console.log("Token Stored in the local storage", token);
-                    // Redirect to login page after successful login
-                    navigate("/login");
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        });
-};
-
-
-
+const handleSubmit = (event) => {
+    axios.post("http://localhost:3000/api/user/login", signIn)
+      .then(res => {
+        const token = res.data.token;
+        localStorage.setItem("jwtToken", token);
+        console.log("Token stored in local storage:", token);
+        toggle("profile");
+      })
+      .catch(err => {
+        if (err.response && err.response.status === 401) {
+          console.log("Invalid email or password. Please try again.");
+        } else {
+          console.error("An error occurred:", err);
+        }
+      });
+  };
 
 
   return (
@@ -88,8 +62,6 @@ function SignInBtn({ toggle }) {
       </BasePopup>
     </div>
   );
-}}
+}
 
-
-export default SignInBtn
-
+export default SignInBtn;

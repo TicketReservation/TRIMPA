@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react"
-import   "../css/seats.css"
+import style from "../css/seats.css"
 import imagebus from "../img/BusinessSeats.jpg"
 import imageeco from "../img/EconomySeats.jpg"
 import axios from 'axios' 
@@ -65,7 +65,7 @@ const upp =()=>{
 }
 return (
     <div>
-        {/* <h1 class="trimpa">TRIMPA</h1> */}
+        <h1 class="trimpa">TRIMPA</h1>
     <div class ="bigdiv">
 <div class="plane">
   <div class="cockpit">

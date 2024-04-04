@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react"
-import  "../css/seats.css"
+import style from "../css/seats.css"
 import imagebus from "../img/BusinessSeats.jpg"
 import imageeco from "../img/EconomySeats.jpg"
 import axios from 'axios' 

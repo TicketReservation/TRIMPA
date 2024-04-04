@@ -42,19 +42,15 @@ function App() {
     </div>
   );
   function SeatPage() {
-    return (<>
-      <Header/>
-      <br /><br />
+    return (
       < Seats/>
-      </>
     );
   }
   function SecPage() {
-    return (<>
-       <Header/>
-      <br /><br />
+    return (
+      
         < Secondseats/>
-        </>
+        
     );
   }
 

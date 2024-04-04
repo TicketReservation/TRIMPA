@@ -1,3 +1,4 @@
+
 const express = require("express");
 const router = express.Router();
 const {getAll,register,deleteOne,login,updateOne,getOne,updateOOne,deeleteOne,addOne,remove}=require('../controller/UserController')
