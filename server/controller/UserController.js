@@ -108,7 +108,15 @@ updateOne : async (req, res) => {
       throw error
   }
 },
-
+deleteOne:async(req,res)=>{
+  try {
+    const _id=req.params.id
+    const user=db.User.destroy({where:{id:_id}})
+    res.json(user)
+  } catch (error) {
+    throw error
+  }
+      },
 addOne : async (req, res) => {
    try {
        const add = await db.User.create(req.body)

@@ -3,6 +3,8 @@ import style from "../css/seats.css"
 import imagebus from "../img/BusinessSeats.jpg"
 import imageeco from "../img/EconomySeats.jpg"
 import axios from 'axios' 
+import { NavLink } from 'react-router-dom';
+
 
 function Seats (props){
 
@@ -61,7 +63,7 @@ const upp =()=>{
     valid:valid,
       
   })
-}
+} 
 return (
     <div>
         <h1 class="trimpa">TRIMPA</h1>
@@ -764,7 +766,7 @@ return (
     
   </div>
 </div>
-<div class="container">
+<div class="container-f">
     <div class="flight-info">
       <p>From: SFO, California, US</p>
       <p>To :{flight.Name} </p>

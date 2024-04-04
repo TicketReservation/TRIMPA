@@ -1,18 +1,19 @@
+
 const mysql = require('mysql2')
 const { Sequelize ,DataTypes } = require('sequelize')
-// const { DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD } = require("./config.js")
-const connection = new Sequelize('tripma', 'root', 'dhia2002', {
-  host: 'localhost',
-  dialect: 'mysql',
-  logging:false
-});
+const { DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD } = require("./config.js")
+// const connection = new Sequelize('tripma', 'root', 'root', {
+//   host: 'localhost',
+//   dialect: 'mysql',
+//   logging:false
+// });
+ 
+const connection = new Sequelize (DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, {
+  dialect: 'mysql'
+})
 
-// const connection = new Sequelize (DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, {
-//   dialect: 'mysql'
-// })
 
-
-async function connectionTest (){     
+async function connectionTest (){
   try {
     await connection.authenticate()
     console.log('Connection has been established successfully.')

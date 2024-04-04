@@ -18,7 +18,7 @@ function Information() {
 
 
   return (
-    <div className="container">
+    <div className="container   aazaz"   >
       <h4>Passenger information</h4>
       <p>
         Enter the required information for each traveler and be sure that it exactly 
@@ -111,7 +111,10 @@ function Information() {
               First Last <button onClick={mns}>-</button> {comteur}<button onClick={pls}>+</button>
             </div>
             <br />
-            <button>Save and close</button> <button>Select seats</button>
+            
+            <a href='/'>Save and close</a>   <a href='/seats'>Select seats</a>
+            <br></br>
+            
           </div>
         </form>
       </div>

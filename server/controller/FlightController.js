@@ -1,4 +1,4 @@
-const { DefinePlugin } = require('webpack')
+
 const db = require('../Database/index')
 module.exports = {
 
@@ -43,14 +43,14 @@ Select: async function(req, res) {
     try { 
         const dep = req.params.departure;
         const des = req.params.destination;
-        
+
         const flights = await db.Flight.findAll({
             where: { 
                 destination: des,
                 departure: dep
             } 
         });
-        
+
         res.send(flights);
     } catch (error) {
         console.error(error);
