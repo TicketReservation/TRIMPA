@@ -2,6 +2,10 @@ import React from 'react';
 import Flightdashboard from '../css/flightdashboard.css'
 import photostat from '../img/pngegg.png'
 function StaticsDashboard(props) {
+  console.log("data",props.data)
+  const dataLength = props.data ? props.data.length : 0;
+const flightLength = props.flight ? props.flight.length : 0;
+
     return (
         <div className="admin-dashboard">
         <div className="sidebar">
