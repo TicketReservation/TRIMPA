@@ -8,8 +8,10 @@ module.exports = {
         res.status(200).send(users);
     } catch (error) {
         throw error;
+        throw error;
     }
 }
+
 ,
   //
     deeleteOne:async(req,res)=>{
@@ -22,6 +24,7 @@ try {
 }
     },
     //
+    //
     updateOOne:async(req,res)=>{
       try {
         const _id=req.params.id
@@ -31,6 +34,7 @@ try {
         throw error
       }
     },
+
     register: async (req, res) => {
       const { Name, email, password, picture } = req.body;
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -40,6 +44,7 @@ try {
       } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Registration failed' });
+
       }
     },
 
@@ -52,7 +57,7 @@ try {
         throw error
       }
     },
-    remove: async (req, res) => {
+remove: async (req, res) => {
       try {
         const user = await db.User.destroy({where: { id: req.params.id }})
         res.json(user)
@@ -76,7 +81,7 @@ login: async (req, res) => {
           return res.status(401).json({ error: 'Wrong password' });
         }
 
-        const token = jwt.sign({  id: user.id, role: user.role  }, "mlop09", { expiresIn: "1h" });
+        const token = jwt.sign({ id: user.id }, "mlop09", { expiresIn: "1h" });
         res.status(200).json({ token });
       } catch (error) {
         console.error("Error during login:", error);
@@ -97,6 +102,7 @@ updateOne : async (req, res) => {
   }
 },
 //
+//
 deleteOne:async(req,res)=>{
   try {
     const _id=req.params.id
@@ -106,6 +112,7 @@ deleteOne:async(req,res)=>{
     throw error
   }
       },
+      //
       //
 addOne : async (req, res) => {
    try {
