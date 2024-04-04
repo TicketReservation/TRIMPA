@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../css/flightdashboard.css'
-import flightimage from '../img/pngwing.png'
+import flightimage from '../img/pngegg.png'
 import Seats from './seats';
 
 function FlightDashboard(props) {

@@ -15,7 +15,7 @@ import Seats from './compoents/seats';
 import SearchBar from './compoents/SearchBar';
 import Confirmation from './compoents/confirmation';
 import Secondseats from './compoents/Secondseats';
-
+import Admin from './compoents/AdminDashboard';
 function App() {
 
 
@@ -31,6 +31,7 @@ function App() {
           <Route path="/flight" element={<FlightPage />} />
           <Route path="/confir" element={<ConfirPgae />} />
           <Route path="/Second" element={<SecPage />} />
+          <Route path="/Admin" element={<Admin />} />
 
           <Route path="profile" element={<ProfPage />} />
           <Route path="/information" element={<InfoPage />} />

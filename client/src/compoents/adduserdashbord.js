@@ -22,7 +22,7 @@ return (
  <input type="email" value={email} placeholder='put email' onChange={(e)=>setemail(e.target.value)} />
  <input type="text" name={password} placeholder='put Password' onChange={(e)=>setpass(e.target.value)} />
  <input type="text" value={picture} placeholder='put pictureurl' onChange={(e)=>setimage(e.target.value)} />
- <button onClick={()=>{ adddd();props.changeView("UserDashboard")}}>ADD</button>
+ <button onClick={()=>{ adddd();props.changeView("UserDashboard");props.fetch()}}>ADD</button>
   </div>
 )
 }

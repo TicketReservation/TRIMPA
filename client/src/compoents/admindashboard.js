@@ -7,7 +7,7 @@ import UserDashboard from './userdashbord';
 import Adduser from './adduserdashbord';
 import AddFlight from './addflight';
 
-function AdminDashboard() {
+function Admin() {
     const [view, setView] = useState("UserDashboard");
     const [data, setdata] = useState([]);
     const [flight, setflight] = useState([]);
@@ -64,11 +64,11 @@ function AdminDashboard() {
         if (view === "FlightDashboard") {
             return <FlightDashboard changeView={changeView} flight={flight} deleteflight={deleteflight} addflight={addflight} />;
         } else if (view === "StaticsDashboard") {
-            return <StaticsDashboard changeView={changeView} />;
+            return <StaticsDashboard  data={data}  flight={flight}  changeView={changeView} />;
         } else if (view === "UserDashboard") {
             return <UserDashboard changeView={changeView} data={data} deletee={deletee} add={add} />;
         } else if (view === "add") {
-            return <Adduser changeView={changeView} data={data} deletee={deletee} add={add} setupdater={setupdater} />;
+            return <Adduser changeView={changeView} fetch={fetch} data={data} deletee={deletee} add={add} setupdater={setupdater} />;
         } else if (view === "addflight") {
             return <AddFlight changeView={changeView} flight={flight} deleteflight={deleteflight} addflight={addflight} />;
         }
@@ -79,4 +79,4 @@ function AdminDashboard() {
     );
 }
 
-export default AdminDashboard;
+export default Admin;

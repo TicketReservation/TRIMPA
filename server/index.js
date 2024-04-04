@@ -6,15 +6,17 @@ const UserRoute = require('./Routers/user.routes.js')
 const FlightRoute = require('./Routers/flight.routes.js')
 const SitRoute = require('./Routers/sit.routes.js')
 const BookingRoute = require('./Routers/booking.routes.js')
-
+const adminRoute = require('./Routers/admine.routes.js')
 
 const Payment=require('./Routers/Payment.Routes.js')
+
 
 
 
 app.use(express.static(__dirname + "/../client/dist"))
 app.use(express.json())
 app.use(cors())
+app.use('/api/admin', adminRoute )
 app.use('/api/user', UserRoute);
 app.use('/api/flight', FlightRoute);
 app.use('/api/sit', SitRoute);
