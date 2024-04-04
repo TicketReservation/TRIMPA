@@ -3,7 +3,11 @@ import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 import '../css/homePage.css';
 import axios from 'axios';
 
+
 function SignInBtn({ toggle }) {
+
+
+
   const [anchor, setAnchor] = useState(null);
 
   const handleClick = (event) => {
@@ -24,9 +28,9 @@ function SignInBtn({ toggle }) {
       [e.target.id]: e.target.value
     });
   };
-
+  
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
     axios.post('http://localhost:3000/api/user/login', signIn)
       .then(res => {
         const token = res.data.token;
@@ -42,6 +46,7 @@ function SignInBtn({ toggle }) {
         }
       });
   };
+        
 
   return (
     <div>

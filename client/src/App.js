@@ -24,6 +24,7 @@ function App() {
 
   return (
     <div>
+        {/* < Profile/> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AccPage />} />

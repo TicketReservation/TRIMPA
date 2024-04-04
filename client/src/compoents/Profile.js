@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { jwtDecode } from "jwt-decode";
+import {jwtDecode} from "jwt-decode";
+import '../css/profile.css';
+
+
+
+
+
 
 function Profile() {
   const [id, setId] = useState(null);
@@ -8,6 +14,7 @@ function Profile() {
     Name: "",
     email: "",
     password: "",
+    newPassword: "",
     picture: null
   });
   
@@ -20,6 +27,7 @@ function Profile() {
     const decoded = jwtDecode(token);
     const userId = decoded.id;
     setId(userId); 
+    console.log(id);
   
     axios.get(`http://localhost:3000/api/user/${userId}`)
       .then(res => {
@@ -30,7 +38,7 @@ function Profile() {
   
 
   const uploadImage = async () => {
-    if (!update.picture) return;
+    if (!update.picture) return null;
 
     const formData = new FormData();
     formData.append("file", update.picture);
@@ -40,7 +48,7 @@ function Profile() {
       const response = await axios.post("https://api.cloudinary.com/v1_1/dockwpvkl/upload", formData);
       return response.data.secure_url;
     } catch (error) {
-      console.log(error);
+      console.log("Error uploading image:", error);
       return null;
     }
   }
@@ -62,10 +70,14 @@ function Profile() {
         updatedData.picture = imageUrl;
       }
 
+      if (!updatedData.newPassword) {
+        delete updatedData.newPassword;
+      }
+
       await axios.put(`http://localhost:3000/api/user/${id}`, updatedData);
       handleData();
     } catch (error) {
-      console.log("error", error);
+      console.log("Error updating profile:", error);
     }
   };
 
@@ -83,15 +95,15 @@ function Profile() {
         <h2>Update Profile</h2>
         <span className='NameEmail'>
           <label htmlFor="name">Name</label><br />
-          <input type="text" value={update.Name} id="name" name="Name" onChange={handleChange} required />
+          <input type="text" value={update?.Name || ""} id="name" name="Name" onChange={handleChange} required />
           <label htmlFor="email">Email</label><br />
-          <input type="email" value={update.email} id="email" name="email" onChange={handleChange} required />
+          <input type="email" value={update?.email || ""} id="email" name="email" onChange={handleChange} required />
         </span>
         <span className='PasswordPicture'>
           <label htmlFor="password">Current password</label><br />
           <input type="password" placeholder='old password' id="password" name="password" onChange={handleChange} required /><br />
           <label htmlFor="newPassword">New Password</label><br />
-          <input type="password" placeholder='new password' id="newPassword" name="newPassword" onChange={handleChange} required /><br />
+          <input type="password" placeholder='new password' id="newPassword" name="newPassword" onChange={handleChange} /><br />
           <label htmlFor="picture">Picture</label><br />
           <img src={update.picture} alt="User" /><br />
           <input type="file" id="picture" name="picture" onChange={handleImage} /><br /><br />

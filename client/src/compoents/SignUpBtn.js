@@ -4,6 +4,8 @@ import '../css/homePage.css';
 import axios from 'axios';
 
 function SignUpBtn() {
+    // const dispatch = useDispatch();
+    // const signUpData = useSelector((state) => state.signUp.signUpData);
     const [anchor, setAnchor] = useState(null);
     const [signUp, setSignUp] = useState({
         Name: "",
@@ -27,9 +29,18 @@ function SignUpBtn() {
         });
     };
 
+
+    // const handleInput = (e) => {
+    //     dispatch(updateSignUpData({ ...signUpData, [e.target.id]: e.target.value }));
+    //   };
+
     const handleImage = (e) => {
         setImage(e.target.files[0]);
     };
+
+    // const handleImage = (e) => {
+    //     dispatch(updateSignUpData({ ...signUpData, picture: e.target.files[0] }));
+    //   };
 
     const uploadImage = async () => {
         try {
@@ -57,6 +68,18 @@ function SignUpBtn() {
             console.log("Error during signup:", error);
         }
     };
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     dispatch(signUpUser(signUpData))
+    //       .then(() => {
+    //         dispatch(clearSignUpData());
+    //         console.log("User signed up successfully");
+    //       })
+    //       .catch((error) => {
+    //         console.error("Error during signup:", error);
+    //       });
+    //   };
 
     return (
         <div>
